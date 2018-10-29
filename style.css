@@ -1,0 +1,10 @@
+body {
+	font-family: "Courier New";
+}
+.sectionHeaders {
+	font-weight: bold;
+}
+#title {
+	font-size: 36px;
+	text-align: center;
+}
