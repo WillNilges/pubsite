@@ -2,8 +2,59 @@ body {
 	font-family: "Courier New";
 }
 
+div {
+	background-color: #CCCCE5;
+	border: 1px solid black;
+}
+
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 .sectionHeaders {
+	font-size: 24px;
 	font-weight: bold;
+}
+
+.articleHeaders {
+	font-size: 18px;
+	font-weight:bold;
+}
+
+#sidebar {
+	position: relative;
+	float: left;
+	width: 20%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#main {
+	position: relative;
+	float: right;
+	width: 75%;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #title {
