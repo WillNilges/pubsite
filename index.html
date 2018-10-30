@@ -10,7 +10,9 @@
 		<div id="sidebar">
 		<p class="sectionHeaders">Links:</p>
 		<hr>
-		<a href="https://www.github.com/WillNilges/">My Github</a>
+		<a href="https://www.github.com/WillNilges/">- My Github</a>
+		<br>
+		<a href="https://www.linkedin.com/in/will-nilges-866804143/">- My LinkedIn</a>
 		<br>
 		<br>
 		</div>
@@ -23,11 +25,11 @@
 		<p class="sectionHeaders">Guides</p>
 		<hr>
 		<p class="articleHeaders">How to set up networking on an uncooperative CLI.</p>
-		<p>I need to get to my other thonkpad and get some code...</p>
-		<p>Until then, you need to add the device to `/etc/network`.</p>
-		<p>Add the device to your `interfaces` file which might look something like this:</p>
+		<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
+		<p>First, you need to add the device to <div id="code">/etc/network</div></p>
+		<p>Add the device to your `interfaces` file which might look something like this:</>
 		<p>
-		<em>
+		<div id="code">
 		# This file describes the network interfaces available on your system<br>
 		# and how to activate them. For more information, see interfaces(5).<br>
 		<br>
@@ -36,10 +38,17 @@
 		# The loopback network interface<br>
 auto lo<br>
 iface lo inet loopback<br>
-		</em>
+		</div>
 		</p>
-		<p>You'll need to find the device name using <em>ifconfig -a</em> and thenadd the device to this like this:<em> iface *DEVICE NAME* inet dhcp</em></p>
-<p>Then, you'll need to hit it with an <em>ifdown *DEVICE NAME*</em> and then an <em>ifup *DEVICE NAME*</em></p>
+	<p>You will need to find the device name using</p>
+	<p><div id="code">ifconfig -a</div></p>
+	<p>and then add the device to this like this:</p>
+	<p><div id="code">iface *DEVICE NAME* inet dhcp</div></p>
+	<p>Then, you will need to hit it with an</p>
+	<p><div id="code">ifdown *DEVICE NAME*</div></p>
+	<p>and then an</p>
+	<p><div id="code">ifup *DEVICE NAME*</div></p>
+	<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
 		<!--<p>Nothing, yet.</p>-->
 		</div>
 	</body>
