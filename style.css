@@ -1,9 +1,9 @@
 body {
+	margin: auto;
+	width: 800px;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #FFFFFF;
 	background-color: #333333;
-	margin-left: 20%;
-	margin-right: 20%;
 }
 
 div {
