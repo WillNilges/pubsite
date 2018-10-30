@@ -24,7 +24,22 @@
 		<p>Additionally, I'll probably put some neat-o project sites on here. It'll be great!</p>
 		<p class="sectionHeaders">Guides</p>
 		<hr>
-		<p class="articleHeaders">How to set up networking on an uncooperative CLI.</p>
+		<!--Start posts here.-->
+		<p class="articleHeaders"> How to install Bumblebee on Arch </p>
+		<p><strong>29 October, 2018</strong><br></p>
+		<p>Do this after installing Xorg but before installing a DE. The next time I install Arch I'll actually blog about it properly but this is something that might be useful real quick. Also, if you're trying to install Bumblebee on any other flavor,
+		<br>
+		don't.</p>
+		<p id="code">
+			sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils
+			<br>
+			sudo gpasswd -a $USER bumblebee
+			<br>
+			sudo systemctl enable bumblebee
+		</p>
+		<br><hr><br>
+		<p class="articleHeaders">How to set up networking on an uncooperative CLI</p>
+		<p><strong>29 October, 2018</strong><br></p>
 		<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
 		<p>First, you need to add the device to <div id="code">/etc/network</div></p>
 		<p>Add the device to your `interfaces` file which might look something like this:</>
