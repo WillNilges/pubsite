@@ -1,66 +1,120 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Yay computers!</title>
-		<meta name="author" content="willnilges">
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<script src="include.js"></script>
-	</head>
-	<body>
-		<h1 id="title"> Will's Guide to Computing for Forgetful Power Users</h1>
-		<div w3-include-html="sidebar.html" id="sidebar"></div>
-		<div id="main">
-		<p class="sectionHeaders">About this site</p>
-		<hr>
-		<p>Welcome to this small little thing I am writing!</p>
-		<p>Here, you will find mostly miscellaneous tech advice and no-nonsense guides to doing things in Linux. I might also rant on here. Who knows?</p>
-		<p>This site is also open to pull requests. If you have some nifty advice about Linux, submit a pull request!</p>
-		<p>Additionally, I'll probably put some neat-o project sites on here. It'll be great!</p>
-		<p class="sectionHeaders">Guides</p>
-		<hr>
-		<!--Start posts here.-->
-		<p class="articleHeaders"> How to install Bumblebee on Arch </p>
-		<p><strong>29 October, 2018</strong><br></p>
-		<p>Do this after installing Xorg but before installing a DE. The next time I install Arch I'll actually blog about it properly but this is something that might be useful real quick. Also, if you're trying to install Bumblebee on any other flavor,
-		<br>
-		don't.</p>
-		<p id="code">
-			sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils
-			<br>
-			sudo gpasswd -a $USER bumblebee
-			<br>
-			sudo systemctl enable bumblebee
-		</p>
-		<br><hr><br>
-		<p class="articleHeaders">How to set up networking on an uncooperative CLI</p>
-		<p><strong>29 October, 2018</strong><br></p>
-		<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
-		<p>First, you need to add the device to <div id="code">/etc/network</div></p>
-		<p>Add the device to your `interfaces` file which might look something like this:</>
-		<p>
-		<div id="code">
-		# This file describes the network interfaces available on your system<br>
-		# and how to activate them. For more information, see interfaces(5).<br>
-		<br>
-		source /etc/network/interfaces.d/*<br>
-		<br>
-		# The loopback network interface<br>
-auto lo<br>
-iface lo inet loopback<br>
-		</div>
-		</p>
-	<p>You will need to find the device name using</p>
-	<p><div id="code">ifconfig -a</div></p>
-	<p>and then add the device to this like this:</p>
-	<p><div id="code">iface *DEVICE NAME* inet dhcp</div></p>
-	<p>Then, you will need to hit it with an</p>
-	<p><div id="code">ifdown *DEVICE NAME*</div></p>
-	<p>and then an</p>
-	<p><div id="code">ifup *DEVICE NAME*</div></p>
-	<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
-		<!--<p>Nothing, yet.</p>-->
-		</div>
-		<p>Written by Will Nilges. Last updated <br> 29 October, 2018.</p>
-	</body>
-	<script>includeHTML();</script>
+<html lang="en"
+      dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Yay computers!</title>
+
+  <link rel="stylesheet"
+        href="styles/main.css">
+</head>
+
+<body class="page">
+  <h1 class="page__title">Will's Guide to Computing for Forgetful Power Users</h1>
+  <div class="sidebar">
+    <h3 class="sidebar__title">Links:</h3>
+    <ul class="sidebar__list">
+      <li class="sidebar__item">
+        <a href="/">Guide to computing</a>
+      </li>
+      <li class="sidebar__item">
+        <a href="/">About me</a>
+      </li>
+      <li class="sidebar__item">
+        <a href="//www.github.com/WillNilges/">Github</a>
+      </li>
+      <li class="sidebar__item">
+        <a href="//www.linkedin.com/in/will-nilges-866804143/">Linkedin</a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="section">
+      <h2 class="section__title">About this site</h2>
+      <p>Welcome to this small little thing I am writing!</p>
+
+      <p>Here, you will find mostly miscellaneous tech advice and no-nonsense guides to doing things in Linux. I might also rant on here. Who knows?</p>
+
+      <p>This site is also open to pull requests. If you have some nifty advice about Linux, submit a pull request!</p>
+
+      <p>Additionally, I'll probably put some neat-o project sites on here. It'll be great!</p>
+    </div>
+    <div class="section">
+      <h2 class="section__title">Guides</h2>
+      <div class="section">
+        <h3 class="section__title">
+          How to install Bumblebee on Arch
+        </h3>
+        <span class="date">29 October, 2018</span>
+
+        <p>
+          Do this after installing Xorg but before installing a DE. The next time I install Arch I'll actually blog about it properly but this is something that might be useful real quick. Also, if you're trying to install Bumblebee on any other flavor, don't.
+        </p>
+
+        <code class="code">
+          sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils<br>
+          sudo gpasswd -a $USER bumblebee<br>
+          sudo systemctl enable bumblebee
+        </code>
+      </div>
+
+      <div class="section">
+        <h3 class="section__title">
+          How to set up networking on an uncooperative CLI
+        </h3>
+        <span class="date">29 October, 2018</span>
+
+        <p>
+          So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.
+        </p>
+
+        <p>
+          First, you need to add the device to <code class="code code_inline">/etc/network</code>
+        </p>
+
+        <p>
+          Add the device to your `interfaces` file which might look something like this:
+        </p>
+
+        <code class="code">
+          # This file describes the network interfaces available on your system<br>
+          # and how to activate them. For more information, see interfaces(5).<br>
+          <br>
+          source /etc/network/interfaces.d/*<br>
+          <br>
+          # The loopback network interface<br>
+          auto lo<br>
+          iface lo inet loopback<br>
+        </code>
+
+        <p>You will need to find the device name using</p>
+
+        <code class="code">ifconfig -a</code>
+
+        <p>and then add the device to this like this:</p>
+
+        <code class="code">iface *DEVICE NAME* inet dhcp</code>
+
+        <p>Then, you will need to hit it with an</p>
+
+        <code class="code">ifdown *DEVICE NAME*</code>
+
+        <p>and then an</p>
+
+        <code class="code">ifup *DEVICE NAME*</code>
+
+        <p>
+          and then, assuming the divine forces will actually allow it, you should be able to network!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">
+    Written by <a href="//github.com/WillNilges">Will Nilges</a>. Design by <a href="//github.com/rasuru/">rasuru</a>.
+  </p>
+</body>
+
 </html>
