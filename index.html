@@ -4,23 +4,17 @@
 		<title>Yay computers!</title>
 		<meta name="author" content="willnilges">
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="include.js"></script>
 	</head>
 	<body>
 		<h1 id="title"> Will's Guide to Computing for Forgetful Power Users</h1>
-		<div id="sidebar">
-		<p class="sectionHeaders">Links:</p>
-		<hr>
-		<a href="https://www.github.com/WillNilges/">- My GitHub</a>
-		<br>
-		<a href="https://www.linkedin.com/in/will-nilges-866804143/">- My LinkedIn</a>
-		<br>
-		<br>
-		</div>
+		<div w3-include-html="sidebar.html" id="sidebar"></div>
 		<div id="main">
 		<p class="sectionHeaders">About this site</p>
 		<hr>
-		<p>Welcome to this small little thing I might do eventually! At some point, I'll get around to making a place for me to store all my tech notes and knowhow</p>
+		<p>Welcome to this small little thing I am writing!</p>
 		<p>Here, you will find mostly miscellaneous tech advice and no-nonsense guides to doing things in Linux. I might also rant on here. Who knows?</p>
+		<p>This site is also open to pull requests. If you have some nifty advice about Linux, submit a pull request!</p>
 		<p>Additionally, I'll probably put some neat-o project sites on here. It'll be great!</p>
 		<p class="sectionHeaders">Guides</p>
 		<hr>
@@ -66,5 +60,7 @@ iface lo inet loopback<br>
 	<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
 		<!--<p>Nothing, yet.</p>-->
 		</div>
+		<p>Written by Will Nilges. Last updated <br> 29 October, 2018.</p>
 	</body>
+	<script>includeHTML();</script>
 </html>
