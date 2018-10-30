@@ -68,6 +68,7 @@ strong {
 
 .code_inline {
   display: inline;
+  padding: 4px;
   border : none;
 }
 
