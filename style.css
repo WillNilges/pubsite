@@ -1,5 +1,7 @@
 body {
+	float: center;
 	margin: auto;
+	/* text-align: right; */
 	width: 800px;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #FFFFFF;
@@ -8,12 +10,17 @@ body {
 
 div {
 	background-color: #555555;
-	border: 1px solid #00FF00;
-	border-radius: 5px;
+	border-left: 1px solid #00FF00;
+	/*border-radius: 5px;*/
 }
 
 img {
 	width: 100%;
+}
+
+hr {
+	/* border: none; */
+	border-style: solid;
 }
 
 a:link {
