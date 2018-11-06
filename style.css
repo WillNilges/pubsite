@@ -12,6 +12,10 @@ div {
 	border-radius: 5px;
 }
 
+img {
+	width: 100%;
+}
+
 a:link {
     color: white;
     background-color: transparent;
