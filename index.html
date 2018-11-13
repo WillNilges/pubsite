@@ -90,10 +90,10 @@ A DE also usually has "widgets" that let you manage apps, power, wifi, sound, an
 		<p class="articleHeaders">How to set up networking on an uncooperative CLI</p>
 		<p><strong>29 October, 2018</strong><br></p>
 		<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
-		<p>First, you need to add the device to <div id="code">/etc/network</div></p>
+		<p>First, you need to add the device to</p>
+		<p id="code">/etc/network</p>
 		<p>Add the device to your `interfaces` file which might look something like this:</>
-		<p>
-		<div id="code">
+		<p id="code">
 		# This file describes the network interfaces available on your system<br>
 		# and how to activate them. For more information, see interfaces(5).<br>
 		<br>
@@ -102,16 +102,15 @@ A DE also usually has "widgets" that let you manage apps, power, wifi, sound, an
 		# The loopback network interface<br>
 auto lo<br>
 iface lo inet loopback<br>
-		</div>
 		</p>
 	<p>You will need to find the device name using</p>
-	<p><div id="code">ifconfig -a</div></p>
+	<p id="code">ifconfig -a</p>
 	<p>and then add the device to this like this:</p>
-	<p><div id="code">iface *DEVICE NAME* inet dhcp</div></p>
+	<p id="code">iface *DEVICE NAME* inet dhcp</p>
 	<p>Then, you will need to hit it with an</p>
-	<p><div id="code">ifdown *DEVICE NAME*</div></p>
+	<p id="code">ifdown *DEVICE NAME*</p>
 	<p>and then an</p>
-	<p><div id="code">ifup *DEVICE NAME*</div></p>
+	<p id="code">ifup *DEVICE NAME*</p>
 	<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
 		<!--<p>Nothing, yet.</p>-->
 		</div>
