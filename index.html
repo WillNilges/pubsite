@@ -12,14 +12,41 @@
 		<div id="main">
 		<p class="sectionHeaders">About this site</p>
 		<hr>
-		<p>Welcome to this small little thing I am writing!</p>
-		<p>Here, you will find mostly miscellaneous tech advice and no-nonsense guides to doing things in Linux. I might also rant on here. Who knows?</p>
-		<p>This site is also open to pull requests. If you have some nifty advice about Linux, submit a pull request!</p>
-		<p>Additionally, I'll probably put some neat-o project sites on here. It'll be great!</p>
+		<p>Welcome to my tiny corner of tech knowledge.</p>
+		<p>Here, you will find mostly miscellaneous tech advice, no-nonsense guides, and occasional notes.</p>
+		<p>This site is also open to suggestions and user-submitted content. If you have some nifty advice about Linux, submit a pull request!</p>
+		<p>Additionally, I'll probably put some neat-o project sites and/or pages on here. It'll be great!</p>
 		<p class="sectionHeaders">Guides</p>
 		<hr>
 		<!--Start posts here.-->
 
+		<p class="articleHeaders">Windows broke my time!</p>
+		<p><strong>24 December, 2018</strong></p>
+		<p>
+		I've had this issue several times in the past: After installing Arch to a machine and rebooting a few times, the time may inexplicably be wrong. When you run <p id="code">timedatectl</p> you might get something like this back:
+		<p id="code">
+		Local time: Mon 2018-12-24 10:21:41 EST # Something incorrect
+		<br>
+		Universal time: Mon 2018-12-24 14:21:41 ETC # Is probably in EST or whatever your timezone is.
+		<br>
+		RTC time: Mon 2018-12-24 19:21:41
+		<br>
+		Time zone: America/New_York (EST, -0500)
+		<br>
+		System clock synchronized: yes
+		<br>
+		NTP service: inactive
+		<br>
+		RTC in local TZ: no
+		<br>
+		</p>
+		The important things you will notice is that Universal Time won't be UTC and Local Time might be something weird.
+		<br>
+		Anyway, the point is you fix it with this:
+		</p>
+		<p id="code">
+		timedatectl set-ntp true
+	  	</p>
 		<p class="articleHeaders">Graphics output!</p>
 		<p><strong>17 December, 2018</strong></p>
 		<p>
