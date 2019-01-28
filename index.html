@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Yay computers!</title>
-		<meta name="author" content="willnilges">
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<script src="include.js"></script>
-	</head>
-	<body>
-		<h1 id="title"> Will's Guide to Computing for Forgetful Power Users</h1>
-		<div w3-include-html="sidebar.html" id="sidebar"></div>
-		<div id="main">
+<head>
+	<title>Yay computers!</title>
+	<meta name="author" content="willnilges">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="include.js"></script>
+</head>
+<body>
+	<h1 id="title"> Will's Guide to Computing for Forgetful Power Users</h1>
+	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="main">
 		<p class="sectionHeaders">About this site</p>
 		<hr>
 		<p>Welcome to my tiny corner of tech knowledge.</p>
@@ -23,142 +23,149 @@
 		<p class="articleHeaders">Windows broke my time!</p>
 		<p><strong>24 December, 2018</strong></p>
 		<p>
-		I've had this issue several times in the past: After installing Arch to a machine and rebooting a few times, the time may inexplicably be wrong. When you run <p id="code">timedatectl</p> you might get something like this back:
-		<p id="code">
-		Local time: Mon 2018-12-24 10:21:41 EST # Something incorrect
-		<br>
-		Universal time: Mon 2018-12-24 14:21:41 ETC # Is probably in EST or whatever your timezone is.
-		<br>
-		RTC time: Mon 2018-12-24 19:21:41
-		<br>
-		Time zone: America/New_York (EST, -0500)
-		<br>
-		System clock synchronized: yes
-		<br>
-		NTP service: inactive
-		<br>
-		RTC in local TZ: no
-		<br>
+			I've had this issue several times in the past: After installing Arch to a machine and rebooting a few times, the time may inexplicably be wrong. When you run <p id="code">timedatectl</p> you might get something like this back:
+			<p id="code">
+				Local time: Mon 2018-12-24 10:21:41 EST # Something incorrect
+				<br>
+				Universal time: Mon 2018-12-24 14:21:41 ETC # Is probably in EST or whatever your timezone is.
+				<br>
+				RTC time: Mon 2018-12-24 19:21:41
+				<br>
+				Time zone: America/New_York (EST, -0500)
+				<br>
+				System clock synchronized: yes
+				<br>
+				NTP service: inactive
+				<br>
+				RTC in local TZ: no
+				<br>
+			</p>
+			The important things you will notice is that Universal Time won't be UTC and Local Time might be something weird.
+			<br>
+			Anyway, the point is you fix it with this:
 		</p>
-		The important things you will notice is that Universal Time won't be UTC and Local Time might be something weird.
-		<br>
-		Anyway, the point is you fix it with this:
-		</p>
 		<p id="code">
-		timedatectl set-ntp true
-	  	</p>
+			timedatectl set-ntp true
+		</p>
+
+		<br><hr><br>
+
+
 		<p class="articleHeaders">Graphics output!</p>
 		<p><strong>17 December, 2018</strong></p>
 		<p>
-		Did you know it's possible to run Proprietary Nvidia drivers AND use Intel Integrated Graphics™® to display the desktop?
-		Yeah. You just have to install the Nvidia drivers on a desktop and then go into the BIOS, enable the integrated graphics, and then set it as default video output. Then, just plug your video cable directly into the motherboard.
+			Did you know it's possible to run Proprietary Nvidia drivers AND use Intel Integrated Graphics™® to display the desktop?
+			Yeah. You just have to install the Nvidia drivers on a desktop and then go into the BIOS, enable the integrated graphics, and then set it as default video output. Then, just plug your video cable directly into the motherboard.
 		</p>
 		<p>
-		Do this, then you'll have the whole GPU to throw at your OpenCL and Tensorflow stuff. Congrats.
+			Do this, then you'll have the whole GPU to throw at your OpenCL and Tensorflow stuff. Congrats.
 		</p>
 		<p>
-		I had to do this at work last week, so I'm just gonna toss this up on here.
+			I had to do this at work last week, so I'm just gonna toss this up on here.
 		</p>
 		<p class="articleHeaders">Ahh! Thunar won't automount stuff!</p>
 		<p><strong>27 November, 2018</strong></p>
 		<p>Didja hit it with a</p>
 		<p id="code">sudo pacman -S gvfs</p><p>? Should work after that.</p>
 
-		<p class="articleHeaders">Pimp my DE seminar notes</p>
-		<p><strong>5 November, 2018</strong><br></p>
-<p>I recently gave a seminar on the basics of desktop environment (DE) customization at Computer Science House. I discussed how to customize your GNOME, KDE, and XFCE environments and where to get new themes, icons, and fonts.
-The talk started with</p>
-<strong>What is a DE?</strong>
-<p>Desktop Environments are graphical interfaces that make it easier for people to interface with computers. If you've used a computer in the last 20 years, you've used a DE.
-DEs usually come with a window manager, normally either floating (The windows can move around detached from everything and will float over each other and behind each other) or tiling (The windows take up the entire screen and typically can't overlap except in tabbed mode). This allows you to multitask in an easy-to-understand way.
-A DE also usually has "widgets" that let you manage apps, power, wifi, sound, and desktop space more effectively. Typically, a DE will have a dock or a task bar that will display running processes as well as favorites, a system tray for getting info about your network status, battery status, audio status, time, CPU load, disk usage, RAM usage, and pretty much any other statistic you want about your computer.</p>
-<p>Finally, a DE will sometimes (depending on your install) have apps like a graphical file manager, web browser, text editor, settings manager, photo viewer, archiving tool, etc etc etc. that let users do command line things on not the command line.</p>
-<strong>Which DE should I use?</strong>
-<p>The three most common DEs for newbies and experienced users alike are GNOME, KDE, and XFCE.</p>
-<p><strong>GNOME</strong></p>
-<img src="gnome.png" alt="gnome de">
-<p>The one most newbies use because it comes with Ubuntu and Fedora by default. It's simple (on the surface), pretty stable, and easy to learn coming from Windows or macOS.</p>
-<ul>
-<li>Already kinda pretty</li>
-<li>Pretty good looking nowadays (it used to be hideous)</li>
-<li>Uses plugins for customization</li>
-<li>Heavy</li>
-<li>Getting Lighter</li>
-<li>Very actively developed (Since 1999)</li>
-<li>Not good with older hardware</li>
-</ul>
-<p><strong>KDE</strong></p>
-<img src="kde.png" alt="kde de">
-<p>KDE is a nice DE that isn't as heavy as GNOME and operates similarly to Windows, so it's good for those looking to transition. It customizes in a very different way from GNOME, but it still has robust customization options, utilizing modular and configurable panels that can be used in almost any way. It's also actively developed by several different communities.</p>
-<ul>
-<li>Lighter weight(tm) than GNOME</li>
-<li>Similar to Windows</li>
-<li>REALLY good widget support</li>
-<li>Actively developed (Since 1996)</li>
-<li>Looks the most modern (arguably)</li>
-<li>Sometimes weird theming</li>
-</ul>
-<p><strong>XFCE</strong></p>
-<img src="xfce.png" alt="xfce de">
-<p>XFCE is the lightest weight of these DEs. It's pretty old, too, and has a smaller development team. It's highly configurable boasting a robust and decently stable™ panel system. The panels work like KDE's panels, but with more direct customization and fewer animations. If you want your environment to look good without killing your CPU, this is the DE for you.</p>
-<ul>
-<li>Lightest weight (of the three here.)</li>
-<li>Most customizable</li>
-<li>Easiest to customize</li>
-<li>Lots of small weird bugs</li>
-<li>Old (Released in 1996)</li>
-<li>Small dev team</li>
-</ul>
-<p>Of course, there are others like i3, AwesomeWM, and Openbox, but those can be difficult to configure, and were not covered in my seminar. So that's about it for now. See ya!</p>
-<p>Useful links:</p>
-<p>For getting GNOME stuff: <a href="http://gnome-look.org">gnome-look.org</a> and <a href="http://extensions.gnome.org">extensions.gnome.org</a>. The former will get you desktop themes, fonts, icons, and backgrounds, and the latter will get you additional functionality like better window paneling, different ways to manage desktops, widgets, dock customizations, and more.</p>
-<p>For getting KDE stuff: You can use the “Get more <item>” buttons in the settings, or you can go to <a href="http://kde-look.org">kde-look.org</a> to get themes, fonts, icons, and more.</item></p>
-<p>For getting XFCE stuff: You can go to, you guessed it, <a href="http://xfce-look.org">xfce-look.org</a>. It's got all the things that the other two sites I mentioned have.</p>
-
-<br><hr><br>
-
-		<p class="articleHeaders"> How to install Bumblebee on Arch </p>
-		<p><strong>29 October, 2018</strong><br></p>
-		<p>Do this after installing Xorg but before installing a DE. The next time I install Arch I'll actually blog about it properly but this is something that might be useful real quick. Also, if you're trying to install Bumblebee on any other flavor,
-		<br>
-		don't.</p>
-		<p id="code">
-			sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils
-			<br>
-			sudo gpasswd -a $USER bumblebee
-			<br>
-			sudo systemctl enable bumblebee
-		</p>
 		<br><hr><br>
 
-		<p class="articleHeaders">How to set up networking on an uncooperative CLI</p>
-		<p><strong>29 October, 2018</strong><br></p>
-		<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
-		<p>First, you need to add the device to</p>
-		<p id="code">/etc/network</p>
-		<p>Add the device to your `interfaces` file which might look something like this:</>
-		<p id="code">
-		# This file describes the network interfaces available on your system<br>
-		# and how to activate them. For more information, see interfaces(5).<br>
-		<br>
-		source /etc/network/interfaces.d/*<br>
-		<br>
-		# The loopback network interface<br>
-auto lo<br>
-iface lo inet loopback<br>
-		</p>
-	<p>You will need to find the device name using</p>
-	<p id="code">ifconfig -a</p>
-	<p>and then add the device to this like this:</p>
-	<p id="code">iface *DEVICE NAME* inet dhcp</p>
-	<p>Then, you will need to hit it with an</p>
-	<p id="code">ifdown *DEVICE NAME*</p>
-	<p>and then an</p>
-	<p id="code">ifup *DEVICE NAME*</p>
-	<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
-		<!--<p>Nothing, yet.</p>-->
-		</div>
-		<!--<p>Written by Will Nilges. Last updated <br> 29 October, 2018.</p>-->
-	</body>
-	<script>includeHTML();</script>
-</html>
+
+		<p class="articleHeaders">Pimp my DE seminar notes</p>
+		<p><strong>5 November, 2018</strong><br></p>
+		<p>I recently gave a seminar on the basics of desktop environment (DE) customization at Computer Science House. I discussed how to customize your GNOME, KDE, and XFCE environments and where to get new themes, icons, and fonts.
+			The talk started with</p>
+			<strong>What is a DE?</strong>
+			<p>Desktop Environments are graphical interfaces that make it easier for people to interface with computers. If you've used a computer in the last 20 years, you've used a DE.
+				DEs usually come with a window manager, normally either floating (The windows can move around detached from everything and will float over each other and behind each other) or tiling (The windows take up the entire screen and typically can't overlap except in tabbed mode). This allows you to multitask in an easy-to-understand way.
+				A DE also usually has "widgets" that let you manage apps, power, wifi, sound, and desktop space more effectively. Typically, a DE will have a dock or a task bar that will display running processes as well as favorites, a system tray for getting info about your network status, battery status, audio status, time, CPU load, disk usage, RAM usage, and pretty much any other statistic you want about your computer.</p>
+				<p>Finally, a DE will sometimes (depending on your install) have apps like a graphical file manager, web browser, text editor, settings manager, photo viewer, archiving tool, etc etc etc. that let users do command line things on not the command line.</p>
+				<strong>Which DE should I use?</strong>
+				<p>The three most common DEs for newbies and experienced users alike are GNOME, KDE, and XFCE.</p>
+				<p><strong>GNOME</strong></p>
+				<img src="gnome.png" alt="gnome de">
+				<p>The one most newbies use because it comes with Ubuntu and Fedora by default. It's simple (on the surface), pretty stable, and easy to learn coming from Windows or macOS.</p>
+				<ul>
+					<li>Already kinda pretty</li>
+					<li>Pretty good looking nowadays (it used to be hideous)</li>
+					<li>Uses plugins for customization</li>
+					<li>Heavy</li>
+					<li>Getting Lighter</li>
+					<li>Very actively developed (Since 1999)</li>
+					<li>Not good with older hardware</li>
+				</ul>
+				<p><strong>KDE</strong></p>
+				<img src="kde.png" alt="kde de">
+				<p>KDE is a nice DE that isn't as heavy as GNOME and operates similarly to Windows, so it's good for those looking to transition. It customizes in a very different way from GNOME, but it still has robust customization options, utilizing modular and configurable panels that can be used in almost any way. It's also actively developed by several different communities.</p>
+				<ul>
+					<li>Lighter weight(tm) than GNOME</li>
+					<li>Similar to Windows</li>
+					<li>REALLY good widget support</li>
+					<li>Actively developed (Since 1996)</li>
+					<li>Looks the most modern (arguably)</li>
+					<li>Sometimes weird theming</li>
+				</ul>
+				<p><strong>XFCE</strong></p>
+				<img src="xfce.png" alt="xfce de">
+				<p>XFCE is the lightest weight of these DEs. It's pretty old, too, and has a smaller development team. It's highly configurable boasting a robust and decently stable™ panel system. The panels work like KDE's panels, but with more direct customization and fewer animations. If you want your environment to look good without killing your CPU, this is the DE for you.</p>
+				<ul>
+					<li>Lightest weight (of the three here.)</li>
+					<li>Most customizable</li>
+					<li>Easiest to customize</li>
+					<li>Lots of small weird bugs</li>
+					<li>Old (Released in 1996)</li>
+					<li>Small dev team</li>
+				</ul>
+				<p>Of course, there are others like i3, AwesomeWM, and Openbox, but those can be difficult to configure, and were not covered in my seminar. So that's about it for now. See ya!</p>
+				<p>Useful links:</p>
+				<p>For getting GNOME stuff: <a href="http://gnome-look.org">gnome-look.org</a> and <a href="http://extensions.gnome.org">extensions.gnome.org</a>. The former will get you desktop themes, fonts, icons, and backgrounds, and the latter will get you additional functionality like better window paneling, different ways to manage desktops, widgets, dock customizations, and more.</p>
+				<p>For getting KDE stuff: You can use the “Get more <item>” buttons in the settings, or you can go to <a href="http://kde-look.org">kde-look.org</a> to get themes, fonts, icons, and more.</item></p>
+				<p>For getting XFCE stuff: You can go to, you guessed it, <a href="http://xfce-look.org">xfce-look.org</a>. It's got all the things that the other two sites I mentioned have.</p>
+
+				<br><hr><br>
+
+				<p class="articleHeaders"> How to install Bumblebee on Arch </p>
+				<p><strong>29 October, 2018</strong><br></p>
+				<p>Do this after installing Xorg but before installing a DE. The next time I install Arch I'll actually blog about it properly but this is something that might be useful real quick. Also, if you're trying to install Bumblebee on any other flavor,
+					<br>
+					don't.</p>
+					<p id="code">
+						sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils
+						<br>
+						sudo gpasswd -a $USER bumblebee
+						<br>
+						sudo systemctl enable bumblebee
+					</p>
+					<br><hr><br>
+
+					<p class="articleHeaders">How to set up networking on an uncooperative CLI</p>
+					<p><strong>29 October, 2018</strong><br></p>
+					<p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
+					<p>First, you need to add the device to</p>
+					<p id="code">/etc/network</p>
+					<p>Add the device to your `interfaces` file which might look something like this:</>
+						<p id="code">
+							# This file describes the network interfaces available on your system<br>
+							# and how to activate them. For more information, see interfaces(5).<br>
+							<br>
+							source /etc/network/interfaces.d/*<br>
+							<br>
+							# The loopback network interface<br>
+							auto lo<br>
+							iface lo inet loopback<br>
+						</p>
+						<p>You will need to find the device name using</p>
+						<p id="code">ifconfig -a</p>
+						<p>and then add the device to this like this:</p>
+						<p id="code">iface *DEVICE NAME* inet dhcp</p>
+						<p>Then, you will need to hit it with an</p>
+						<p id="code">ifdown *DEVICE NAME*</p>
+						<p>and then an</p>
+						<p id="code">ifup *DEVICE NAME*</p>
+						<p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
+						<!--<p>Nothing, yet.</p>-->
+					</div>
+					<!--<p>Written by Will Nilges. Last updated <br> 29 October, 2018.</p>-->
+				</body>
+				<script>includeHTML();</script>
+				</html>
