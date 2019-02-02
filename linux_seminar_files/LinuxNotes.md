@@ -93,6 +93,20 @@ So first, before I go into any great detail about any one DE or Distro (we’ll 
 
 ## The GNOME desktop
 
-![Default GNOME desktop]()
+![Default GNOME desktop](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/RHEL_gnome_desktop.png)
 
 This is what the GNOME desktop looks like as configured by RIT’s CE department. It’s got a top bar with a few different things. On the right, you’ve got a power and status menu which lets you change things like volume, open settings menu, and log out. It’s also got a clock and some status icons. On the right, you’ve got the Applications menu, (which we’ll cover in the next ~~slide~~ section), which is probably your best bet for launching applications. On the bottom is a window list as well as a virtual desktop list that shows everything that is currently open.
+
+## The Applications Menu
+![Applications Menu](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/RHEL_gnome_activities.png)
+This is the Applications menu (AKA the Activities Menu). In the center is an overview of all open windows. On the left, you have a dock that displays pinned programs for quick access (just like macOS) as well as any other open programs. When an icon is clicked, the Applications menu will close and the windows for that open program will be brought to the front. On the right, there is a list of all virtual desktops (These can be switched between with `CTRL+ALT+<Arrow Key>`). Up top, there is a search bar for finding programs, files, and directories. Above that is the usual top bar.
+
+## File Management
+![]()
+Here is what Nautilus usually looks like by default on RHEL.
+You’ve got
+- An area to view the files that are actually in your current directory
+Quick access bar over on the left that can show directories, mounted volumes, network locations, etc.
+- In the top bar, from left to right, you have forward and back, an indicator that tells you your current path, and, if you hit CTRL+L, shows an address bar so you can enter a path yourself.
+- A search function, then a toggle for list view or icon view
+- A menu which houses options like zoom and how to sort your stuff.
