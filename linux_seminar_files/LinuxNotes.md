@@ -117,6 +117,10 @@ Quick access bar over on the left that can show directories, mounted volumes, ne
 - A menu which houses options like zoom and how to sort your stuff.
 
 ### Graphical Text Editors
+Linux has many graphical text editors available. They're not much different from text editors on Windows, especially because most of the popular ones are the same. Atom, VS Code, and Sublime are all available on Linux. Even IDEs like the JetBrains collection are available for download and the install process is quite painless.
+
+There are, of course, Linux exclusive ones, such as Gedit, Leafpad, and Mousepad. They're kind of like Notepad++.
+![gedit](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/gedit.png)
 
 
 ## The Command Line
@@ -145,7 +149,30 @@ By the way, here's a list of commonly used commands.
 - *mv &lt;file&gt; &lt;destination&gt;* - Moves a file or directory to new path
 - *cp &lt;file&gt; &lt;destination&gt;* - Copies a file or directory to new path (For directories, use the -r option)
 - *mkdir &lt;dir name&gt;* - Creates a directory named &lt;dir name&gt;
+- *chmod* - Changes permissions on files (Normally used for marking programs as runnable)
+- *chown* - Allows you to change permissions for files (set which account owns a file)
 - *sudo* - (SuperUser DO) Executes a command as root
+
+To run most programs on the CLI, you'll probably do one of these things:
+
+- *./&lt;file name&gt;* - Used to run the vast majority of executables. Requires marking a file as runnable.
+- *bash &lt;file name&gt;* - Used to run shell scripts. Usually doesn't need any kind of permissions.
+
+### Important CE specific stuff
+#### Environment Variables
+Shell stores variables to determine behavior
+
+*printenv &lt;variable&gt;* - Prints environment variables
+
+*env VAR1="value" &lt;command&gt; &lt;command_options&gt;* - modifies environment variables
+*set* - Change the value of shell attributes and positional parameters
+
+#### Modules
+Allow dynamic modification of user environment via module files. They can load specific versions of programs and run them from the command line.
+
+module load <modulefile> - Loads modulefile. Each modulefile contains information needed to configure the shell for an application.
+
+Used for MATLAB, vivado, tensorflow.
 
 ### Packages on RHEL
 To install packages on RHEL, type `sudo yum install <package_name>`
@@ -154,9 +181,8 @@ To install packages on RHEL, type `sudo yum install <package_name>`
 To install packages on RHEL, type `sudo yum update`
 ![yum update](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/term3.png)
 
-
 ### Text Editing
-There are several ways to edit text in Linux. Arguably the fastest and lightest weight method is to use a Terminal
+There are several ways to edit text in Linux. Arguably the fastest and lightest weight method is to use a Terminal. The big three are:
 
 ![nano](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/term4.png)
 
@@ -164,9 +190,52 @@ There are several ways to edit text in Linux. Arguably the fastest and lightest 
 *nano - simple, easy to use CLI-based text editor that comes with most distros*
 </p>
 
+Really good CLI editor for beginners. It’s only got one mode, and straightforward customization and hotkeys.
+
 ![vim](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/term5.png)
 <p style="text-align: center">
 *vim - A lightweight, customizable, modal text editor*
 </p>
 
-Oh, and don't forget your code compilation!
+For the more advanced users, Vim is extremely powerful and robust, but has a steep learning curve. There are tons of addons and tweaks available, and most everyone is posting their config files on their GitHub.
+
+
+![emacs](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/emacs.png)
+<p style="text-align: center">
+*Emacs - Buffer based, shortcut heavy text editor for any and all applications.*
+</p>
+
+Emacs is probably the most complex text editor of the ones here. It’s got everything: Text editors, compilers, terminal emulators (so does vim but don’t worry about it), an email client, and many, many games! It’s written in some kind of cursed Lisp and C mix. It’s insane, and if you want to learn it, prepare your spirits.
+
+
+### Code Compilation and Execution
+You can easily run every language from the terminal.
+
+Like I said, there was:
+
+- *./&lt;file name&gt;* - Used to run the vast majority of executables. Requires marking a file as runnable.
+- *bash &lt;file name&gt;* - Used to run shell scripts. Usually doesn't need any kind of permissions.
+
+But then there's also tools for every language. Here are a few commonly used ones:
+
+- *python* - Tool to launch the Python interpreter and shell
+- *javac* - Reads Java class and interface definitions and compiles them into bytecode and class files
+- *java* - Tool to launch Java applications
+- *mcs* - mono C# compiler
+- *mono* - C# runtime environment
+- *gcc* - C compiler
+- *g++* - C and C++ compiler
+- *clang* - C, C++, and Objective-C compiler
+
+
+## Conclusion
+Aaaaand that's about it. If you have any questions, comments, or suggestions, open an issue or pull request. I will probably be updating this from time to time, so check back for more content.
+
+Thanks for reading!
+
+### Sources
+https://www.linux.com/what-is-linux
+https://www.digitalocean.com/community/tutorials/brief-history-of-linux
+https://www.youtube.com/watch?v=UjDQtNYxtbU
+https://www.gnu.org/software/emacs/tour/index.html
+https://wiki.archlinux.org/index.php/environment_variables

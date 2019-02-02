@@ -1,7 +1,7 @@
 body {
 	float: center;
 	margin: auto;
-	width: 800px;
+	width: 80%;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #FFFFFF;
 	background-color: #333333;
@@ -21,13 +21,13 @@ hr {
 }
 
 a:link {
-    color: white;
+    color: #00FF99;
     background-color: transparent;
     text-decoration: none;
 }
 
 a:visited {
-    color: white;
+    color: #00FF99;
     background-color: transparent;
     text-decoration: none;
 }
@@ -50,7 +50,7 @@ a:active {
 }
 
 .articleHeaders {
-	font-size: 18px;
+	font-size: 28px;
 	font-weight:bold;
 }
 
