@@ -1,0 +1,98 @@
+# Intro to GNU/Linux
+
+This seminar will be a light introduction to GNU/Linux for those who are brand new or at least know their way around.
+
+Link to slides [here](https://docs.google.com/presentation/d/14ia1Dp34B1xmx9fCBu5X7Xu4dv563XABAFjvPaCinRs/edit?usp=sharing). (Only available to those with an RIT email address for now).
+
+**It covers:**
+- What GNU/Linux is
+- A brief history of its development
+- Linux Jargon (scattered throughout)
+- The basics of the GNOME desktop environment
+  - How to log in
+  - How to navigate the desktop
+  - How to use Nautilus (GNOME's file manager)
+- The Command Line
+  - Common Commands
+    - Navigation (ls, la, cd)
+    - Viewing (cat, grep)
+    - Moving stuff (mv, cp)
+    - Making Directories (mkdir)
+    - Doing stuff as root (sudo)
+  - Installing and Updating Packages
+    - yum
+  - Running Programs
+    - ./
+    - sh
+    - bash
+  - Text Editing
+    - nano
+    - vim
+    - emacs
+  - Environment Variables
+  - Modules
+  - Programming Commands
+    - python
+    - javac
+    - java
+    - mcs
+    - mono
+    - gcc
+  - Basic Troubleshooting
+
+## What is GNU/Linux?
+Linux is FOSS, meaning that it is free to use and install and the source code is available in its entirety online for free.
+
+Linux is what most of the cloud runs on. An overwhelming majority of servers run Linux that support e-mail, message boards, FTP, social media, and everything in-between. There is a very, very low chance that Linux has not affected your life in some way.
+
+A few of the main features that GNU/Linux boasts is that it’s highly configurable, usually pretty lightweight, and extremely secure. GNU/Linux doesn’t collect your data or force updates. You own the software that is on your computer, and can do whatever you want with it. (Gonna go ahead and steal this quote), “[A] Linux based OS allow[s] you to work the way you want [to] instead of making you work the way [it] want[s you to].”
+
+Linux is worked on by a huge community that spans a multitude of corporations and communities. A lot of different people work on a lot of different things for Linux. An OS is big: It’s gotta have drivers, a GUI, file managers, command line interfaces, and a whole buncha programs to do computer-y things. We got AAA corporate software engineers and random college students in their dorm rooms contributing to the same desktop environment repo.
+
+(Based on (and incorporates with) UNIX, GNU, and other systems)
+Lastly, I think some people might get mad if I don’t mention this, Linux is a part of a bigger ecosystem of software. Linux is a kernel upon which an OS is built, so most complete distros use GNU project code and a few other things that sum up to a complete user experience.
+
+## A Brief History
+
+Minics > Unics > Unix > Minix > Linux
+Unix was designed after the development of a different system called Minics which was super overengineered and basically unusable.
+Important aspects of Minics:
+    Clarity: Modular design, simple file structure, and straightforward system calls.
+    Portability: Written in C, UNIX is aimed for wide-scale use and adoption.
+“A basis in C means Unix is adaptable and easy to run on a variety of hardware.”
+Simultaneity: Sustains multiple users and workflows. Kernel and user stay separate.
+
+GNU began development when Richard Stallman decided that he wanted to use computers in an environment where he could freely share software with his peers without the burden of licensing and what not. He left his research position at MIT to pursue this project instead, as remaining at MIT would mean not being able to distribute it freely.
+
+Linus Torvalds began developing Linux in 1991 after being fed up with MINIX’s licensing. Torvalds announced on a MINIX  user group that he was developing his own OS, and a few years after starting development on MINIX using the GNU C compiler, version 1.0 dropped in 1994. (I highly encourage you to read up on the history and look at the source of the earlier versions if you have any interest at all.
+
+## Distros
+
+Here's a _very_ brief, _very_ basic timeline™ of major linux distros. TLDR Linux 1.0 came out in the early 90's so all the cool kids came out then.
+
+- RedHat (1993)
+  - Fedora (2003)
+  - RHEL (2000)
+- Debian (1993)
+  - Ubuntu (2004)
+- Slackware (1993)
+  - Arch (2002)
+
+## The Basics
+So first, before I go into any great detail about any one DE or Distro (we’ll only cover GNOME in this seminar) I thought it would be good to take a peek at other tools and DEs as well just to get you started.
+
+**Perks of GNOME**
+- Popular DE
+- Sleek and Modern
+- Beginner Friendly
+- ~~uses a lot of ram~~
+- Tons of easy-to-use plugins and modifications
+- Metric tons of support
+- Everyone uses it
+- RIT uses it
+
+## The GNOME desktop
+
+![Default GNOME desktop]()
+
+This is what the GNOME desktop looks like as configured by RIT’s CE department. It’s got a top bar with a few different things. On the right, you’ve got a power and status menu which lets you change things like volume, open settings menu, and log out. It’s also got a clock and some status icons. On the right, you’ve got the Applications menu, (which we’ll cover in the next ~~slide~~ section), which is probably your best bet for launching applications. On the bottom is a window list as well as a virtual desktop list that shows everything that is currently open.
