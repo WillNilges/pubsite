@@ -57,11 +57,12 @@ Lastly, I think some people might get mad if I don’t mention this, Linux is a 
 **Minics > Unics > Unix > Minix > Linux.**
 
 Unix was designed after the development of a different system called Minics which was super overengineered and basically unusable.
-Important aspects of Minics:
-    Clarity: Modular design, simple file structure, and straightforward system calls.
-    Portability: Written in C, UNIX is aimed for wide-scale use and adoption.
-“A basis in C means Unix is adaptable and easy to run on a variety of hardware.”
-Simultaneity: Sustains multiple users and workflows. Kernel and user stay separate.
+Important aspects of UNIX:
+
+- Clarity: Modular design, simple file structure, and straightforward system calls.
+- Portability: Written in C, UNIX is aimed for wide-scale use and adoption.
+- “A basis in C means Unix is adaptable and easy to run on a variety of hardware.”
+- Simultaneity: Sustains multiple users and workflows. Kernel and user stay separate.
 
 GNU began development when Richard Stallman decided that he wanted to use computers in an environment where he could freely share software with his peers without the burden of licensing and what not. He left his research position at MIT to pursue this project instead, as remaining at MIT would mean not being able to distribute it freely.
 
@@ -96,7 +97,7 @@ So first, before I go into any great detail about any one DE or Distro (we’ll 
 
 ![Default GNOME desktop](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/RHEL_gnome_desktop.png)
 
-This is what the GNOME desktop looks like as configured by RIT’s CE department. It’s got a top bar with a few different things. On the right, you’ve got a power and status menu which lets you change things like volume, open settings menu, and log out. It’s also got a clock and some status icons. On the right, you’ve got the Applications menu, (which we’ll cover in the next ~~slide~~ section), which is probably your best bet for launching applications. On the bottom is a window list as well as a virtual desktop list that shows everything that is currently open.
+This is what the GNOME desktop looks like as configured by RIT’s CE department. It’s got a top bar with a few different things. On the right, you’ve got a power and status menu which lets you change things like volume, open settings menu, and log out. It’s also got a clock and some status icons. On the left, you’ve got the Applications menu, (which we’ll cover in the next ~~slide~~ section), which is probably your best bet for launching applications. On the bottom is a window list as well as a virtual desktop list that shows everything that is currently open.
 
 ### The Applications Menu
 ![Applications Menu](https://raw.githubusercontent.com/WillNilges/willnilges.github.io/master/linux_seminar_files/RHEL_gnome_activities.png)
