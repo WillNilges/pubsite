@@ -222,34 +222,4 @@ This is the Applications menu (AKA the Activities Menu). In the center is an ove
             <li><a href="https://www.gnu.org/software/emacs/tour/index.html">https://www.gnu.org/software/emacs/tour/index.html</a></li>
             <li><a href="https://wiki.archlinux.org/index.php/environment_variables">https://wiki.archlinux.org/index.php/environment_variables</a></li>
           </ul>
-
-          <br><hr><br>
-
-          <p class="articleHeaders">Windows broke my time!</p>
-          <h3>24 December, 2018</h3>
-          <p>
-            I've had this issue several times in the past: After installing Arch to a machine and rebooting a few times, the time may inexplicably be wrong. When you run <p id="code">timedatectl</p> you might get something like this back:
-            <p id="code">
-              Local time: Mon 2018-12-24 10:21:41 EST # Something incorrect
-              <br>
-              Universal time: Mon 2018-12-24 14:21:41 ETC # Is probably in EST or whatever your timezone is.
-              <br>
-              RTC time: Mon 2018-12-24 19:21:41
-              <br>
-              Time zone: America/New_York (EST, -0500)
-              <br>
-              System clock synchronized: yes
-              <br>
-              NTP service: inactive
-              <br>
-              RTC in local TZ: no
-              <br>
-            </p>
-            The important things you will notice is that Universal Time won't be UTC and Local Time might be something weird.
-            <br>
-            Anyway, the point is you fix it with this:
-          </p>
-          <p id="code">
-            timedatectl set-ntp true
-          </p>
 </html>
