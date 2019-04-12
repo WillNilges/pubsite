@@ -12,13 +12,11 @@ The steps go (and for reference my root partition is /dev/sda6)
 <div id="code">
 mount /dev/sda7 /mnt
 <br>
-mkdir /mnt/boot/efi
-<br>
-mount /dev/sda2 /mnt/boot/efi
+mount /dev/sda2 /mnt/boot/
 <br>
 arch-chroot /mnt
 <br>
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
 <br>
 grub-mkconfig -o /boot/grub/grub.cfg
 </div><br>
