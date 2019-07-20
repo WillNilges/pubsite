@@ -1,1 +1,3 @@
-I'm going to start doing some small how-to blogs at some point and will make some sites for my bigger projects. Here is where they will be.
+This is my personal site. I keep descriptions of all my best projects on here, as well as various little blogs or notes or guides I come up with. You can also find my reusme here.
+
+This site was written completely from scratch.
