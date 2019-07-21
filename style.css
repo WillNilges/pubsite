@@ -6,12 +6,14 @@ body {
     color: #FFFFFF;
     background-color: #333333;
 
-/*
-    @media screen and (max-width: 600px){
-        font-size:18px;
-    }
-*/
 }
+
+@media screen and (max-width: 800px){
+    body{
+        font-size: 18px;
+    }
+}
+
 
 div {
     background-color: #555555;
