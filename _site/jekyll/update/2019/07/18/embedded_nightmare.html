@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>My (ongoing) embedded chip nightmare feat. FRDM and Arduino | Will’s Guide to Computing for Forgetful Power Users</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="My (ongoing) embedded chip nightmare feat. FRDM and Arduino" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="So, if you’ve read my aboutme page recently, you’ll know that I’m currently working on putting together a cool custom controller for a GDD project for Imagine RIT 2020. Basically, the controller is going to be totally custom and will have many buttons, knobs, switches, dials, and displays so that people can walk by our booth and press fancy buttons to make random stuff happen in our game. (It’s more of a control panel, really). Basically, the panel will have the ability to impact the game world by activating abilities, changing stuff like gravity, screen orientation, etc. I want to make this happen by basically engineering a custom chassis, stuffing a bunch of really neat-o looking buttons inside, and having some kind of controller emulate keypresses" />
+<meta property="og:description" content="So, if you’ve read my aboutme page recently, you’ll know that I’m currently working on putting together a cool custom controller for a GDD project for Imagine RIT 2020. Basically, the controller is going to be totally custom and will have many buttons, knobs, switches, dials, and displays so that people can walk by our booth and press fancy buttons to make random stuff happen in our game. (It’s more of a control panel, really). Basically, the panel will have the ability to impact the game world by activating abilities, changing stuff like gravity, screen orientation, etc. I want to make this happen by basically engineering a custom chassis, stuffing a bunch of really neat-o looking buttons inside, and having some kind of controller emulate keypresses" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2019/07/18/embedded_nightmare.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2019/07/18/embedded_nightmare.html" />
+<meta property="og:site_name" content="Will’s Guide to Computing for Forgetful Power Users" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-18T16:32:23-04:00" />
+<script type="application/ld+json">
+{"description":"So, if you’ve read my aboutme page recently, you’ll know that I’m currently working on putting together a cool custom controller for a GDD project for Imagine RIT 2020. Basically, the controller is going to be totally custom and will have many buttons, knobs, switches, dials, and displays so that people can walk by our booth and press fancy buttons to make random stuff happen in our game. (It’s more of a control panel, really). Basically, the panel will have the ability to impact the game world by activating abilities, changing stuff like gravity, screen orientation, etc. I want to make this happen by basically engineering a custom chassis, stuffing a bunch of really neat-o looking buttons inside, and having some kind of controller emulate keypresses","@type":"BlogPosting","headline":"My (ongoing) embedded chip nightmare feat. FRDM and Arduino","dateModified":"2019-07-18T16:32:23-04:00","datePublished":"2019-07-18T16:32:23-04:00","url":"http://localhost:4000/jekyll/update/2019/07/18/embedded_nightmare.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/07/18/embedded_nightmare.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Will's Guide to Computing for Forgetful Power Users" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Will&#39;s Guide to Computing for Forgetful Power Users</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My (ongoing) embedded chip nightmare feat. FRDM and Arduino</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-07-18T16:32:23-04:00" itemprop="datePublished">Jul 18, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>So, if you’ve read my aboutme page recently, you’ll know that I’m currently working on putting together a cool custom controller for a GDD project for Imagine RIT 2020. Basically, the controller is going to be totally custom and will have many buttons, knobs, switches, dials, and displays so that people can walk by our booth and press fancy buttons to make random stuff happen in our game. (It’s more of a control panel, really). Basically, the panel will have the ability to impact the game world by activating abilities, changing stuff like gravity, screen orientation, etc. I want to make this happen by basically engineering a custom chassis, stuffing a bunch of really neat-o looking buttons inside, and having some kind of controller emulate keypresses</p>
+
+<p>Only one problem, though: Embedded platforms are kind of a nightmare.</p>
+
+<p>I’m writing about this becuase I know some people I think’d get a kick out of this story, and I think it’s really going to be an example of just how goddamn annoying computers can be.</p>
+
+<p>Okay, so here’s the thing. I need a microcontroller board that can do all the things I needed it to do. I believe the best thing for this project would be an Arduino Leonardo, since it can do all the Arduino-y things, but can also be used as an HID device, meaning keyboard emulation. However, I didn’t want to use something I was familiar with (in persuit of knowledge™). My original thought was to use the Teensy 3.6 that CSH had. However, when I went to the research room a few weeks ago to look for it, I couldn’t find it for the life of me! So, I had to look for alternatives.</p>
+
+<p>I researched two of them: The Arduino has a project called HoodLoader2 that operated on the fact that Arduinos (I think all of them) actually have two microcontrollers on them. The Arduino Uno has a 16u2 and an ATmega328. The important thing to me was that HoodLoader2 enabled the user to program the 16u2, which enabled the use of any Arduino as an HID device (like a keyboard). I didn’t really want to do this, since it was Arduino.</p>
+
+<p>So, I had another option: I remembered that I got a neat board from one of my friends called the FRDM-K64F. This board is a low-cost, open source microcontroller platform that (apparently) is used in the automotive industry. The reason I went after this board was that I found a HID library for it and was like, “Well, I don’t have a Leonardo (which is the coward’s way out) or a Teensy so I’ll try using this.”</p>
+
+<p><strong>Boy, was that a fucking mistake.</strong></p>
+
+<p>This K64F was a total blunder, and to this day I haven’t actually gotten it to work. Granted, I did learn a lot, but no actual results. TLDR is I’m convinced that I’ve got the wrong firmware, but here’s the full story:</p>
+
+<p>So the K64F is a board previously used in CMPE-460, Interface and Digital Electronics, which covers various topics related to sensors, motors, and signals that now uses the NXP Kinetis. At some point, a CSH alum got her hands on one of these boards, gave it away to another CSH’er, who gave it to me. Having not worked with this platform before, I immediately started googling everything, and stumbled upon mbed’s site. Mbed is a platform that allows easy programming and use of a <em>ton</em> of different microcontrollers. It’s possible to program the FRDM-K64F in a few different ways, but the way I wanted to do it was mbed.</p>
+
+  </div><a class="u-url" href="/jekyll/update/2019/07/18/embedded_nightmare.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Will&#39;s Guide to Computing for Forgetful Power Users</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Will&#39;s Guide to Computing for Forgetful Power Users</li><li><a class="u-email" href="mailto:will.nilges@mail.rit.edu">will.nilges@mail.rit.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/willnilges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">willnilges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A place to dump guides, tidbits of computing knowlegde, event notifications, or whatever the hell else I feel like dumping.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
