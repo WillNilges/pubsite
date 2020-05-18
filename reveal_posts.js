@@ -7,7 +7,7 @@ function makeTogglable(){
     for (i = 0; i < z.length; i++) {
         //element = z[i];
         if (z[i].id.includes("title") && z[i+1].id.includes("post")) {
-                togglePost(z[i].id, z[i+1].id);
+            togglePost(z[i].id, z[i+1].id);
         }
     }
 }
@@ -17,16 +17,19 @@ function togglePost(title_id, post_id) {
     post = document.getElementById(post_id);
     post.style.display = "none";
    
-    title.addEventListener('click',
-	    function() {
-	        if (post.style.display === "none") {
-                post.style.display = "block";
-                var replace = post.innerHTML.replace(title.innerHTML, ' ');
-                post.innerHTML = replace;
-            } else {
-                post.style.display = "none";
-            }
-	}, false);
+    title.addEventListener('click', function(){
+        hideNShow(post); 
+    });
+}
+
+function hideNShow(post){
+    if (post.style.display === "none") {
+        post.style.display = "block";
+        var replace = post.innerHTML.replace(title.innerHTML, ' ');
+        post.innerHTML = replace;
+    } else {
+        post.style.display = "none";
+    }
 }
 
 //var myEl = document.getElementById('subnetting_and_forgetting_title');
