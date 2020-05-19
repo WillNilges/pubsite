@@ -1,4 +1,4 @@
-function latest_commit() { 
+function latestCommit() { 
     fetch(
       "https://api.github.com/repos/willnilges/willnilges.github.io/branches/master"
     )
