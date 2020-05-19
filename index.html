@@ -19,6 +19,7 @@
         <p>This site is also open to suggestions and user-submitted content. If you have some nifty advice about Linux, submit a pull request!</p>
         <p>Additionally, I'll probably put some neat-o project sites and/or pages on here. It'll be great!</p>
         <p class="sectionHeaders">Posts</p>
+	<p>(Click to show)</p>
         <hr>
 
         <!--
@@ -29,49 +30,81 @@
         <br><hr><br>
 
         -->
-       
-	<h1 id="subnetting_and_forgetting_title">Subnetting and Forgetting</h1>
-	<span w3-include-html="posts/2020-05-17_subnetting_and_forgetting.html" id="subnetting_and_forgetting_post"></span>
+    <details> 
+	    <summary id="new-title">Subnetting and Forgetting</summary>
+	    <span w3-include-html="posts/2020-05-17_subnetting_and_forgetting.html" id="subnetting_and_forgetting_post"></span>
+    </details>
         <br><hr><br>
-        <h1 id="finishing_up_title">Finishing ShelfLife... finally.</h1>
-        <span w3-include-html="posts/2020-05-11_finishing_up.html" id="finishing_up_post"></span>
+        <details>
+            <summary id="new-title">Finishing ShelfLife... finally.</summary>
+            <span w3-include-html="posts/2020-05-11_finishing_up.html" id="finishing_up_post"></span>
+        </details>
         <br><hr><br>
-        <h1 id="new_year_title">A small update</h1>
-        <span w3-include-html="posts/new_year.html" id="new_year_post"></span>
+        <details>
+            <summary id="new-title">A small update</summary>
+            <span w3-include-html="posts/new_year.html" id="new_year_post"></span>
+        </details>
         <br><hr><br>
-        <h1 id="future_is_open_title">The Future is Open reigstration happening now!</h1>
-        <span w3-include-html="posts/future_is_open.html" id="future_is_open_post"></span>
+        <details> 
+            <summary id="new-title">The Future is Open reigstration happening now!</summary>
+            <span w3-include-html="posts/future_is_open.html" id="future_is_open_post"></span>
+        </details>
         <br><hr><br>
-        <h1 id="proper_i3_scaling_title">How to properly scale i3 on HiDPI displays</h1>
-        <span w3-include-html="posts/proper_i3_scaling.html" id="proper_i3_scaling_post"></span>
+        <details>
+            <summary id="new-title">How to properly scale i3 on HiDPI displays</summary>
+            <span w3-include-html="posts/proper_i3_scaling.html" id="proper_i3_scaling_post"></span>
+        </details>
         <br><hr><br>
-        <h1 id="arch_scaling_hack_title">A neat HiDPI scaling hack</h1>
-        <span w3-include-html="posts/arch_scaling_hack.html" id="arch_scaling_hack_post"></span>
+        <details> 
+            <summary id="new-title">A neat HiDPI scaling hack</summary>
+            <span w3-include-html="posts/arch_scaling_hack.html" id="arch_scaling_hack_post"></span>
+        </details>
         <br><hr><br>
-        <h1 id="grub_arch_fix_title">Installing GRUB on Arch</h1>
-        <span w3-include-html="posts/grub_arch_fix.html" id="grub_arch_fix_post"></span>
+	<details>
+	    <summary id="new-title">Installing GRUB on Arch</summary>
+	    <span w3-include-html="posts/grub_arch_fix.html" id="grub_arch_fix_post"></span>
+	</details>
         <br><hr><br>
-        <h1 id="seminar_mk_ii_title">Intro to GNU/Linux (But mostly RHEL for RIT CE students) Mk II.</h1>
-        <span w3-include-html="posts/seminar_mk_ii.html" id="seminar_mk_ii_post"></span>
+	<details>
+	    <summary id="new-title">Intro to GNU/Linux (But mostly RHEL for RIT CE students) Mk II.</summary>
+	    <span w3-include-html="posts/seminar_mk_ii.html" id="seminar_mk_ii_post"></span>
+	</details>
         <br><hr><br>
-        <h1 id="windows_broke_time_title">Windows broke my time!</h1>
-        <span w3-include-html="posts/windows_broke_time.html" id="windows_broke_time_post"></span>
+	<details>
+            <summary id="new-title">Windows broke my time!</summary>
+            <span w3-include-html="posts/windows_broke_time.html" id="windows_broke_time_post"></span>
+	</details>
         <br><hr><br>
-        <span w3-include-html="posts/graphics_output.html"></span>
+	<details>
+            <summary id="new-title">Graphics output!</summary>
+            <span w3-include-html="posts/graphics_output.html"></span>
+	</details>
         <br><hr><br>
-        <span w3-include-html="posts/no_automount.html"></span>
+	<details>
+            <summary id="new-title">Ahh! Thunar won't automount stuff!</summary>
+            <span w3-include-html="posts/no_automount.html"></span>
+    	</details>
         <br><hr><br>
-        <span w3-include-html="posts/pimp_my_de.html"></span>
+	<details>
+            <summary id="new-title">Pimp my DE seminar notes</summary>
+            <span w3-include-html="posts/pimp_my_de.html"></span>
+	</details>
         <br><hr><br>
-        <span w3-include-html="posts/bumblebee_on_arch.html"></span>
+	<details>
+            <summary id="new-title">How to install Bumblebee on Arch</summary>
+            <span w3-include-html="posts/bumblebee_on_arch.html"></span>
+	</details>
         <br><hr><br>
+	<details>
+            <summary id="new-title">How to set up networking on an uncooperative CLI</summary>
         <span w3-include-html="posts/networking_on_cli.html"></span>
+	</details>
     </div>
     <!--<p>Written by Will Nilges. First updated <br> 29 October, 2018.</p>-->
 </body>
 <script>
 	includeHTML();
 	latestCommit();
-    makeTogglable();
+    //makeTogglable();
 </script>
 </html>

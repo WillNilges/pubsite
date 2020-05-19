@@ -84,7 +84,7 @@ a:active {
         padding-left: 10px;
         padding-right: 10px;
         margin-bottom:10px;
-        background-image: linear-gradient(to bottom, #555555, #333333);
+    /*    background-image: linear-gradient(to bottom, #555555, #333333);*/
     }
 
 }
@@ -124,4 +124,14 @@ a:active {
     font-size: 14px;
     border: 1px solid white;
     border-radius: 0px;
+}
+
+#new-title {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
 }
