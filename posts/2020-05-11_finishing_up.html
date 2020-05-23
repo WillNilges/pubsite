@@ -26,7 +26,7 @@ PolicyRule:
 <pre><code>oc policy add-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot
 oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot # This one works!</code></pre>
 <p>Now, that’s not exactly what I want, since, well, it’s probably not good to shunt cluster-admins onto systems willie nilly. So, we gotta make a cluster role. I was messing around with a <code>shelflife</code> cluster role earlier in the year (Like, January). Here’s what it looks like according to <code>oc describe clusterrole.rbac | less</code>. To create this, use <code>oc create clusterrole shelflife --verb=get,watch,list,delete --resource=pods,namespaces,deployments,builds,buildconfigs,deploymentconfigs,deployments,podtemplates,projects</code>.</p>
-<pre><code>Name:         shelflife
+<pre><div class="overflow"><code>Name:         shelflife
 Labels:       &lt;none&gt;
 Annotations:  &lt;none&gt;
 PolicyRule:
@@ -39,7 +39,7 @@ PolicyRule:
   buildconfigs.build.openshift.io      []                 []              [get watch list delete]
   builds.build.openshift.io            []                 []              [get watch list delete]
   deployments.extensions               []                 []              [get watch list delete]
-  projects.project.openshift.io        []                 []              [get watch list delete]</code></pre>
+  projects.project.openshift.io        []                 []              [get watch list delete]</code></div></pre>
 <p>This does not work. However, when doing <code>oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:sl-test</code>, it works.</p>
 <p>Groovy. so uhhhhhhhhh, what’s the deal? Well, I think we’re missing a resource. I’m not sure what, though, and I don’t know if I have a way to find out. I guess I could look at every API call the app needs to make…</p>
 <p>However, that sounds boring. I think, for now, cluster-admin is workable. This is definitely not something I’m going to do for version 1.0, I just reeeeeallly want to make the app work, since I passed it as a major project. I need to find out how to make and use .yaml files to do all this cluster magic automatically.</p>
