@@ -25,7 +25,8 @@ PolicyRule:
 <p>one of these two commands worked. (Actually, you just need the second one, pretty sure).</p>
 <pre><code>oc policy add-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot
 oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot # This one works!</code></pre>
-<p>Now, that’s not exactly what I want, since, well, it’s probably not good to shunt cluster-admins onto systems willie nilly. So, we gotta make a cluster role. I was messing around with a <code>shelflife</code> cluster role earlier in the year (Like, January). Here’s what it looks like according to <code>oc describe clusterrole.rbac | less</code>. To create this, use <code>oc create clusterrole shelflife --verb=get,watch,list,delete --resource=pods,namespaces,deployments,builds,buildconfigs,deploymentconfigs,deployments,podtemplates,projects</code>.</p>
+<p>Now, that’s not exactly what I want, since, well, it’s probably not good to shunt cluster-admins onto systems willie nilly. So, we gotta make a cluster role. I was messing around with a <code>shelflife</code> cluster role earlier in the year (Like, January). Here’s what it looks like according to <code>oc describe clusterrole.rbac | less</code>. To create this, use this command: </p>
+<div class="overflow"> <code>oc create clusterrole shelflife --verb=get,watch,list,delete --resource=pods,namespaces,deployments,builds,buildconfigs,deploymentconfigs,deployments,podtemplates,projects</code>.</div>
 <pre><div class="overflow"><code>Name:         shelflife
 Labels:       &lt;none&gt;
 Annotations:  &lt;none&gt;
