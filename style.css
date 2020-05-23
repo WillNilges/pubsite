@@ -124,6 +124,11 @@ a:active {
     font-size: 14px;
     border: 1px solid white;
     border-radius: 0px;
+    overflow: scroll;
+}
+
+code {
+    overflow: scroll;
 }
 
 #new-title {
