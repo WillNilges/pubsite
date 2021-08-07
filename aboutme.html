@@ -5,7 +5,9 @@
 	<meta name="author" content="willnilges">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
 	<script src="include.js"></script>
+    <script src="latest_commit.js"></script>
 </head>
 <body>
 	<h1 id="title">About Me</h1>
@@ -13,42 +15,32 @@
 	<div id="main">
         <!-- Main section about me and my skills -->
         <p class="sectionHeaders">Hi, I'm Will!</p>
-        <p>Computer Engineering major and Linux fanatic who plays <em>way</em> too many tabletop games. In my freetime (in addition to unhealthy amounts of DND), I also do a fair bit of coding, 3D printing, digital art, and running. My favorite languages by-far are C, Rust, BASH and ARM Assembly. I am also conversational in Spanish, becuase I think language is neat.</p>
+        <p>Computer Engineering major and Linux fanatic who plays <em>way</em> too many tabletop games. In my freetime (in addition to unhealthy amounts of DND), I also do a fair bit of coding, 3D printing, digital art, and running. My favorite coding languages are C, Rust, BASH and ARM Assembly. I am also conversational in Spanish, becuase I think language is neat.</p>
+
         <p class="sectionHeaders">What I'm working on</p>
-        <p>This summer, I'm co-oping at Council Rock in Rochester, NY doing <del>everything under the sun</del> embedded systems programming, full stack engineering, and DevOps. Council Rock specializes in intelligent monitoring of utilities, everything from home solar applications to large scale electrical grid monitoring. I've been working on all kinds of neat embedded tools, operating systems, and software in C, C++, Java, BASH, Python, and JavaScript. 
-            <br><br>
-            As for the fun stuff, I have several projects in the works.
-        </p>
+        <p>This summer, I co-op'ed at Qualcomm, working with their Core Platform PMIC team to design a new framework to assist with debugging. I learned a lot about embedded firmware development, and got the chance to work with a lot of really smart people. All in all, I had a blast!</p>
+
+        <p>This fall, I'm returning to Council Rock to continue work on their new line of solar management systems, doing even more embedded and edge network goodness in C++ and Python. I'm really excited to get to play with this new tech, and hopefully build on what I learned last year.</p>
+
+        <p style><em>If you'd like to hire me, I'm looking for work! I'm available for a Co-Op next Summer of 2022!</em></p>
+
+        <p>As for the fun stuff, I have several projects in the works.</p>
 
         <!-- Projects -->
-        <p><strong>BetterVent</strong></p>
-        <p>BetterVent is a scheduling app I am developing for Computer Science House. We have tablets outside our special rooms that run this software. It displays the current time, which event is currently taking place, and which events are coming up. It also lets people make short, quick reservations for if they need to snag a room for a bit. Check on its progress and fork me <a href="https://www.github.com/willnilges/bettervent">here</a>.</p>
-        <img src="posts/images/bettervent-image.png" alt="bettervent on display in front of the lounge.">
-        <p>Bettervent is open source, and you can find my repo on GitHub. You can also look at Reservator that I tried to fork from, but that app ended up being an overengineered undocumented nightmare, so I tossed everything out and started writing my own from scratch.
-        <br><br>
-        Lately i've gotten busy making quality-of-life improvements to the UI and catching new and exciting bugs, but also adding the additional small feature here and there. At this point, I'd call BetterVent complete.  Check out the README for more information.</p>
+        <span w3-include-html="posts/projects/octo_dash_curses.html" id="boa_project"></span>
 
-        <p><strong>ShelfLife</strong></p>
-        <p>ShelfLife is a utility used to automatically monitor and manage resources on an OKD cluster. When it is active on a cluster, it monitors the projects consuming resources, looking for anything that goes stale. What "stale" means is up to you, but by default, it looks for projects that haven't been worked on for a period of time, and send increasingly urgent emails to their owners before removing all compute resources and eventually archiving the project in S3. It has a plethora of features for categorizing projects for stricter or looser timelines, backup and archival features, and soon, a management frontend. Check it out <a hfref="https://www.github.com/willnilges/ShelfLife">here</a>.</p>
+        <span w3-include-html="posts/projects/bettervent.html" id="bettervent_project"></span>
 
-        <p><strong>The Death Panel</strong></p>
-        <p>The Death Panel is a control panel I'm currently in the process of prototyping for an Imagine RIT project that a bunch of Game Design majors are developing right now. The idea is that this panel will act as an "admin panel" for a given minigame that is currently being played. When you push a button, anything can happen! I aim to have it done fairly quickly, but it's an interesting little side project that I expect to evolve as the rest of the GDD project does. Follow development <a href="https://www.github.com/willnilges/deathpanel">here</a>.</p>
-        <img src="posts/images/deathpanel-concept1.png" alt="Concept CAD #1 of The Death Panel™">
+        <span w3-include-html="posts/projects/shelflife.html" id="shelflife_project"></span>
 
-        <p><strong>Directional AC</strong></p>
-        <p>Directional AC is a project I worked on for Imagine RIT 2019 as part of a bigger smart-car project made by CSH. The project helps to complete our concept of the interior of a futuristic car we've dubbed the Computerized Autonomous Roadster (CAR). It involves enabling the fans in a car's AC system to track a passenger and adjust its direction, power, and temperature using a 3D-printed bracket and camera setup.</p>
-        <img src="posts/images/dirac-imagine-2019.png" alt="Directional AC on display at Imagine RIT">
-        <p>The project is currently capable of tracking a passenger's face accurately and adjusting direction. I'm going to continue work on it to add more features and refine the bracket. Follow development <a href="https://github.com/willnilges/directionalac">here</a>.</p>
+        <span w3-include-html="posts/projects/death_panel.html" id="death_panel_project"></span>
 
-        <p><strong>SampleZone</strong></p>
-        <p>
-        SampleZone is a command line mixer made by Steve Greene (sgreene570) I contribute to. It uses ncurses to allow for mixing and pitch shifting of audio files. There's a lot planned for this program, so stay tuned! Follow upstream development <a href="https://www.github.com/sgreene570/sampleZone">here</a>.
-        </p>
+        <span w3-include-html="posts/projects/directional_ac.html" id="directional_ac_project"></span>
 
-        <p><strong>BOA</strong></p>
-        <p>BOA is a Unity game that I am currently developing in C#. It's a fast-paced, PVP, multiplayer shooter with a heavy focus on mobility and reaction time that drew a lot of inspiration from Terraria and OpenArena. Terraria PVP is a lot of fun in the 2D voxel-like environments that comprise that game, but I'd like it to be faster, and more focused on the combat. OpenArena is a lot like that, and also captures the general feel I want for the game.</p>
-        <p>I've had to put it on hold for a while as I focus on school, work, and my projects for CSH, but it'll (hopefully) be done by <s>mid 2019</s> <s>2020™</s> <s>2021™™</s>.</p>
     </div>
 </body>
-<script>includeHTML();</script>
+<script>
+    includeHTML();
+    latestCommit();
+</script>
 </html>
