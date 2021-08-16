@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 body {
     float: center;
     margin: auto;
     width: 80%;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: #FFFFFF;
     background-color: #333333;
-
 }
 
 @media screen and (max-width: 800px){
@@ -31,10 +33,20 @@ hr {
     border-style: solid;
 }
 
+code {
+    color: #BBFFCC;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
+}
+
+/*summary {
+    font-size: 10px;
+}*/
+
 a:link {
     color: #00FF99;
     background-color: transparent;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:visited {
@@ -138,4 +150,8 @@ div.overflow {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+}
+
+#sidebarLink {
+    text-decoration: none;
 }
