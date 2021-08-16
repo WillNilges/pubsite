@@ -8,28 +8,28 @@
 <p>I know, I know! It’s far from ideal, and I should absolutely just replace the crappy consumer Netgear with my <strong>MEGA BONE-IN TURBO DELUXE ROUTER</strong> and subnet on that. Better yet, use ipv6 and avoid this whole networking mess!</p>
 <p>To tell you the truth, I’m lazy, and still scared of this thing, even after digging around inside of it for a week. So, instead, I set up a sub-subnet.</p>
 <p>The first thing I messed with were the actual ports. Because, I had no idea what I was doing. I had barely even touched managed switches, and the most I’ve done with any kind of routing was portforwarding stuff back at my parents’ house when I ran my network there. So my router has 3 GigabitEthernet ports. I configured the first one to just hit the Netgear router.</p>
-<pre><code>willardsworld&gt;enable
+<div class="codeBlock"><div class="codeBlock"><pre><code>willardsworld&gt;enable
 willardsworld#config term
 willardsworld(config)#interface GigabitEthernet 0/0
-willardsworld(config-if)#ip address 192.168.1.200 255.255.255.0</code></pre>
+willardsworld(config-if)#ip address 192.168.1.200 255.255.255.0</code></pre></div></div>
 <p>When this didn’t work, I did some googling and found out that I had to specify a default gateway. Duh.</p>
 <p><code>willardsworld(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.1</code></p>
 <p>So I did that, and at that point I was able to hit the internet from the router with ping commands.</p>
 <p><code>willardsworld&gt;ping 208.80.154.224</code> (that’s Wikipedia’s IP address)</p>
-<pre><code>Type escape sequence to abort.
+<div class="codeBlock"><pre><code>Type escape sequence to abort.
 Sending 5, 100-byte ICMP Echos to 208.80.154.224, timeout is 2 seconds:
 !!!!!
-Success rate is 100 percent (5/5), round-trip min/avg/max = 44/47/52 ms</code></pre>
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/47/52 ms</code></pre></div>
 <p>bada bing, bada ping.</p>
 <p>Okay, so I got this big steel box online. But like, that doesn’t get me anything.</p>
 <p>Guess I’ll configure another interface.</p>
-<pre><code>willardsworld&gt;enable
+<div class="codeBlock"><pre><code>willardsworld&gt;enable
 willardsworld#config term
 willardsworld(config)#interface GigabitEthernet 0/1
-willardsworld(config-if)#ip address 10.10.33.1 255.255.255.0</code></pre>
+willardsworld(config-if)#ip address 10.10.33.1 255.255.255.0</code></pre></div>
 <p>Yo, sick. Welcome to Willard’s World!</p>
 <p>Well, not yet. This interface is kinda useless without NAT. Let’s fix that.</p>
-<pre><code>willardsworld&gt;enable
+<div class="codeBlock"><pre><code>willardsworld&gt;enable
 willardsworld#config term
 willardsworld(config)#ip nat pool OVRLD 192.168.1.100 192.168.1.100 prefix-length 24
 willardsworld(config)#ip nat inside source list 7 pool OVRLD overload
@@ -42,15 +42,15 @@ willardsworld(config)#interface GigabitEthernet 0/0
 willardsworld(config-if)#ip nat enable
 willardsworld(config-if)#ip nat outside
 willardsworld(config-if)#exit
-willardsworld(config)#exit</code></pre>
+willardsworld(config)#exit</code></pre></div>
 <p>NAT is weird, to set this up, I drew a lot of inspiration from <a href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_nat/configuration/15-mt/nat-15-mt-book/iadnat-addr-consv.html#GUID-C8837DEA-2736-40A5-9D29-8E1553FD1C03">this page</a>.</p>
 <p>I also had to set up a DHCP pool with the 32 addresses I opened up for use:</p>
-<pre><code>willardsworld&gt;enable
+<div class="codeBlock"><pre><code>willardsworld&gt;enable
 willardsworld#config term
 willardsworld(config)#ip dhcp pool WILLARDWORLDNET
 willardsworld(config)#network 10.10.33.0 255.255.255.0
 willardsworld(config)#dns-server 192.168.1.1 1.0.0.1 8.8.4.4
-willardsworld(config)#default-router 10.10.33.1</code></pre>
+willardsworld(config)#default-router 10.10.33.1</code></pre></div>
 <p>And… that was about it. I think. After doing that, I was able to hit the internet from machines on the subnet. Pretty painless process, looking back, but it took a few hours the first time to figure out. I guess that’s why people get certs in this kind of thing.</p>
 <p>Also, in between all these steps I did a TON of actual router configuration including initial setup, SSH keys, MOTDs, users, firmware updates, OS updates, and more. I might make another post about router maintanence later.</p>
 <p>Anyway, after all that, I had a subnet where my machines could talk to each other and the outside world, but the outside world could not talk to them. Because these are mostly personal servers (file servers, nextcloud, proxmox, compute nodes, etc) this is fine… for now.</p>

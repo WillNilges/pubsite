@@ -38,6 +38,7 @@ code {
     color: #BBFFCC;
     font-family: 'Source Code Pro', monospace;
     font-size: 15px;
+    overflow: auto;
 }
 
 /*summary {
@@ -139,8 +140,10 @@ a:active {
     border-radius: 0px;
 }
 
-div.overflow {
-    overflow: scroll;
+div.codeBlock {
+    overflow: auto;
+    display: block;
+    background-color: #333333;
 }
 
 #new-title {
