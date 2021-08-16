@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computers, man.</title>
+	<meta name="author" content="willnilges">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="include.js"></script>
+    <script src="latest_commit.js"></script>
+</head>
+<body>
+	<h1 id="title">Project Archive</h1>
+	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="main">
+        <p class="sectionHeaders">This is where I put info about my older projects</p>
+        <hr>
+
+        <!-- Projects -->
+        <span w3-include-html="posts/projects/samplezone.html" id="samplezone"></span>
+        <span w3-include-html="posts/projects/boa.html" id="boa"></span>
+    </div>
+</body>
+<script>
+    includeHTML();
+    latestCommit();
+</script>
+</html>
