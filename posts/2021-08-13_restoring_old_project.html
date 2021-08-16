@@ -7,7 +7,7 @@
 <h3 id="hypothesis">Hypothesis</h3>
 <p>The reason why, I think, lies in how Google Calendar IDs work, and the absolute <em>cluster</em> that is the way I wrote the sign-in code. For some reason, there’s an option to select your Google Account when you launch the app. I don’t even remember why that’s in there, because I think it just pulls events directly from a calendar URL. I wish I could remember through documentation, but I didn’t write any for that nuance.</p>
 <p>So, I’m going to have to go spelunking to figure out why that is. The calendar URL I mentioned looks like this:</p>
-<pre><code>rtx888k5hi1z5nw3a9rim8pgnh@group.calendar.google.com </code></pre>
+<div class="codeBlock"><pre><code>rtx888k5hi1z5nw3a9rim8pgnh@group.calendar.google.com </code></pre></div>
 <p>Yikes. This is also not documented, and I have no idea where I got the one that’s left on the one “functioning™” tablet. (did I mention that I had to reset two of them because I lost the credentials? Happy thoughts, happy thoughts, happy thoughts…)</p>
 <p>Then there’s also this Development API nonsense that I have <em>no</em> idea what it’s for or why it’s there.</p>
 <p>And did I mention that the GitHub Release page thinks that 0.3-beta is the latest, when 0.4.1-beta is!? Grrrrr….</p>
@@ -21,7 +21,7 @@
 <p>Using this info, I did a <em>ton</em> of Googling and found a few links about the Calendar API, several layers of StackOverflow posts, and some really old, crusty Android API documentation (All of which will be linked at the end).</p>
 <p>Eventually, I decided to just <em>try</em> the way Freshman Will had done things:</p>
 <p>I built a debug version on my desktop, then used the <code>keytool</code> like so:</p>
-<pre><code>keytool -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v </code></pre>
+<div class="codeBlock"><pre><code>keytool -alias androiddebugkey -keystore ~/.android/debug.keystore -list -v </code></pre></div>
 <p>to get the SHA1 fingerprint of my desktop. Then, I went over to the GCP API dashboard for BetterVent on my will.nilges@gmail.com account (the OG, the one and only), and added that to the list of OAuth 2.0 Client IDs (that list also contains my old desktop and my old laptop, neither of which probably built the APK that’s on GitHub right now). That led me over to the OAuth Consent Screen tab, which explained in no unclear words that right now, my app and its Oauth nonsense is Unverified™ by Google. This means that, by default, the App’s status is “In Production” and the OAuth user cap is 100. 100 Devices can use this app while it’s “Unapproved.” The cap will be removed if I can get it “Approved.” That requires a “Verification Process” that is apparently days to weeks long.</p>
 <h3 id="what-now">What now?</h3>
 <p>Sheesh, man. All I want to do is get some public calendar data. Why is this so hard!? App development scares me. Take me back to embedded land where the ‘S’ in IoT stands for ‘Security!’</p>

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+/* Components */
+
 body {
     float: center;
     margin: auto;
@@ -9,13 +11,6 @@ body {
     color: #FFFFFF;
     background-color: #333333;
 }
-
-@media screen and (max-width: 800px){
-    body{
-        font-size: 18px;
-    }
-}
-
 
 div {
     background-color: #555555;
@@ -69,6 +64,8 @@ a:active {
     text-decoration: underline;
 }
 
+/* Classes */
+
 .sectionHeaders {
     font-size: 24px;
     font-weight: bold;
@@ -77,6 +74,49 @@ a:active {
 .articleHeaders {
     font-size: 28px;
     font-weight:bold;
+}
+
+.codeBlock {
+    overflow: auto;
+    display: block;
+    background-color: #333333;
+}
+
+.sideBar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+/* Tags */
+
+/*#code {
+    font-family: "Monospace";
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 0px;
+}*/
+
+#new-title {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+#sidebarLink {
+    text-decoration: none;
+}
+
+/* Sad attempt at responsive design */
+
+@media screen and (max-width: 800px){
+    body{
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width: 800px){
@@ -126,36 +166,4 @@ a:active {
         margin-bottom:10px;
         background-image: linear-gradient(to bottom, #555555, #333333);
     }
-}
-
-#title {
-    font-size: 36px;
-    text-align: center;
-}
-
-#code {
-    font-family: "Monospace";
-    font-size: 14px;
-    border: 1px solid white;
-    border-radius: 0px;
-}
-
-div.codeBlock {
-    overflow: auto;
-    display: block;
-    background-color: #333333;
-}
-
-#new-title {
-  display: block;
-  font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-#sidebarLink {
-    text-decoration: none;
 }

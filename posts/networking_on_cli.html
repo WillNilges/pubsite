@@ -4,26 +4,23 @@
 <p><strong>29 October, 2018</strong><br></p>
 <p>So, if you have something like a ThinkPad X380 Yoga (or like, any of the newer, thiner ThinkPads) that has something like a proprietary Ethernet port <strong>or no network port at all</strong> then here's how you set up networking and get your hardware pinging the internet on a bare Ubuntu (or not) install.</p>
 <p>First, you need to add the device to</p>
-<p id="code">/etc/network</p>
-<p>Add the device to your `interfaces` file which might look something like this:</>
-  <p id="code">
-    # This file describes the network interfaces available on your system<br>
-    # and how to activate them. For more information, see interfaces(5).<br>
-    <br>
-    source /etc/network/interfaces.d/*<br>
-    <br>
-    # The loopback network interface<br>
-    auto lo<br>
-    iface lo inet loopback<br>
-  </p>
+<code>/etc/network</code>
+<p>Add the device to your `interfaces` file which might look something like this:</p>
+<div class="codeBlock"><pre><code>    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+    source /etc/network/interfaces.d/*
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+</code></pre></div>
   <p>You will need to find the device name using</p>
-  <p id="code">ifconfig -a</p>
+  <code>ifconfig -a</code>
   <p>and then add the device to this like this:</p>
-  <p id="code">iface *DEVICE NAME* inet dhcp</p>
+  <code>iface &ltDEVICE NAME&gt inet dhcp</code>
   <p>Then, you will need to hit it with an</p>
-  <p id="code">ifdown *DEVICE NAME*</p>
+  <code>ifdown &ltDEVICE NAME&gt</code>
   <p>and then an</p>
-  <p id="code">ifup *DEVICE NAME*</p>
+  <code>ifup &ltDEVICE NAME&gt</code>
   <p>and then, assuming the divine forces will actually allow it, you should be able to network!</p>
   <!--<p>Nothing, yet.</p>-->
 </div>
