@@ -45,12 +45,12 @@ willardsworld(config-if)#exit
 willardsworld(config)#exit</code></pre></div></div>
 <p>NAT is weird, to set this up, I drew a lot of inspiration from <a href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_nat/configuration/15-mt/nat-15-mt-book/iadnat-addr-consv.html#GUID-C8837DEA-2736-40A5-9D29-8E1553FD1C03">this page</a>.</p>
 <p>I also had to set up a DHCP pool with the 32 addresses I opened up for use:</p>
-<div class="codeBlock"><div class="codeBlock"><pre><code>willardsworld&gt;enable
+<div class="codeBlock"><pre><code>willardsworld&gt;enable
 willardsworld#config term
 willardsworld(config)#ip dhcp pool WILLARDWORLDNET
 willardsworld(config)#network 10.10.33.0 255.255.255.0
 willardsworld(config)#dns-server 192.168.1.1 1.0.0.1 8.8.4.4
-willardsworld(config)#default-router 10.10.33.1</code></pre></div></div>
+willardsworld(config)#default-router 10.10.33.1</code></pre></div>
 <p>And… that was about it. I think. After doing that, I was able to hit the internet from machines on the subnet. Pretty painless process, looking back, but it took a few hours the first time to figure out. I guess that’s why people get certs in this kind of thing.</p>
 <p>Also, in between all these steps I did a TON of actual router configuration including initial setup, SSH keys, MOTDs, users, firmware updates, OS updates, and more. I might make another post about router maintanence later.</p>
 <p>Anyway, after all that, I had a subnet where my machines could talk to each other and the outside world, but the outside world could not talk to them. Because these are mostly personal servers (file servers, nextcloud, proxmox, compute nodes, etc) this is fine… for now.</p>
