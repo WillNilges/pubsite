@@ -1,0 +1,105 @@
+<!--<h1 id="installing-gitea-on-okd-4.7">Installing Gitea on OKD 4.7</h1>-->
+<h2 id="september-2021">5 September, 2021</h2>
+<img src="posts/images/gitea_homepage.png"/>
+<h3 id="introduction">Introduction</h3>
+<p>Now that I have this fancy new OKD 4 cluster all set up, I decided I wanted to do a few things with it before I start ~Ruining everything~ doing Operator development. Because, ya know, I had a few web services hosted on VMs (mostly crappy development stuff). It’s not like I was hurting for resources or address space on my internal network, but it feels nice to run those kinds of things more efficently, you know?</p>
+<p>So anyway, a few of these things involve hosting documents and websites that contain info for my place of residence that I’d rather not share on the open internet (stuff like house passwords, configuration files, etc). Typically, these were just chucked in a directory and served through Apache or something. But with OKD, I figured I could run Gitea and make it much easier to deploy and manage versions of these items, and save compute resouces and configuration headaches at the same time.</p>
+<h3 id="installation">Installation</h3>
+<p>First, create a new project on your cluster. Call it, “Gitea.”</p>
+<p>Next, switch to the project on the console, and install the Gitea Helm chart.</p>
+<div class="codeBlock"><pre><code>oc project gitea
+helm repo add gitea-charts https://dl.gitea.io/charts/
+helm install gitea gitea-charts/gitea</code></pre></div>
+<p>There are three pods that run Gitea. There’s the Gitea pod itself, the gitea-memcached pod, and a gitea-postgresql pod. All of these need some amount of fanagling. gitea-memcached has its own Service Account that controls and deploys it, but the other two come from StatefulSets and are controlled by the default Service Account.</p>
+<h3 id="storage">Storage</h3>
+<p>You’ll need two Persistent Volumes (PVs) for the Persistent Volume Claims (PVCs) that Gitea requests. One for Gitea itself, and one for Postgres.</p>
+<div class="codeBlock">
+<pre><code>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitea-pv01
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/nfsshare/gitea/pv01
+    server: 10.10.51.70
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitea-pv02
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/nfsshare/gitea/pv02
+    server: 10.10.51.70
+</code></pre>
+</div>
+<p>Make sure that you give each PV its own directory in whatever storage you’re using. I made a mistake and accidentally sloshed it all together into one directory and ran into a ton of mouting and permissions errors. Pay attention to the above <code>path</code> field in the YAML snippets and make sure you set yours up the same way.</p>
+<h3 id="security-context-constraints">Security Context Constraints</h3>
+<p>Next, because that’s a Helm Chart designed for K8s, you need to modify the Service Context Constraints (<code>scc</code>s) of all the pods. Because some of them insist on running as a certain UID (including Root), you must add the <code>anyuid</code> scc to <code>default</code> and <code>nonroot</code> to gitea-memcached. If you don’t do this, nothing will spin up and you’ll get a ton of UID and group related events in your logs.</p>
+<pre><code>oc adm policy add-scc-to-user anyuid -z default
+oc adm policy add-scc-to-user nonroot -z gitea-memcached</code></pre>
+<p>Finally, add some routes so that you can connect to your new Gitea instance.</p>
+<p>I’m lazy, and just used the web interface for this.</p>
+<figure>
+<img src="posts/images/routing.png" alt="Route add menu." />
+</figure>
+<p>Sick, now you’ve got Gitea running. Go ahead and add an account.</p>
+<h3 id="errors-i-ran-into-and-their-solutions">Errors I ran into (and their solutions)</h3>
+<h4 id="security-context-constraints-1">Security Context Constraints</h4>
+<div class="codeBlock">
+<pre><code>Error creating: pods &quot;gitea-memcached-574858645d-&quot; is forbidden: unable to validate against any security context constraint: [provider restricted: .spec.securityContext.fsGroup: Invalid value: []int64{1001}: 1001 is not an allowed group spec.containers[0].securityContext.runAsUser: Invalid value: 1001: must be in the ranges: [1000660000, 1000669999]]
+
+create Pod gitea-postgresql-0 in StatefulSet gitea-postgresql failed error: pods &quot;gitea-postgresql-0&quot; is forbidden: unable to validate against any security context constraint: [provider restricted: .spec.securityContext.fsGroup: Invalid value: []int64{1001}: 1001 is not an allowed group spec.containers[0].securityContext.runAsUser: Invalid value: 1001: must be in the ranges: [1000660000, 1000669999]]
+
+create Pod gitea-0 in StatefulSet gitea failed error: pods &quot;gitea-0&quot; is forbidden: unable to validate against any security context constraint: [provider restricted: .spec.securityContext.fsGroup: Invalid value: []int64{1000}: 1000 is not an allowed group spec.initContainers[1].securityContext.runAsUser: Invalid value: 1000: must be in the ranges: [1000660000, 1000669999]]</code></pre>
+</div>
+<p>If you see this in your Event logs, then you need to bind SCCs to the <code>gitea-memcached</code> SA and the <code>default</code> SA. You might have to scale your pods up and down to get this to proc.</p>
+<h4 id="chown-and-permissions">Chown and Permissions</h4>
+<div class="codeBlock">
+<pre><code>[38;5;6mpostgresql [38;5;5m20:14:26.90 [0m
+[38;5;6mpostgresql [38;5;5m20:14:26.90 [0m[1mWelcome to the Bitnami postgresql container[0m
+[38;5;6mpostgresql [38;5;5m20:14:26.90 [0mSubscribe to project updates by watching [1mhttps://github.com/bitnami/bitnami-docker-postgresql[0m
+[38;5;6mpostgresql [38;5;5m20:14:26.91 [0mSubmit issues and feature requests at [1mhttps://github.com/bitnami/bitnami-docker-postgresql/issues[0m
+[38;5;6mpostgresql [38;5;5m20:14:26.91 [0m
+[38;5;6mpostgresql [38;5;5m20:14:26.92 [0m[38;5;2mINFO [0m ==&gt; ** Starting PostgreSQL setup **
+[38;5;6mpostgresql [38;5;5m20:14:26.96 [0m[38;5;2mINFO [0m ==&gt; Validating settings in POSTGRESQL_* env vars..
+chmod: changing permissions of &#39;/proc/self/fd/1&#39;: Permission denied</code></pre>
+</div>
+<br>
+<div class="codeBlock">
+<pre><code>[38;5;6mpostgresql [38;5;5m02:54:28.91 [0m
+[38;5;6mpostgresql [38;5;5m02:54:28.91 [0m[1mWelcome to the Bitnami postgresql container[0m
+[38;5;6mpostgresql [38;5;5m02:54:28.92 [0mSubscribe to project updates by watching [1mhttps://github.com/bitnami/bitnami-docker-postgresql[0m
+[38;5;6mpostgresql [38;5;5m02:54:28.92 [0mSubmit issues and feature requests at [1mhttps://github.com/bitnami/bitnami-docker-postgresql/issues[0m
+[38;5;6mpostgresql [38;5;5m02:54:28.93 [0m
+[38;5;6mpostgresql [38;5;5m02:54:28.94 [0m[38;5;2mINFO [0m ==&gt; ** Starting PostgreSQL setup **
+[38;5;6mpostgresql [38;5;5m02:54:28.98 [0m[38;5;2mINFO [0m ==&gt; Validating settings in POSTGRESQL_* env vars..
+[38;5;6mpostgresql [38;5;5m02:54:29.00 [0m[38;5;2mINFO [0m ==&gt; Loading custom pre-init scripts...
+[38;5;6mpostgresql [38;5;5m02:54:29.01 [0m[38;5;2mINFO [0m ==&gt; Initializing PostgreSQL database...
+chmod: changing permissions of &#39;/bitnami/postgresql/data&#39;: Operation not permitted
+[38;5;6mpostgresql [38;5;5m02:54:29.05 [0m[38;5;3mWARN [0m ==&gt; Lack of permissions on data directory!
+chmod: changing permissions of &#39;/bitnami/postgresql/data&#39;: Operation not permitted
+[38;5;6mpostgresql [38;5;5m02:54:29.05 [0m[38;5;3mWARN [0m ==&gt; Lack of permissions on data directory!
+[38;5;6mpostgresql [38;5;5m02:54:29.06 [0m[38;5;2mINFO [0m ==&gt; pg_hba.conf file not detected. Generating it...
+[38;5;6mpostgresql [38;5;5m02:54:29.06 [0m[38;5;2mINFO [0m ==&gt; Generating local authentication configuration
+ls: cannot open directory &#39;/bitnami/postgresql/data&#39;: Permission denied</code></pre>
+</div>
+<br>
+<div class="codeBlock">
+<pre><code>[root@okd4-services ~]# kubectl logs gitea-0 -c init-directories
++ chown 1000:1000 /data
+chown: /data: Operation not permitted</code></pre>
+</div>
+<p>Or any other kind of <code>chown</code> error, you need to look at your PV setup. Chances are you’re creating them in the same directory so they’re colliding. In the beginning, I accidentally tried to create these PVs in <code>/var/nfsshare/registry</code> which caused a <em>lot</em> of fireworks.</p>
