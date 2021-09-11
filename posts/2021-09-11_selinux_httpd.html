@@ -1,0 +1,7 @@
+<h2 id="september-2021">11 September, 2021</h2>
+<p>I’ve been having this weird problem with my httpd dev instance where, when I try to serve content, sometimes, seemingly at random, I’ll get 403’ed when it serves. My file permissions are correct, my ownership is correct, but I just <em>won’t</em> be able to access the content. Very annoying.</p>
+<p>Today, I figured out the problem: SELinux.</p>
+<p>To fix these weird issues, you have to tell SELinux that everything is ok, and you aren’t getting hacked:</p>
+<div class="codeBlock"><pre><code>chcon -R -t httpd_sys_content_t /var/www/html</code></pre></div>
+<p>Should work after that.</p>
+<p>Source: <a href="https://serverfault.com/questions/309233/apache-serves-some-files-others-get-403">Apache serves some files, others get 403</a></p>
