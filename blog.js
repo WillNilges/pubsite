@@ -1,4 +1,4 @@
-var posts = [
+const posts = [
     "2021-09-15_selinux_httpd.md",
     "2021-09-11_recovering_an_okd4_worker.md",
     "2021-09-05_Gitea_on_OKD4.md",
@@ -9,7 +9,19 @@ var posts = [
     "2020-05-17_subnetting_and_forgetting.md",
 ];
 
-var legacyPosts = [
+// I'm not very good with computers.
+const titles = [
+  "Fixing some random 403's",
+  "Installing Gitea on OKD 4.7",
+  "Recovering an OKD 4 Worker",
+  "OKD 4, but again.",
+  "Troubles with `firewalld`",
+  "Re-Installing my First Major Project",
+  "A TL;DR on OKD 4",
+  "Subnetting and Forgetting",
+]
+
+const legacyPosts = [
     "2020-05-11_finishing_up.html",
     "new_year.html",
     "future_is_open.html",
@@ -27,6 +39,7 @@ var legacyPosts = [
 
 //"embedded_nightmare.html",
 
+
 function getPost(post, legacy) {
     console.log(post);
     console.log(`legacy = ${legacy}`);
@@ -43,7 +56,6 @@ function getPost(post, legacy) {
               return;
             }
 
-            // Examine the text in the response
            response.text().then(function(data) {
                 let target = document.getElementById("main")
                 //console.log(data);
@@ -55,6 +67,7 @@ function getPost(post, legacy) {
                 //let sectionHeader = document.getElementById("sectionHeader");
                 //let title = data.split('\n', 1)[0];
                 //sectionHeader.innerHTML = title;
+                return data;
             }); 
         }
     )
@@ -89,13 +102,31 @@ function loadPosts() {
 
 function generatePostLinks() {
     let postDiv = document.getElementById("main");
-    posts.forEach((post, index) => {
-        postDiv.innerHTML += `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')">${post}</a><br>`;
+    postDiv.innerHTML += `<div class="postList">`;
+    posts.forEach( (post, index) => {
+        postDiv.innerHTML += `<div class="post">`;
+        postDate = post.split("_")[0];
+        fetch('./posts/md/' + post)
+        .then(
+            function(response) {
+                response.text().then(function(data) {
+                    let title = data.split('\n', 1)[0];
+                    postDiv.innerHTML +=
+                            `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>`;
+                    postDiv.innerHTML += `<h3 style="margin-top:0;">${postDate}</h3>`;
+                    postDiv.innerHTML += `</div>`;
+                }); 
+            }
+        );
     });
+    /*
     postDiv.innerHTML += markdown('## Legacy Posts')
     postDiv.innerHTML += markdown('---')
     legacyPosts.forEach((post, index) => {
-        postDiv.innerHTML += `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')">${post}</a><br>`;
+        postDiv.innerHTML += 
+            `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')">${post}</a><br>`;
     });
+    postDiv.innerHTML += `</div>`;
+    */
 }
 
