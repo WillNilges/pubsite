@@ -1,5 +1,8 @@
 # Installing Gitea on OKD 4.7
-## 5 September, 2021
+
+### 5 September, 2021
+
+---
 
 ### Introduction
 Now that I have this fancy new OKD 4 cluster all set up, I decided I wanted to do a few things with it before I start ~Ruining everything~ doing Operator development. Because, ya know, I had a few web services hosted on VMs (mostly crappy development stuff). It's not like I was hurting for resources or address space on my internal network, but it feels nice to run those kinds of things more efficently, you know?

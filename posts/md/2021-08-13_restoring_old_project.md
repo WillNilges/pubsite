@@ -1,4 +1,8 @@
-## 13 August, 2021
+# Re-Installing my First Major Project
+
+### 13 August, 2021
+
+---
 
 ### Background
 

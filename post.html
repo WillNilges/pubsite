@@ -9,21 +9,13 @@
 	<script src="include.js"></script>
     <script src="drawdown.js"></script>
     <script src="blog.js"></script>
-    <script defer>window.onload = function() {
-const params = new URLSearchParams(
-  window.location.search
-);
-        const postTitle = params.get("post"); // value1 
-        getPost(postTitle, document.getElementById("main"));
-    }</script>
+    <script defer>window.onload = function() {generatePost();}</script>
     <!--<script src="latest_commit.js"></script>-->
 </head>
 <body>
 	<h1 class="pageTitle">Willard's Guide to Computing for Forgetful Power Users</h1>
 	<div w3-include-html="sidebar.html" id="sidebar"></div>
 	<div id="main">
-        <p class="sectionHeaders">Theoretically, there could be a section header in this location.</p>
-        <hr>
     </div>
 </body>
 <script>

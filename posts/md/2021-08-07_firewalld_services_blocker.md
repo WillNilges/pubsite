@@ -1,5 +1,8 @@
-# Troubles with firewalld
-## 7 August, 2021
+# Troubles with `firewalld`
+
+### 7 August, 2021
+
+---
 
 This weekend, I decided to pop open my blog to tweak and fix a few layout and organization things. To be able to quickly iterate, I quickly installed `httpd` on a development VM so that I could treat it like a real webserver and not just host it locally on my laptop.
 
