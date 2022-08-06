@@ -15,7 +15,6 @@ body {
 
 div {
     background-color: #555555;
-    border-left: 1px solid #00FF99;
 }
 
 img {
@@ -115,6 +114,10 @@ a:active {
 
 #sidebarLink {
     text-decoration: none;
+}
+
+#main {
+    border-left: 1px solid #00FF99;
 }
 
 /* Sad attempt at responsive design */

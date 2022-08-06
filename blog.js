@@ -108,9 +108,6 @@ function getPost(post, legacy) {
     .catch(function(err) {
       console.log('Fetch Error :-S', err);
     });
-    // posts.forEach((post, index) => {
-    //     
-    // });
 }
 
 function generatePost() {
@@ -138,24 +135,23 @@ function generatePostLinks() {
     let postDiv = document.getElementById("main");
     postDiv.innerHTML += `<div class="postList">`;
     posts.forEach( (post, index) => {
-        postDiv.innerHTML += `<div class="post">`;
-        postDate = post.split("_")[0];
+        let postDate = post.split("_")[0];
         let title = titles[index];
         postDiv.innerHTML +=
-                `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>`;
-        postDiv.innerHTML += `<h3 style="margin-top:0;">${postDate}</h3>`;
-        postDiv.innerHTML += `</div>`;
+                `<div class="post">
+                <a id="${post}" onclick="window.location.href = 'post.html?post=${post}'"><h2 style="margin-bottom:0;">${title}</h2></a>
+                <h3 style="margin-top:0;">${postDate}</h3>
+                </div>`;
     });
-    /*
-    postDiv.innerHTML += markdown('## Legacy Posts')
-    postDiv.innerHTML += markdown('---')
-    */
+    
     legacyPosts.forEach((post, index) => {
         let title = legacyTitles[index];
         let postDate = legacyDates[index];
         postDiv.innerHTML += 
-                `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>`;
-        postDiv.innerHTML += `<h3 style="margin-top:0;">${postDate}</h3>`;
+                `<div class="post">
+                <a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>
+                <h3 style="margin-top:0;">${postDate}</h3>
+                </div>`;
     });
     postDiv.innerHTML += `</div>`;
 }
