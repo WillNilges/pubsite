@@ -50,8 +50,8 @@ function loadPosts() {
 function generatePostLinks() {
     let postDiv = document.getElementById("blogJS");
     posts.forEach((post, index) => {
-        postDiv.innerHTML += `<a id="${post}" onclick="window.location.replace('post.html')">${post}</a><br>`;
-        
+        postDiv.innerHTML += `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')">${post}</a><br>`;
+        //const paramValue1 = params.get("param1"); // value1 
     });
 }
 
@@ -60,4 +60,3 @@ function generatePostLinks() {
 //loadPosts();
 
 
-generatePostLinks();

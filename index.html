@@ -9,10 +9,10 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
     <script src="include.js"></script>
-    <script src="latest_commit.js"></script>
+    <!--<script src="latest_commit.js"></script>-->
     <script src="reveal_posts.js"></script>
-    <script src="drawdown.js"></script>
-    <script defer src="blog.js"></script>
+    <script src="blog.js"></script>
+    <script defer>window.onload = function() {generatePostLinks();}</script>
 </head>
 <body>
     <h1 class="pageTitle"> Willard's Guide to Computing for Forgetful Power Users</h1>
@@ -37,7 +37,7 @@
         <hr>
 
         -->
-
+<!--
         <summary id="new-title">Fixing some random 403's</summary>
         <span w3-include-html="posts/2021-09-11_selinux_httpd.html" id="selinux_httpd_post"></span>
         <hr>
@@ -121,7 +121,7 @@
             <summary id="new-title">How to set up networking on an uncooperative CLI</summary>
         <span w3-include-html="posts/networking_on_cli.html"></span>
         <hr>
-        <br>
+        <br>-->
     </div>
     <!--<p>Written by Will Nilges. First updated <br> 29 October, 2018.</p>-->
 </body>
