@@ -7,6 +7,7 @@ body {
     float: center;
     margin: auto;
     width: 80%;
+    max-width: 1000px;
     font-family: 'Source Sans Pro', sans-serif;
     color: #FFFFFF;
     background-color: #333333;

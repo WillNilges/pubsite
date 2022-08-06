@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WilNil's Blog</title>
+	<meta name="author" content="willnilges">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="include.js"></script>
+    <script src="latest_commit.js"></script>
+</head>
+<body>
+	<h1 class="pageTitle">Useful Links</h1>
+	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="main">
+        <p class="sectionHeaders">As a programmer, I do a lot of googling.
+        <br>Occasionally, I find neat stuff.
+        <br>If I do, I'll try my best to remember to put it here.</p>
+        <hr>
+
+        <!-- Links -->
+        <a href="https://regexr.com/"><h2>Regexr</h2></a>
+        <img src="posts/images/regexr.png"/>
+        <p>A useful tool for building regexes. It has a neat manual/library, examples, and resources for learning how to use Regex in various contexts and statements. Whenever I have the <em>vast</em> displeasure of using <code>sed</code>, I go here to build my matching statements.</p>
+
+        <a href="https://misc.flogisoft.com/bash/tip_colors_and_formatting"><h2>bash:tip_colors_and_formatting</h2></a>
+        <img src="https://misc.flogisoft.com/_media/bash/colors_format/256_colors_bg.png"/>
+        <p>When I was getting into ricing ZSH stuff, I hadn't a clue how setting colors and stuff in a terminal worked. I still don't, but I <a href="https://github.com/willnilges/fpscli">have built projects in the past that would suggest otherwise</a>. Anyway, one day when I was a freshman in college I found this. It's pretty useful.</p>
+
+    </div>
+</body>
+<script>
+    includeHTML();
+    latestCommit();
+</script>
+</html>
