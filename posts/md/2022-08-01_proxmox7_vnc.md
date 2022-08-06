@@ -26,11 +26,33 @@ In 2017, Jordan Rodgers created Proxstar to do all of the above things. He used 
 
 So, he did something that I think was hacky as all get-out, but was actually super clever. Proxmox sits atop QEMU, and exposes a lot of QEMU's bells and whistles, such as its VNC server functionality. By configuring this VNC server, you can connect to a port on the Proxmox host itself and gain graphical console access to a VM. In Proxmox 5 and 6, there was an API route you could hit to change the settings of this VNC server exposed by any given VM, on the fly. Jordan took advantage of that by using the API to configure a VNC connection on-demand, then using [Websockify]() to connect to that port and that node, start up a noVNC instance on the client's computer, connect to that Websockify instance, which would then send VNC traffic between the server and the client.
 
+One (ok, well, two) small issues: The first one is that in order for this to be possible, you'd have to open quite a large range of ports on each node's firewall (something like 5900-6000, _at least_). That, as you might guess, is a security hole. For infrastructure that's supposed to host the beating heart of CSH, that's unacceptable. The second issue is that VNC traffic is not encrypted. So, even if you did open the port, you'd be sending keystrokes and frame data through CSH's network (between the proxmox servers and the OKD project that Proxstar lives on) unencrypted. In theory, this is fine, because we own the network, but it's really not good practice. (The websocket connection is secured, so Proxstar to you is a non-issue)
+
+To get around this, Jordan gave SSH credentials to Proxstar for it to open an SSH tunnel to forward VNC traffic through. Clever, if a bit hacky. It worked prettty well, until Proxmox 7.
+
 **Insert diagram of Jordan's setup**
 
-This route still exists in Proxmox 7, but due to a [regression]() in QEMU, you can no longer change these settings via this route.
+This route still exists in Proxmox 7, but due to a [regression]() in QEMU, you can no longer change these settings on the fly. Instead, you have to add the VNC configuration in the QEMU config file pertaining to a host, then reboot the host. I actually tried to patch Jordan's code to make this possible, but it was a complete mess, didn't work half the time (I blame Proxmox), and even if it did, you'd have to reboot your VM to get a console.
 
+For a while, I thought I was screwed, and didn't touch the code. Until the above described attempt to patch, I had noticed problems with VNC all the way back in 2020, but I was too afraid to touch the code because I wasn't sure I could make heads or tails of it. Eventually, though, I manned up, and went looking for a solution.
+
+<!--Proxmox does some [interesting things](jordan's message linking to source code) to get its own internal noVNC client to work. I don't understand it at all,-->
+
+I found it in the API, quite early on, in fact. In my preliminary research on this topic, I stumbled upon the [vncproxy](https://pve.proxmox.com/pve-docs/api-viewer/index.html#/nodes/{node}/qemu/{vmid}/vncproxy) route and the [vncwebsocket](https://pve.proxmox.com/pve-docs/api-viewer/index.html#/nodes/{node}/qemu/{vmid}/vncwebsocket) route. With a little help from a [noVNC]() client and [Websockify](), you can use the first route to prompt the server to open a "TCP VNC proxy connection." That will return a ticket and a port. Using Websockify, you can open a connection to the proxmox node on the given port, and then forward incoming traffic to that port.
+
+The second route is highly misleading. The reason for this is that typically, the way a websocket works is that you'd call an API endpoint using a WebSocket library with the extension `wss://`. You and the server would negotiate an `UPGRADE` to the connection, and then you'd have a websocket.
+
+[Fireship has a pretty good video explaining the basics of a websocket.](https://www.youtube.com/watch?v=1BfCnjr_Vjg&t=202s)
+
+Unbeknownst to me, Proxmox's `vncwebsocket` API route is not at all what it seems. In reality, after calling `vncproxy`, Proxstar spends 10 seconds listening for a connection on the port it returns. If you point a websocket-based VNC client (like noVNC) at that server and port, presto! You'll have a VNC session. The ticket provided with the port is used as the password (this is not documented, of course).
+
+**Insert diagram of API calls**
+
+**Insert diagram of my setup**
 
 ...
 
-I've got demo code [available on GitHub]()
+I've got demo code [available on GitHub](https://github.com/WillNilges/proxstar-vnc-forwarder/) that should show you exactly what steps you need to take to get this working on your own cluster. Simply download the dependencies, add credentials, and run the script. The automated chrome-based `browser.get()` call is only tested in macOS, but it should spit out the requisite information to get it working manually. If you have any problems, stories, or info to share, I implore you to open an issue, because as [the proxmox staff have said](), this functionality is _very_ poorly documented.
+
+Cheers,
+- Willard
