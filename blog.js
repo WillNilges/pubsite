@@ -106,27 +106,20 @@ function generatePostLinks() {
     posts.forEach( (post, index) => {
         postDiv.innerHTML += `<div class="post">`;
         postDate = post.split("_")[0];
-        fetch('./posts/md/' + post)
-        .then(
-            function(response) {
-                response.text().then(function(data) {
-                    let title = data.split('\n', 1)[0];
-                    postDiv.innerHTML +=
-                            `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>`;
-                    postDiv.innerHTML += `<h3 style="margin-top:0;">${postDate}</h3>`;
-                    postDiv.innerHTML += `</div>`;
-                }); 
-            }
-        );
+        let title = titles[index];
+        postDiv.innerHTML +=
+                `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>`;
+        postDiv.innerHTML += `<h3 style="margin-top:0;">${postDate}</h3>`;
+        postDiv.innerHTML += `</div>`;
     });
     /*
     postDiv.innerHTML += markdown('## Legacy Posts')
     postDiv.innerHTML += markdown('---')
+    */
     legacyPosts.forEach((post, index) => {
         postDiv.innerHTML += 
             `<a id="${post}" onclick="window.location.replace('post.html?post=${post}')">${post}</a><br>`;
     });
     postDiv.innerHTML += `</div>`;
-    */
 }
 
