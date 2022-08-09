@@ -58,23 +58,18 @@ function generatePost() {
 function generatePostLinks() {
     let postDiv = document.getElementById("main");
     postDiv.innerHTML += `<div class="postList">`;
-    posts.forEach( (post, index) => {
-        let postDate = post.split("_")[0];
-        let title = titles[index];
+    postObj.forEach( (post, index) => {
         postDiv.innerHTML +=
                 `<div class="post">
-                <a id="${post}" onclick="window.location.href = 'post.html?post=${post}'"><h2 style="margin-bottom:0;">${title}</h2></a>
-                <h3 style="margin-top:0;">${postDate}</h3>
+                <a id="${post.filename}" onclick="window.location.href = 'post.html?post=${post.filename}'"><h2 style="margin-bottom:0;">${post.title}</h2></a>
+                <h3 style="margin-top:0;">${post.date}</h3>
                 </div>`;
     });
-    
-    legacyPosts.forEach((post, index) => {
-        let title = legacyTitles[index];
-        let postDate = legacyDates[index];
+    legacyPostObj.forEach((post, index) => {
         postDiv.innerHTML += 
                 `<div class="post">
-                <a id="${post}" onclick="window.location.replace('post.html?post=${post}')"><h2 style="margin-bottom:0;">${title}</h2></a>
-                <h3 style="margin-top:0;">${postDate}</h3>
+                <a id="${post.filename}" onclick="window.location.replace('post.html?post=${post.filename}')"><h2 style="margin-bottom:0;">${post.title}</h2></a>
+                <h3 style="margin-top:0;">${post.date}</h3>
                 </div>`;
     });
     postDiv.innerHTML += `</div>`;
