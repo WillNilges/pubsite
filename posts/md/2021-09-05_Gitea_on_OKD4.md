@@ -41,7 +41,9 @@ spec:
     path: /var/nfsshare/gitea/pv01
     server: 10.10.51.70
 
----
+```
+
+```
 
 apiVersion: v1
 kind: PersistentVolume
@@ -74,7 +76,7 @@ Finally, add some routes so that you can connect to your new Gitea instance.
 
 I'm lazy, and just used the web interface for this.
 
-![Routing Screenie](routing.png)
+![Routing Screenie](posts/images/routing.png)
 
 Sick, now you've got Gitea running. Go ahead and add an account.
 

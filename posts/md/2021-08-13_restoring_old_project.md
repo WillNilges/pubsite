@@ -75,18 +75,18 @@ Oh, also, the instructions "For Development," aren't exactly "For Development." 
 
 **"Important" Links**
 
-https://console.cloud.google.com/apis/credentials?project=bettervent
-https://console.cloud.google.com/apis/credentials/consent?project=bettervent
-https://support.google.com/cloud/answer/7454865
-https://stackoverflow.com/questions/21137453/getting-google-calendar-events-with-api-v3-without-using-oauth
-https://stackoverflow.com/questions/40941556/com-google-android-gms-auth-googleauthexception-unregistered-on-api-console
-https://stackoverflow.com/questions/5883938/getting-events-from-calendar
-https://stackoverflow.com/questions/14365219/in-a-nutshell-whats-the-difference-from-using-oauth2-request-getauthtoken-and-g/14374577
-https://stackoverflow.com/questions/22142641/access-to-google-api-googleaccountcredential-usingoauth2-vs-googleauthutil-get
-https://developers.google.com/identity/smartlock-passwords/android/retrieve-credentials
-https://developers.google.com/identity/one-tap/android/get-saved-credentials#kotlin
-https://googleapis.dev/java/google-api-client/latest/com/google/api/client/googleapis/extensions/android/gms/auth/GoogleAccountCredential.html
-https://github.com/EricKarschner37/BetterVent/tree/develop
-http://www.java2s.com/example/java-api/com/google/api/client/googleapis/extensions/android/gms/auth/googleaccountcredential/gettoken-0-0.html
-https://googleapis.dev/java/google-api-client/latest/com/google/api/client/googleapis/extensions/android/gms/auth/GoogleAccountCredential.html
-https://www.tabnine.com/code/java/methods/com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential/getToken
+- https://console.cloud.google.com/apis/credentials?project=bettervent
+- https://console.cloud.google.com/apis/credentials/consent?project=bettervent
+- https://support.google.com/cloud/answer/7454865
+- https://stackoverflow.com/questions/21137453/getting-google-calendar-events-with-api-v3-without-using-oauth
+- https://stackoverflow.com/questions/40941556/com-google-android-gms-auth-googleauthexception-unregistered-on-api-console
+- https://stackoverflow.com/questions/5883938/getting-events-from-calendar
+- https://stackoverflow.com/questions/14365219/in-a-nutshell-whats-the-difference-from-using-oauth2-request-getauthtoken-and-g/14374577
+- https://stackoverflow.com/questions/22142641/access-to-google-api-googleaccountcredential-usingoauth2-vs-googleauthutil-get
+- https://developers.google.com/identity/smartlock-passwords/android/retrieve-credentials
+- https://developers.google.com/identity/one-tap/android/get-saved-credentials#kotlin
+- https://googleapis.dev/java/google-api-client/latest/com/google/api/client/googleapis/extensions/android/gms/auth/GoogleAccountCredential.html
+- https://github.com/EricKarschner37/BetterVent/tree/develop
+- http://www.java2s.com/example/java-api/com/google/api/client/googleapis/extensions/android/gms/auth/googleaccountcredential/gettoken-0-0.html
+- https://googleapis.dev/java/google-api-client/latest/com/google/api/client/googleapis/extensions/android/gms/auth/GoogleAccountCredential.html
+- https://www.tabnine.com/code/java/methods/com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential/getToken

@@ -21,12 +21,12 @@ const postObj = [
     "date": "2021-08-27"
   },
   {
-    "filename": "2021-08-13_restoring_old_project.md",
-    "title": "Troubles with `firewalld`",
+    "filename": "2021-08-07_firewalld_services_blocker.md",
+    "title": "Troubles with firewalld",
     "date": "2021-08-13"
   },
   {
-    "filename": "2021-08-07_firewalld_services_blocker.md",
+    "filename": "2021-08-13_restoring_old_project.md",
     "title": "Re-Installing my First Major Project",
     "date": "2021-08-07"
   },
