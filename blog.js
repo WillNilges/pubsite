@@ -47,6 +47,13 @@ function generatePost() {
     }
 }
 
+function generateUsefulLinks() {
+    linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"];
+    for (let i = 0; i < linkPosts.length; i++) {
+        getPost(linkPosts[i]);
+    }
+}
+
 /*function loadPosts() {
     let postsSpot = document.getElementById("blogJS");
 

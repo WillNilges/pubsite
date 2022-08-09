@@ -9,12 +9,6 @@
 	<script src="include.js"></script>
     <script src="drawdown.js"></script>
     <script src="blog.js"></script>
-    <script defer>
-        linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"];
-        for (let i = 0; i < linkPosts.length; i++) {
-            getPost(linkPosts[i]);
-        }
-    </script>
     <!--<script src="latest_commit.js"></script>-->
 </head>
 <body>
@@ -27,5 +21,5 @@
         <hr>
     </div>
 </body>
-<script>includeHTML();</script>
+<script>includeHTML(); generateUsefulLinks();</script>
 </html>
