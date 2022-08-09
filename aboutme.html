@@ -16,24 +16,24 @@
 	<div w3-include-html="sidebar.html" id="sidebar"></div>
 	<div id="main">
         <script defer>
+            const target = document.getElementById("main")
             function loadHeader() {
-                getPost("about_me.md");
+                renderInOrder(target, ["about_me.md"]);
                 return new Promise((resolve) => {
                   setTimeout(() => {
                     resolve();
                   }, 0);
                 });
             }
+            // TODO (willnilges): Render links to projects
             function loadPosts() {
-                projects = [
+                const projects = [
                     "projects/imaginerit2022.html",
                     "projects/inkpath.html",
                     "projects/octo_dash_curses.html",
                     "projects/bettervent.html"
                 ];
-                for (let i = 0; i < projects.length; i++) {
-                    getPost(projects[i], true);
-                }
+                renderInOrder(target, projects, true);
             }
             loadHeader().then( () => {
                 loadPosts();

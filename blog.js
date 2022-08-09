@@ -1,59 +1,34 @@
-function getPost(post, legacy) {
-    console.log(post);
-    console.log(`legacy = ${legacy}`);
-    let baseUrl = './posts/md/';
-    if (legacy === true) {
-        baseUrl = './posts/'
-    }
-    fetch(baseUrl + post)
-    .then(
-        function(response) {
-            if (response.status !== 200) {
-              console.log('Whoops! Can\'t get post. Status Code: ' +
-                response.status);
-              return;
-            }
-
-           response.text().then(function(data) {
-                let target = document.getElementById("main")
-                //console.log(data);
-                if (legacy) {
-                    target.innerHTML += data;
-                } else {
-                    target.innerHTML += markdown(data);
-                }
-                //let sectionHeader = document.getElementById("sectionHeader");
-                //let title = data.split('\n', 1)[0];
-                //sectionHeader.innerHTML = title;
-                return data;
-            }); 
-        }
-    )
-    .catch(function(err) {
-      console.log('Fetch Error :-S', err);
-    });
-}
-
+// Used to generate a single post when you click on it from the homepage
 function generatePost() {
     const params = new URLSearchParams(
       window.location.search
     );
-    const postTitle = params.get("post"); // value1 
+    const postTitle = params.get("post"); 
+    const target = document.getElementById("main");
     if (postTitle.split(".").pop() === "html") {
         console.log('Loading legacy post!');
-        getPost(postTitle, true);
+        renderInOrder(target, [postTitle], true);
     } else {
-        getPost(postTitle);
+        renderInOrder(target, [postTitle]);
     }
 }
 
+// Used to fetch descriptions of useful links on the useful links page
 function generateUsefulLinks() {
-    let linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"];
+    const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
+    const target = document.getElementById("main")
+    renderInOrder(target, linkPosts);
+}
+
+// thanks ethan
+// A better version of getPost() that is less dumb and ugly and stoopid
+function renderInOrder(target, articles, legacy) {
     let baseUrl = './posts/md/';
-    let target = document.getElementById("main")
-    // thanks ethan
+    if (legacy === true) {
+        baseUrl = './posts/'
+    }
     Promise.allSettled(
-        linkPosts.map(
+        articles.map(
             item=>fetch(
                 baseUrl + item
             ).then(
@@ -63,25 +38,17 @@ function generateUsefulLinks() {
     ).then(
         arr=>arr.forEach(
             item2=>{
-                target.innerHTML += markdown(item2.value) 
+                if (legacy) {
+                    target.innerHTML += item2.value;
+                } else {
+                    target.innerHTML += markdown(item2.value);
+                }
             }
         )
     );
-
-/*    for (let i = 0; i < linkPosts.length; i++) {
-        getPost(linkPosts[i]);
-    }
-*/
 }
 
-/*function loadPosts() {
-    let postsSpot = document.getElementById("blogJS");
-
-    posts.forEach((post, index) => {
-        getPost(post, postsSpot);
-    });
-}*/
-
+// Generates the list of links on the homepage
 function generatePostLinks() {
     let postDiv = document.getElementById("main");
     postDiv.innerHTML += `<div class="postList">`;
