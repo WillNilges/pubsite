@@ -48,10 +48,30 @@ function generatePost() {
 }
 
 function generateUsefulLinks() {
-    linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"];
-    for (let i = 0; i < linkPosts.length; i++) {
+    let linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"];
+    let baseUrl = './posts/md/';
+    let target = document.getElementById("main")
+    // thanks ethan
+    Promise.allSettled(
+        linkPosts.map(
+            item=>fetch(
+                baseUrl + item
+            ).then(
+                response=>response.text()
+            )
+        )
+    ).then(
+        arr=>arr.forEach(
+            item2=>{
+                target.innerHTML += markdown(item2.value) 
+            }
+        )
+    );
+
+/*    for (let i = 0; i < linkPosts.length; i++) {
         getPost(linkPosts[i]);
     }
+*/
 }
 
 /*function loadPosts() {
