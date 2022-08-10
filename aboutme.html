@@ -10,17 +10,13 @@
 
     <!-- Important shit -->
     <script type="module" src="postList.js"></script>
-    <!--<script src="drawdown.js"></script>
-    <script src="blog.js"></script>-->
     <script type="module" src="page.js"></script>
     
-    <!-- TODO (willnilges): delet -->
-    <!--<script src="latest_commit.js"></script>-->
     <script type="module">
         import { loadPage } from "./page.js";
         import { projectsObj } from "./postList.js";
         window.onload = function() {
-            includeHTML();
+            includeHTML(); // TODO: Delet
             // latestCommit();
             const target = document.getElementById("main");
             loadPage(target, "/posts/md/about_me.md", projectsObj);

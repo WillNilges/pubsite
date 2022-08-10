@@ -10,10 +10,11 @@
     <link rel="shortcut icon" href="favicon.ico">
     <script src="include.js"></script>
     <!--<script src="latest_commit.js"></script>-->
-    <script src="drawdown.js"></script>
-    <script src="postList.js"></script>
-    <script src="blog.js"></script>
-    <script defer>
+    <script type="module" src="postList.js"></script>
+    <script type="module" src="blog.js"></script>
+    <script type="module">
+        import { postObj, legacyPostObj } from "./postList.js";
+        import { generatePostLinks } from "./blog.js"
         window.onload = function() {
             const target = document.getElementById("main");
             generatePostLinks(target, postObj);

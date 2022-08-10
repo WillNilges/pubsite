@@ -7,9 +7,13 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
 	<script src="include.js"></script>
-    <script src="drawdown.js"></script>
-    <script src="blog.js"></script>
-    <script defer>window.onload = function() {generatePost();}</script>
+    <script type="module" src="blog.js"></script>
+    <script type="module">
+        import { generatePost } from "./blog.js";
+        window.onload = function() {
+            generatePost();
+        }
+    </script>
     <!--<script src="latest_commit.js"></script>-->
 </head>
 <body>

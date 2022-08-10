@@ -7,9 +7,19 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
 	<script src="include.js"></script>
-    <script src="drawdown.js"></script>
-    <script src="blog.js"></script>
+    <script type="module" src="blog.js"></script>
     <!--<script src="latest_commit.js"></script>-->
+    <script type="module">
+        import { postObj, legacyPostObj } from "./postList.js";
+        import { renderInOrder } from "./blog.js"
+
+        const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
+        window.onload = function() {
+            const target = document.getElementById("main");
+            renderInOrder(target, linkPosts);
+            includeHTML(); 
+        }
+    </script>
 </head>
 <body>
 	<h1 class="pageTitle">Useful Links</h1>
@@ -21,5 +31,4 @@
         <hr>
     </div>
 </body>
-<script>includeHTML(); generateUsefulLinks();</script>
 </html>

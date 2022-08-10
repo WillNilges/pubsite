@@ -1,3 +1,5 @@
+import { markdown } from "./drawdown.js";
+
 // Used to generate a single post when you click on it from the homepage
 function generatePost() {
     const params = new URLSearchParams(
@@ -85,4 +87,4 @@ function generatePostLinks(target, postList, legacy) {
     target.innerHTML += `</div>`;
 }
 
-export { generatePostLinks };
+export { generatePostLinks, renderInOrder, generatePost };
