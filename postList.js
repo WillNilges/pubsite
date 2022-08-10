@@ -114,3 +114,11 @@ const legacyPostObj = [
 
 // Excluded
 //"embedded_nightmare.html",
+
+const projectObj = [
+  {
+    "filename": "networking_on_cli.html",
+    "title": "How to set up networking on an uncooperative CLI",
+    "date": "2018-10-29"
+  }
+];

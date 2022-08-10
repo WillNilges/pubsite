@@ -72,10 +72,14 @@ function generatePostLinksOld() {
 function generatePostLinks(target, postList, legacy) {
     target.innerHTML += `<div class="postList">`;
     postList.forEach((post, index) => {
+        subTitle = "";
+        if (post.date !== undefined) {
+           subTitle = `<h3 style="margin-top:0;">${post.date}</h3>`
+        }
         target.innerHTML +=
                 `<div class="post">
                 <a id="${post.filename}" onclick="window.location.href = 'post.html?post=${post.filename}'"><h2 style="margin-bottom:0;">${post.title}</h2></a>
-                <h3 style="margin-top:0;">${post.date}</h3>
+                ${subTitle}
                 </div>`;
     });
     target.innerHTML += `</div>`;

@@ -18,3 +18,6 @@ _If you'd like to hire me, I'm looking for work! I'm available for a Co-Op next 
 
 As for the fun stuff, I have several projects in the works.
 
+## Projects
+
+---

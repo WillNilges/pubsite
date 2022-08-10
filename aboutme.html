@@ -9,7 +9,7 @@
 	<script src="include.js"></script>
     <script src="drawdown.js"></script>
     <script src="blog.js"></script>
-    <script src="latest_commit.js"></script>
+    <!--<script src="latest_commit.js"></script>-->
 </head>
 <body>
 	<h1 class="pageTitle">About Me</h1>
@@ -17,6 +17,25 @@
 	<div id="main">
         <script defer>
             const target = document.getElementById("main")
+            const projects = [
+                { filename: "projects/imaginerit2022.html", title: "ImagineRIT 2022: CSHacked", date: "A Bluetooth Low Energy Tracking project I oversaw the development of." },
+                { filename: "projects/inkpath.html", title: "Inkpath", date: "A raster diagram conversion + insertion tool for Xournal++. Convert photos of notes into native .xopp format!"},
+                { filename: "projects/octo_dash_curses.html", title: "Octo Dash Curses", date: "A tool for monitoring the status of a 3D print from the command line. Powered by OctoPrint."},
+                { filename: "projects/bettervent.html", title: "BetterVent", date: "A free and open source android-tablet schedule viewer for placing outside of rooms." },
+            ];
+            const fetch_header = async function () {
+                return fetch("/posts/md/about_me.md")
+                    .then(res=>res.text())
+                    .then(text=>markdown(text));
+            }
+            var load_page = async function() {
+                var header = await fetch_header();
+                target.innerHTML = header;
+                generatePostLinks(target, projects, true);
+            }
+            load_page();
+            
+            /*
             function loadHeader() {
                 renderInOrder(target, ["about_me.md"]);
                 return new Promise((resolve) => {
@@ -27,17 +46,11 @@
             }
             // TODO (willnilges): Render links to projects
             function loadPosts() {
-                const projects = [
-                    "projects/imaginerit2022.html",
-                    "projects/inkpath.html",
-                    "projects/octo_dash_curses.html",
-                    "projects/bettervent.html"
-                ];
-                renderInOrder(target, projects, true);
+            
+                generatePostLinks(target, projects, true);
+                //renderInOrder(target, projects, true);
             }
-            loadHeader().then( () => {
-                loadPosts();
-            });
+            Promise.allSettled(loadHeader()).then(loadPosts());*/
         </script>
     </div>
 </body>
