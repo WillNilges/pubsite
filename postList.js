@@ -115,10 +115,27 @@ const legacyPostObj = [
 // Excluded
 //"embedded_nightmare.html",
 
-const projectObj = [
-  {
-    "filename": "networking_on_cli.html",
-    "title": "How to set up networking on an uncooperative CLI",
-    "date": "2018-10-29"
-  }
+const projectsObj = [
+    { 
+        "filename": "projects/imaginerit2022.html",
+        "title": "ImagineRIT 2022: CSHacked", 
+        "date": "A Bluetooth Low Energy Tracking project I oversaw the development of."
+    },
+    {
+        "filename": "projects/inkpath.html", 
+        "title": "Inkpath", 
+        "date": "A raster diagram conversion + insertion tool for Xournal++. Convert photos of notes into native .xopp format!"
+    },
+    { 
+        "filename": "projects/octo_dash_curses.html", 
+        "title": "Octo Dash Curses", 
+        "date": "A tool for monitoring the status of a 3D print from the command line. Powered by OctoPrint."
+    },
+    {
+        "filename": "projects/bettervent.html",
+        "title": "BetterVent", 
+        "date": "A free and open source android-tablet schedule viewer for placing outside of rooms."
+    },
 ];
+
+export { postObj, legacyPostObj, projectsObj };

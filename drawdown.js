@@ -127,3 +127,5 @@
 
     return src.trim();
 };
+
+export { markdown };

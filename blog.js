@@ -72,7 +72,7 @@ function generatePostLinksOld() {
 function generatePostLinks(target, postList, legacy) {
     target.innerHTML += `<div class="postList">`;
     postList.forEach((post, index) => {
-        subTitle = "";
+        let subTitle = "";
         if (post.date !== undefined) {
            subTitle = `<h3 style="margin-top:0;">${post.date}</h3>`
         }
@@ -85,3 +85,4 @@ function generatePostLinks(target, postList, legacy) {
     target.innerHTML += `</div>`;
 }
 
+export { generatePostLinks };
