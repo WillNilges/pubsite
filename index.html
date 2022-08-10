@@ -13,7 +13,13 @@
     <script src="drawdown.js"></script>
     <script src="postList.js"></script>
     <script src="blog.js"></script>
-    <script defer>window.onload = function() {generatePostLinks();}</script>
+    <script defer>
+        window.onload = function() {
+            const target = document.getElementById("main");
+            generatePostLinks(target, postObj);
+            generatePostLinks(target, legacyPostObj, true);
+        }
+    </script>
 </head>
 <body>
     <h1 class="pageTitle"> Willard's Guide to Computing for Forgetful Power Users</h1>

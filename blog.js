@@ -49,7 +49,7 @@ function renderInOrder(target, articles, legacy) {
 }
 
 // Generates the list of links on the homepage
-function generatePostLinks() {
+function generatePostLinksOld() {
     let postDiv = document.getElementById("main");
     postDiv.innerHTML += `<div class="postList">`;
     postObj.forEach( (post, index) => {
@@ -67,5 +67,17 @@ function generatePostLinks() {
                 </div>`;
     });
     postDiv.innerHTML += `</div>`;
+}
+
+function generatePostLinks(target, postList, legacy) {
+    target.innerHTML += `<div class="postList">`;
+    postList.forEach((post, index) => {
+        target.innerHTML +=
+                `<div class="post">
+                <a id="${post.filename}" onclick="window.location.href = 'post.html?post=${post.filename}'"><h2 style="margin-bottom:0;">${post.title}</h2></a>
+                <h3 style="margin-top:0;">${post.date}</h3>
+                </div>`;
+    });
+    target.innerHTML += `</div>`;
 }
 
