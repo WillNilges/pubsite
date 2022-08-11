@@ -6,24 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
-	<script src="include.js"></script>
     <script type="module" src="blog.js"></script>
-    <!--<script src="latest_commit.js"></script>-->
     <script type="module">
         import { postObj, legacyPostObj } from "./postList.js";
-        import { renderInOrder } from "./blog.js"
-
+        import { renderInOrder, getContent } from "./blog.js"
         const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
-        window.onload = function() {
+        window.onload = async function() {
             const target = document.getElementById("main");
+            const sidebar = document.getElementById("sidebar");
+            sidebar.innerHTML += await getContent("../sidebar.html", true);
             renderInOrder(target, linkPosts);
-            includeHTML(); 
         }
     </script>
 </head>
 <body>
 	<h1 class="pageTitle">Useful Links</h1>
-	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="sidebar"></div>
 	<div id="main">
         <p class="sectionHeaders">As a programmer, I do a lot of googling.
         <br>Occasionally, I find neat stuff.

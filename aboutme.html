@@ -13,13 +13,11 @@
         import { renderInOrder, getContent, generatePostLinks } from "./blog.js";
         import { projectsObj } from "./postList.js";
         window.onload = async function() {
-            // latestCommit();
             const target = document.getElementById("main");
-            //loadPage(target, "/posts/md/about_me.md", projectsObj);
-
+            const sidebar = document.getElementById("sidebar");
+            sidebar.innerHTML += await getContent("../sidebar.html", true);
             target.innerHTML += await getContent("/posts/md/about_me.md");
             generatePostLinks(target, projectsObj);
-            renderInOrder(document.getElementById("sidebar"), ["../sidebar.html"], true);
         }
     </script>
 </head>

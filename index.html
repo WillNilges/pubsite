@@ -8,15 +8,16 @@
     <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
-    <script src="include.js"></script>
     <!--<script src="latest_commit.js"></script>-->
     <script type="module" src="postList.js"></script>
     <script type="module" src="blog.js"></script>
     <script type="module">
         import { postObj, legacyPostObj } from "./postList.js";
-        import { generatePostLinks } from "./blog.js"
-        window.onload = function() {
+        import { generatePostLinks, getContent } from "./blog.js"
+        window.onload = async function() {
             const target = document.getElementById("main");
+            const sidebar = document.getElementById("sidebar");
+            sidebar.innerHTML += await getContent("../sidebar.html", true);
             generatePostLinks(target, postObj);
             generatePostLinks(target, legacyPostObj, true);
         }
@@ -24,7 +25,7 @@
 </head>
 <body>
     <h1 class="pageTitle"> Willard's Guide to Computing for Forgetful Power Users</h1>
-    <div w3-include-html="sidebar.html" id="sidebar"></div>
+    <div id="sidebar"></div>
     <div id="main">
         <p class="sectionHeaders">About this site</p>
         <hr>
@@ -37,9 +38,4 @@
     </div>
     <!--<p>Written by Will Nilges. First updated <br> 29 October, 2018.</p>-->
 </body>
-<script>
-	includeHTML();
-	latestCommit();
-    //makeTogglable();
-</script>
 </html>
