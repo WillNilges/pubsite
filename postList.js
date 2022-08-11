@@ -7,12 +7,12 @@ const postObj = [
   },
   {
     "filename": "2021-09-11_recovering_an_okd4_worker.md",
-    "title": "Installing Gitea on OKD 4.7",
+    "title": "Recovering an OKD 4 Worker",
     "date": "2021-09-11"
   },
   {
     "filename": "2021-09-05_Gitea_on_OKD4.md",
-    "title": "Recovering an OKD 4 Worker",
+    "title": "Installing Gitea on OKD 4.7",
     "date": "2021-09-05"
   },
   {
