@@ -1,5 +1,7 @@
 import { markdown } from "./drawdown.js";
 
+// TODO (willnilges): One day I'll learn how to properly use Async... One day :')
+
 // Used to generate a single post when you click on it from the homepage
 function generatePost() {
     const params = new URLSearchParams(
@@ -13,13 +15,6 @@ function generatePost() {
     } else {
         renderInOrder(target, [postTitle]);
     }
-}
-
-// Used to fetch descriptions of useful links on the useful links page
-function generateUsefulLinks() {
-    const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
-    const target = document.getElementById("main")
-    renderInOrder(target, linkPosts);
 }
 
 // thanks ethan
@@ -48,27 +43,6 @@ function renderInOrder(target, articles, legacy) {
             }
         )
     );
-}
-
-// Generates the list of links on the homepage
-function generatePostLinksOld() {
-    let postDiv = document.getElementById("main");
-    postDiv.innerHTML += `<div class="postList">`;
-    postObj.forEach( (post, index) => {
-        postDiv.innerHTML +=
-                `<div class="post">
-                <a id="${post.filename}" onclick="window.location.href = 'post.html?post=${post.filename}'"><h2 style="margin-bottom:0;">${post.title}</h2></a>
-                <h3 style="margin-top:0;">${post.date}</h3>
-                </div>`;
-    });
-    legacyPostObj.forEach((post, index) => {
-        postDiv.innerHTML += 
-                `<div class="post">
-                <a id="${post.filename}" onclick="window.location.replace('post.html?post=${post.filename}')"><h2 style="margin-bottom:0;">${post.title}</h2></a>
-                <h3 style="margin-top:0;">${post.date}</h3>
-                </div>`;
-    });
-    postDiv.innerHTML += `</div>`;
 }
 
 function generatePostLinks(target, postList, legacy) {
