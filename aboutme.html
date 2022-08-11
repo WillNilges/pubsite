@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
-    <script type="module" src="postList.js"></script>
-    <script type="module" src="page.js"></script>
     <script type="module">
-        import { loadPage } from "./page.js";
         import { renderInOrder, getContent, generatePostLinks } from "./blog.js";
         import { projectsObj } from "./postList.js";
         window.onload = async function() {
@@ -24,7 +21,6 @@
 <body>
 	<h1 class="pageTitle">About Me</h1>
 	<div id="sidebar"></div>
-	<div id="main">
-    </div>
+	<div id="main"></div>
 </body>
 </html>

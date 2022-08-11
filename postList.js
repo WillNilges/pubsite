@@ -138,4 +138,32 @@ const projectsObj = [
     },
 ];
 
-export { postObj, legacyPostObj, projectsObj };
+const projectsArchive = [
+    { 
+        "filename": "projects/shelflife.html",
+        "title": "Shelflife", 
+        "date": "An Experimental OKD resource management system"
+    },
+    { 
+        "filename": "projects/death_panel.html",
+        "title": "The Death Panel", 
+        "date": "An (unfinished) part of CSH's ImagineRIT 2020 project."
+    },
+    { 
+        "filename": "projects/directional_ac.html",
+        "title": "Directional AC", 
+        "date": "Part of CSH's ImagineRIT 2019 project."
+    },
+    { 
+        "filename": "projects/samplezone.html",
+        "title": "sampleZone", 
+        "date": "An ncurses-based app for creating music with sampled audio" 
+    },
+    { 
+        "filename": "projects/boa.html",
+        "title": "BOA", 
+        "date": "An unfinished video game I worked on during the summer of 2018"
+    },
+];
+
+export { postObj, legacyPostObj, projectsObj, projectsArchive };
