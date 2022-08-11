@@ -1,4 +1,8 @@
-## 27 August, 2021
+# OKD 4, but again.
+
+### 27 August, 2021
+
+---
 
 ### I wish I wrote more stuff down.
 
@@ -97,7 +101,7 @@ I am so tired of this project not existing. I want it to exist.
 
 So, this is a bit wack:
 
-![OKD4 Monitoring CO](okd4_monitoring_co.png)
+![OKD4 Monitoring CO](posts/images/okd4_monitoring_co.png)
 
 Looks like there are a few failed services that might be preventing the second Prometheus pod from coming up. I tried deleting the prometheus pod to see if it'd figure itself out, but it didn't. So I'm gonna try deleting the failed pods and see what happens.
 

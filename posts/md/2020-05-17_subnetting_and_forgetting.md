@@ -1,5 +1,8 @@
 # Subnetting and Forgetting
-## 17 May, 2020
+
+### 17 May, 2020
+
+---
 
 Heyo! I've actually got a backlog of stuff to talk about after this week! Hopefully I'll be able to post it all in a reasonable amount of time. (Spoilers: haha no way).
 

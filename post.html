@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WilNil's Blog</title>
+	<meta name="author" content="willnilges">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="favicon.ico">
+	<script src="include.js"></script>
+    <script type="module" src="blog.js"></script>
+    <script type="module">
+        import { generatePost } from "./blog.js";
+        window.onload = function() {
+            generatePost();
+        }
+    </script>
+    <!--<script src="latest_commit.js"></script>-->
+</head>
+<body>
+	<h1 class="pageTitle">Willard's Guide to Computing for Forgetful Power Users</h1>
+	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="main">
+    </div>
+</body>
+<script>
+    includeHTML();
+</script>
+</html>

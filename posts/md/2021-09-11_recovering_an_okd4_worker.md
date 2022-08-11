@@ -1,4 +1,8 @@
-## 11 September, 2021
+# Recovering an OKD 4 Worker
+
+### 11 September, 2021
+
+---
 
 ### Introduction
 
@@ -6,7 +10,7 @@ This Tuesday, something _really_ bad happened on floor at Computer Science House
 
 Lots of stuff crashed. We lost a chunk of our IPA install, we lost our main webserver, we lost an untold number of user VMs that may or may not have been restarted yet, and with all of that compute infrastructure, most of our house services went down: Gitlab, conditional, STARRS (our DNS frontend), and I don't even remember how many others. The cherry on top was when Datadog started logging downtime. Damb.
 
-![red bar moment](datadog_downtime.png)
+![red bar moment](posts/images/datadog_downtime.png)
 
 So that day, I worked for 10 hours, then checked my phone when I got home, got _back in_ the car, and drove to floor to start putting out fires. We were there for 7 hours.
 
@@ -24,11 +28,11 @@ So, okd4-worker03-nrh.csh.rit.edu went down. It stayed down. In the past when th
 So two things are usually wrong when a node won't come back up:
 **1:** The "Boot Order" option in the "Options" tab is misconfigured. It may, for some reason, have decided to set the install disk as the primary boot option, or it may have disabled the hard drive option. Either way, you need to make sure that the hard drive is the primary boot option.
 
-![This field is the bane of my existance](boot_order.png)
+![This field is the bane of my existance](posts/images/boot_order.png)
 
 **2:** HA has gotten _very_ confused. I find that the best way to ensure success when bringing an OKD 4 worker back up is to set HA to 'ignored.' In this particular case, it was set to 'stopped' for some odd reason. That caused this weird issue where, no matter what setting I changed, and no matter how I went about turning the node off and on again, the damn thing just _wouldn't_ boot correctly. Either it would boot to the installer, or it would boot loop, or it would just _ignore_ me. At one point, I pressed 'Stop' three times (and all three times Proxmox logged the Status as OK on those commands) in order to get it to actually stop. Once, I removed literally every storage medium and it still insisted on booting to the installer somehow. **So, TL;DR: SET HA TO 'IGNORED' BEFORE MESSING WITH IT**
 
-![So is this one](haaaaa.png)
+![So is this one](posts/images/haaaaa.png)
 
 ### So the VM is behaving properly, now what?
 
@@ -54,7 +58,7 @@ By futz with the Certificate Authority, I mean follow Method #2 on [this blog po
 
 So this went on and on for the next few days until last night, when I had the realization that we take _really_ good backups, and maybe, just maybe, if I restored the VM to a copy from Monday night, fixed all the HA nonsense and boot order malarkey, it would request to re-join the cluster on its own.
 
-![CSRs! FINALLY!](csr.png)
+![CSRs! FINALLY!](posts/images/csr.png)
 
 And that's exactly what happened.
 

@@ -1,9 +1,10 @@
 # A TL;DR on OKD 4
-## 12 December, 2020
 
-So I'm a part of this org called Computer Science House. We do a lotta DevOps, and this year, our STAR cert expired.
+### 12 December, 2020
 
-That was really bad.
+---
+
+So I'm a part of this org called Computer Science House. We do a lotta DevOps, and this year, our STAR cert expired, which kinda sucked.
 
 Well, not really. We were pretty used to STAR certs expiring. It's a pretty regular process and it goes like this: You pay for one in 2016. When you do that, it lasts 2 years. But then it expires in 2018, and when that happens you pay for a new one and spend about 3 weeks trying to track down all the systems that use it. Our mistake was using it for OKD 3.
 
