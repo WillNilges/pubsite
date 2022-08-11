@@ -87,4 +87,16 @@ function generatePostLinks(target, postList, legacy) {
     target.innerHTML += `</div>`;
 }
 
-export { generatePostLinks, renderInOrder, generatePost };
+const getContent = async function(content, legacy) {
+    return fetch(content)
+        .then(res=>res.text())
+        .then(text=> {
+            if (legacy) {
+                return text;
+            } else {
+                return markdown(text);
+            }
+        });
+}
+
+export { getContent, generatePostLinks, renderInOrder, generatePost };

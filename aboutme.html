@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
-	<script src="include.js"></script>
-
-    <!-- Important shit -->
     <script type="module" src="postList.js"></script>
     <script type="module" src="page.js"></script>
-    
     <script type="module">
         import { loadPage } from "./page.js";
+        import { renderInOrder, getContent, generatePostLinks } from "./blog.js";
         import { projectsObj } from "./postList.js";
-        window.onload = function() {
-            includeHTML(); // TODO: Delet
+        window.onload = async function() {
             // latestCommit();
             const target = document.getElementById("main");
-            loadPage(target, "/posts/md/about_me.md", projectsObj);
+            //loadPage(target, "/posts/md/about_me.md", projectsObj);
+
+            target.innerHTML += await getContent("/posts/md/about_me.md");
+            generatePostLinks(target, projectsObj);
+            renderInOrder(document.getElementById("sidebar"), ["../sidebar.html"], true);
         }
     </script>
 </head>
 <body>
 	<h1 class="pageTitle">About Me</h1>
-	<div w3-include-html="sidebar.html" id="sidebar"></div>
+	<div id="sidebar"></div>
 	<div id="main">
     </div>
 </body>
