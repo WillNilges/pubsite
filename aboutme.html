@@ -6,43 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
-	<script src="include.js"></script>
-    <script src="latest_commit.js"></script>
+    <script type="module">
+        import { renderInOrder, getContent, generatePostLinks } from "./blog.js";
+        import { projectsObj } from "./postList.js";
+        import { togglePost, hideNShow } from "./reveal.js";
+        window.onload = async function() {
+            const target = document.getElementById("main");
+            const sidebar = document.getElementById("sidebar");
+            sidebar.innerHTML += await getContent("../sidebar.html", true);
+            togglePost("sidebarHead", "sidebarBody");
+            target.innerHTML += await getContent("/posts/md/about_me.md");
+            generatePostLinks(target, projectsObj);
+        }
+    </script>
 </head>
 <body>
 	<h1 class="pageTitle">About Me</h1>
-	<div w3-include-html="sidebar.html" id="sidebar"></div>
-	<div id="main">
-        <!-- Main section about me and my skills -->
-        <p class="sectionHeaders">Hi, I'm Will! (he/him)</p>
-        <hr>
-        <p>Computer Engineering major and Linux fanatic who plays <em>way</em> too many tabletop games. In my freetime (in addition to unhealthy amounts of DND), I also do a lot of coding, 3D printing, fiction writing, digital art, and running. My favorite coding languages are C, Python, Rust, and BASH. I am also conversational in Spanish.</p>
-
-        <p class="sectionHeaders">What I'm working on</p>
-        <hr>
-        <p>Last fall, I returned to Council Rock to continue work on their new line of solar management systems, doing even more embedded and edge network goodness in C++ and Python. It was great seeing the fruits of my labor from 2020 grow into something incredible, and I thoroughly enjoyed the experience of making it even better.</p>
-
-        <p>Currently, I'm in the 4th year of my Computer Engineering Undergraduate at RIT. Most of my classtime this year is being spent trying to find Fourier Transforms and forgetting to press the 'S' key while writing to the STCSR register to enable my SysTickTimer.</p>
-
-        <p>For this summer, I have accepted a co-op offer with Datadog! I don't know what I'll be working on yet, but I'm sure it'll be really cool.</p>
-
-        <!--<p style><em>If you'd like to hire me, I'm looking for work! I'm available for a Co-Op next Summer of 2022!</em></p>-->
-
-        <p>As for the fun stuff, I have several projects in the works.</p>
-
-        <!-- Projects -->
-        <span w3-include-html="posts/projects/imaginerit2022.html" id="imagineRIT2022"></span>
-        <span w3-include-html="posts/projects/inkpath.html" id="inkpath"></span>
-        <span w3-include-html="posts/projects/octo_dash_curses.html" id="boa_project"></span>
-        <span w3-include-html="posts/projects/bettervent.html" id="bettervent_project"></span>
-        <!--<span w3-include-html="posts/projects/shelflife.html" id="shelflife_project"></span>-->
-        <!--<span w3-include-html="posts/projects/death_panel.html" id="death_panel_project"></span>-->
-        <!--<span w3-include-html="posts/projects/directional_ac.html" id="directional_ac_project"></span>-->
-
-    </div>
+	<div id="sidebar"></div>
+	<div id="main"></div>
 </body>
-<script>
-    includeHTML();
-    latestCommit();
-</script>
 </html>

@@ -1,4 +1,8 @@
-## 11 September, 2021
+# Fixing some random 403's
+
+### 15 September, 2021
+
+---
 
 I've been having this weird problem with my httpd dev instance where, when I try to serve content, sometimes, seemingly at random, I'll get 403'ed when it serves. My file permissions are correct, my ownership is correct, but I just _won't_ be able to access the content. Very annoying.
 

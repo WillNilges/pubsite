@@ -7,23 +7,26 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="favicon.ico">
     <script type="module">
-        import { getContent, generatePostLinks } from "./blog.js";
-        import { projectsArchive } from "./postList.js";
+        import { postObj, legacyPostObj } from "./postList.js";
+        import { renderInOrder, getContent } from "./blog.js"
         import { togglePost, hideNShow } from "./reveal.js";
+        const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
         window.onload = async function() {
             const target = document.getElementById("main");
             const sidebar = document.getElementById("sidebar");
             sidebar.innerHTML += await getContent("../sidebar.html", true);
             togglePost("sidebarHead", "sidebarBody");
-            generatePostLinks(target, projectsArchive, true);
+            renderInOrder(target, linkPosts);
         }
     </script>
 </head>
 <body>
-	<h1 class="pageTitle">Project Archive</h1>
+	<h1 class="pageTitle">Useful Links</h1>
 	<div id="sidebar"></div>
 	<div id="main">
-        <p class="sectionHeaders">This is where I put info about my older projects</p>
+        <p class="sectionHeaders">As a programmer, I do a lot of googling.
+        <br>Occasionally, I find neat stuff.
+        <br>If I do, I'll try my best to remember to put it here.</p>
         <hr>
     </div>
 </body>
