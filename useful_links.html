@@ -9,11 +9,13 @@
     <script type="module">
         import { postObj, legacyPostObj } from "./postList.js";
         import { renderInOrder, getContent } from "./blog.js"
+        import { togglePost, hideNShow } from "./reveal.js";
         const linkPosts = ["useful_links/regexr.md", "useful_links/bash_colors.md"]; // TODO (willnilges): Move me to separate file
         window.onload = async function() {
             const target = document.getElementById("main");
             const sidebar = document.getElementById("sidebar");
             sidebar.innerHTML += await getContent("../sidebar.html", true);
+            togglePost("sidebarHead", "sidebarBody");
             renderInOrder(target, linkPosts);
         }
     </script>

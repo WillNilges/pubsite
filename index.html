@@ -12,10 +12,13 @@
     <script type="module">
         import { postObj, legacyPostObj } from "./postList.js";
         import { generatePostLinks, getContent } from "./blog.js"
+        import { togglePost, hideNShow } from "./reveal.js";
+        // TODO: Mess with resize listener some more to get the sidebar to properly re-appear
         window.onload = async function() {
             const target = document.getElementById("main");
             const sidebar = document.getElementById("sidebar");
             sidebar.innerHTML += await getContent("../sidebar.html", true);
+            togglePost("sidebarHead", "sidebarBody");
             generatePostLinks(target, postObj);
             generatePostLinks(target, legacyPostObj, true);
         }

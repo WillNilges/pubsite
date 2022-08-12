@@ -8,9 +8,11 @@
     <link rel="shortcut icon" href="favicon.ico">
     <script type="module">
         import { generatePost, getContent } from "./blog.js";
+        import { togglePost, hideNShow } from "./reveal.js";
         window.onload = async function() {
             const sidebar = document.getElementById("sidebar");
             sidebar.innerHTML += await getContent("../sidebar.html", true);
+            togglePost("sidebarHead", "sidebarBody");
             generatePost();
         }
     </script>

@@ -9,10 +9,12 @@
     <script type="module">
         import { getContent, generatePostLinks } from "./blog.js";
         import { projectsArchive } from "./postList.js";
+        import { togglePost, hideNShow } from "./reveal.js";
         window.onload = async function() {
             const target = document.getElementById("main");
             const sidebar = document.getElementById("sidebar");
             sidebar.innerHTML += await getContent("../sidebar.html", true);
+            togglePost("sidebarHead", "sidebarBody");
             generatePostLinks(target, projectsArchive, true);
         }
     </script>

@@ -35,11 +35,13 @@ function renderInOrder(target, articles, legacy) {
     ).then(
         arr=>arr.forEach(
             item2=>{
+                let renderedHTML = "";
                 if (legacy) {
-                    target.innerHTML += item2.value;
+                    renderedHTML += item2.value;
                 } else {
-                    target.innerHTML += markdown(item2.value);
+                    renderedHTML += markdown(item2.value);
                 }
+                target.innerHTML += `<div class="article">${renderedHTML}</div>`
             }
         )
     );
