@@ -3,7 +3,7 @@ const postObj = [
   {
     "filename": "2022-12-13_quake_on_pinephone_01.md",
     "title": "How to Install Quake on the Pinephone",
-    "date": "2021-12-13"
+    "date": "2022-12-13"
   },
   {
     "filename": "2021-09-15_selinux_httpd.md",
