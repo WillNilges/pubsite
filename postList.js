@@ -1,6 +1,11 @@
 // I'm not very good with computers....
 const postObj = [
   {
+    "filename": "2022-08-01_proxmox7_vnc.md",
+    "title": "Rebuilding VNC Functionality on Proxstar",
+    "date": "2022-08-01"
+  },
+  {
     "filename": "2021-09-15_selinux_httpd.md",
     "title": "Fixing some random 403's",
     "date": "2021-09-15"

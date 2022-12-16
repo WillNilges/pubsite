@@ -1,13 +1,13 @@
 # How (not) to use the Proxmox 7 VNC API
 ## 1 August, 2022
 
-~~If you've been following my LinkedIn, you might know that I've been driving myself crazy trying to figure out how VNC over Websockets work, specifically, how to get a VNC shell on a remote VM in Proxmox.~~
+If you've been following my LinkedIn, you might know that I've been driving myself crazy trying to figure out how VNC over Websockets work, specifically, how to get a VNC shell on a remote VM in Proxmox.
 
 Computer Science House uses Proxmox extensively for our infrastructure. From LDAP and SSO-related services like Keycloak and LDAP, to web infrastructure like our public site, and URL mappings for home directories. For the longest time, we also had OKD, our container orchestration platform, hosted on there as well.
 
 Proxmox has an... _okay_ user interface available for managing your virtual machines, and that's what we, the RTPs, use to manage our core services. It works well enough, and gives you acess to _most_ of the functionality you need for serious hypervisor management.
 
-**insert photo of proxmox here**
+![Proxmox dashboard](posts/images/proxmox.jpg)
 
 However, the interface has a few critical flaws that make it difficult to use for the average CSHer, especially someone who is new to hypervisors:
 1. The interface is pretty complicated. There are a lot of bells and whistles that the average user isn't going to want or need to touch.
@@ -18,7 +18,7 @@ Enter [Proxstar](https://github.com/computersciencehouse/proxstar). Proxstar is 
 
 <!--TODO: Open issue to allow people to upload ISOs for approval in Proxstar-->
 
-**insert photo of proxstar here**
+![Screenshot of Proxstar's VM management page](posts/images/proxstar.jpg)
 
 That last point is the subject of today's blog post. Let's dive in.
 
@@ -30,7 +30,8 @@ One (ok, well, two) small issues: The first one is that in order for this to be 
 
 To get around this, Jordan gave SSH credentials to Proxstar for it to open an SSH tunnel to forward VNC traffic through. Clever, if a bit hacky. It worked prettty well, until Proxmox 7.
 
-**Insert diagram of Jordan's setup**
+![Proxmox noVNC as programmed by Jordan Rogers](posts/images/proxstar_jordan.png)
+
 
 This route still exists in Proxmox 7, but due to a [regression]() in QEMU, you can no longer change these settings on the fly. Instead, you have to add the VNC configuration in the QEMU config file pertaining to a host, then reboot the host. I actually tried to patch Jordan's code to make this possible, but it was a complete mess, didn't work half the time (I blame Proxmox), and even if it did, you'd have to reboot your VM to get a console.
 
@@ -46,11 +47,13 @@ The second route is highly misleading. The reason for this is that typically, th
 
 Unbeknownst to me, Proxmox's `vncwebsocket` API route is not at all what it seems. In reality, after calling `vncproxy`, Proxstar spends 10 seconds listening for a connection on the port it returns. If you point a websocket-based VNC client (like noVNC) at that server and port, presto! You'll have a VNC session. The ticket provided with the port is used as the password (this is not documented, of course).
 
-**Insert diagram of API calls**
+<!--**Insert Sequence Diagram of API calls**-->
 
-**Insert diagram of my setup**
+Now, this is roughly how it works.
 
-...
+![New Proxmox Setup](posts/images/proxstar_willard.png)
+
+<!--There was probably more I wanted to add here, but oh well.-->
 
 I've got demo code [available on GitHub](https://github.com/WillNilges/proxstar-vnc-forwarder/) that should show you exactly what steps you need to take to get this working on your own cluster. Simply download the dependencies, add credentials, and run the script. The automated chrome-based `browser.get()` call is only tested in macOS, but it should spit out the requisite information to get it working manually. If you have any problems, stories, or info to share, I implore you to open an issue, because as [the proxmox staff have said](), this functionality is _very_ poorly documented.
 
