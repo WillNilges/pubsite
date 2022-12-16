@@ -1,6 +1,11 @@
 // I'm not very good with computers....
 const postObj = [
   {
+    "filename": "2022-12-13_quake_on_pinephone_01.md",
+    "title": "How to Install Quake on the Pinephone",
+    "date": "2022-12-13"
+  },
+  {
     "filename": "2022-08-01_proxmox7_vnc.md",
     "title": "Rebuilding VNC Functionality on Proxstar",
     "date": "2022-08-01"
