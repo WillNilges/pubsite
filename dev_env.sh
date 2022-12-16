@@ -1,4 +1,5 @@
 #!/bin/bash
+
 serve_port=$1
 
 if [[ -z "$serve_port" ]]; then
