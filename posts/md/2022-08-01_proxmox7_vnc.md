@@ -14,7 +14,7 @@ Proxmox has an... _okay_ user interface available for managing your virtual mach
 However, the interface has a few critical flaws that make it difficult to use for the average CSHer, especially someone who is new to hypervisors:
 1. The interface is pretty complicated. There are a lot of bells and whistles that the average user isn't going to want or need to touch.
 2. Proxmox doesn't integrate well with our SSO system. We _could_ script account creation, but it'd be extra work.
-3. This is probably the most important thing: We cannot impose resource limits using Proxmox. RAM doesn't grow on trees, so we have to havr some way to prevent people from allocating 69GB of RAM to their Minecraft server.
+3. This is probably the most important thing: We cannot impose resource limits using Proxmox. RAM doesn't grow on trees, so we have to have some way to prevent people from allocating 69GB of RAM to their Minecraft server.
 
 Enter [Proxstar](https://github.com/computersciencehouse/proxstar). Proxstar is a Virtual Machine configuration and management interface written in Flask. It takes advantage of the [Proxmox API](https://pve.proxmox.com/pve-docs/api-viewer/) and [Proxmoxer](https://github.com/proxmoxer) to provide a clean and simple way for users to access our VM infrastructure, and for RTPs to impose limits to things like CPU, RAM, and storage. You can create VMs, install (RTP approved) ISOs, install an SSH key, and open a noVNC console.
 
