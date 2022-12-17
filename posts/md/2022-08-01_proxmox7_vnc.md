@@ -53,6 +53,12 @@ Now, this is roughly how it works.
 
 ![New Proxmox Setup](posts/images/proxstar_willard.png)
 
+At this point, I want to make two quick shout outs:
+
+**Thanks to** [Joe Abbate](https://github.com/jabbate19) **for helping me out with the implementation of all this, both the proof-of-concept, and in production. He's really smart and if you are a recruiter, you should hire him.**
+
+**Thanks to** [Jordan Rodgers](https://github.com/com6056), **the original inventor of Proxstar for helping me through this whole process.**
+
 ### Try It at Home!
 
 I've got demo code [available on GitHub](https://github.com/WillNilges/proxstar-vnc-forwarder/) that should show you exactly what steps you need to take to get this working on your own cluster. Simply download the dependencies, add credentials, and run the script. The automated chrome-based `browser.get()` call is only tested in macOS, but it should spit out the requisite information to get it working manually. If you have any problems, stories, or info to share, I implore you to open an issue, because as [the proxmox staff have said](), this functionality is _very_ poorly documented.
