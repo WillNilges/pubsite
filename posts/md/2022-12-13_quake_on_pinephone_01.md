@@ -4,6 +4,8 @@
 
 ---
 
+![Quake running natively on the Pinephone on Postmarket OS](posts/images/quake_on_pinephone.jpg)
+
 ### Introduction
 
 I dunno if I've ever discussed this online, but I _really_ like Quake. I dunno why I got so into it, but it must've started in late 2017, early 2018-ish. I was in my senior year of highschool, and stumbled upon [OpenArena](http://openarena.ws/smfnews.php), a fork of [ioquake3](https://github.com/ioquake/ioq3), which in and of itself is a community-supported fork of [Quake](https://github.com/id-Software/Quake-III-Arena). I'm actually not even sure if that lineage is correct. Quake and its sequels is one of those legendary games that was forked a million-and-a-half times since it was released to the FOSS world under a GPL license in 2005(?).
@@ -18,7 +20,7 @@ Now I have a PinePhone, so I thought, "why the hell not?"
 
 ### Tutorial
 
-I figured out how to do it _on the pinephone._ It wasn't actually that hard. The hard part would be cross-compiling this on an X86 machine. Oof.
+I figured out how to do it _on the pinephone,_ with PostmarketOS. It wasn't actually that hard. The hard part would be cross-compiling this on an X86 machine. Oof.
 
 1. Download [quakespasm](https://quakespasm.sourceforge.net/download.htm) on your pinephone. Specifically, you need the tar.gz at `Source code and Making`.
 2. Uncompress it, and `cd` into the `Quake` directory.
