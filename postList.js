@@ -132,7 +132,7 @@ const projectsObj = [
         "date": "A Bluetooth Low Energy Tracking project I oversaw the development of."
     },
     {
-        "filename": "projects/inkpath.html", 
+        "filename": "projects/inkpath.md", 
         "title": "Inkpath", 
         "date": "A raster diagram conversion + insertion tool for Xournal++. Convert photos of notes into native .xopp format!"
     },
