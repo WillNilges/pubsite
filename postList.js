@@ -1,6 +1,11 @@
 // I'm not very good with computers....
 const postObj = [
   {
+    "filename": "2023-01-16_accessing_serial_archlinux.md",
+    "title": "Configuring the Serial Port for Normal Users",
+    "date": "2023-01-16"
+  },
+  {
     "filename": "2022-12-13_quake_on_pinephone_01.md",
     "title": "How to Install Quake on the Pinephone",
     "date": "2022-12-13"
