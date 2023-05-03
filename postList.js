@@ -1,6 +1,11 @@
 // I'm not very good with computers....
 const postObj = [
   {
+    "filename": "2023-05-03_another_nvidia_laptop.md",
+    "title": "I Bought Another Nvidia Laptop",
+    "date": "2023-05-03"
+  },
+  {
     "filename": "2023-01-16_accessing_serial_archlinux.md",
     "title": "Configuring the Serial Port for Normal Users",
     "date": "2023-01-16"
