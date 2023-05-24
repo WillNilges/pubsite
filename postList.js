@@ -1,6 +1,11 @@
 // I'm not very good with computers....
 const postObj = [
   {
+    "filename": "2023-05-24_rocky_nvidia_dependency_hell.md",
+    "title": "Updating Jet to Rocky Linux 9: A Tromp Through Version Conflicts and Dependency Hell    ",
+    "date": "2023-05-24"
+  },
+  {
     "filename": "2023-05-03_another_nvidia_laptop.md",
     "title": "I Bought Another Nvidia Laptop",
     "date": "2023-05-03"
