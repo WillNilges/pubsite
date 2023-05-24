@@ -1,16 +1,16 @@
-## Hi, I'm Will! (he/him)
+## Hi, I'm Willard (he/they)
 
 ---
 
-Computer Engineering major and Linux fanatic who plays _way_ too many tabletop games. In my freetime (in addition to unhealthy amounts of DND), I also do a lot of coding, 3D printing, fiction writing, digital art, and running. My favorite coding languages are C, Python, Rust, and BASH. I am also conversational in Spanish.
+Computer Engineer, Linux fanatic, OpenShift goblin, and Shiny Object Enthusiast.
+
+I write a lot of code, stare at Datadog, swear at the command line, and put circuits on boards. I work on all kinds of stuff, a lot of whatever piques my interest at a given time. My current obsession is Virtual Reality, SteamVR and the LucidVR project. A lot of my work can be found on the [ClearGauntlets](https://github.com/ClearGauntlets) GitHub and https://cleargauntlets.github.io.
 
 ## What I'm working on
 
 ---
 
-While finishing up my 5th and final year of a Computer Engineering degree at RIT, I've been exploring the CUDA language, particularly its applications in accelerating computer vision algorithms in OpenCV. You can find work on that [here](https://github.com/WillNilges/inkpath-cuda), which will hopefully eventually make its way to [Inkpath](https://github.com/WillNilges/inkpath/).
-
-Being a senior in engineering, I'm also working on my senior design project with a group of really smart people. We're trying to build our own fork of LucidVR, targeting a slightly hiher pricepoint of $200 per pair, and we're calling it [ClearGauntlets](https://github.com/ClearGauntlets). More on that later this year.
+I've just graduated from college! Working on finding an apartment in NYC so I can start working as a backend programmer at Datadog! It's a dream come true. I only learned about Datadog in my 2nd year of college, but I've been fascinated by the world of DevOps since I was 16, and getting to put that knowledge to use and get paid for it _really_ scratches that "I want to play with big computers" itch.
 
 ## Projects
 

@@ -2,6 +2,8 @@
 
 ### Whiteboard transcription that doesn't suck!
 
+While finishing up my 5th and final year of a Computer Engineering degree at RIT, I explored the CUDA language, particularly its applications in accelerating computer vision algorithms in OpenCV. You can find work on that [here](https://github.com/WillNilges/inkpath-cuda), which will hopefully eventually make its way to [Inkpath](https://github.com/WillNilges/inkpath/).(no promises on that, open to maintainers lol)
+
 ![Inkpath image transcription process](posts/images/inkpath_process.jpg)
 
 Inkpath is a plugin for Xournal++ that I've been working on for the past two years or so. It allows a notetaker to take photos of whiteboards, notebooks, basically anything with a white background, and transcribe those notes into Xournal++ so that you can interact with it, re-color it, shrink it, expand it, whatever.
