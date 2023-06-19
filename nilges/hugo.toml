@@ -1,0 +1,4 @@
+baseURL = 'https://nilges.me/'
+languageCode = 'en-us'
+title = "Willard's Guide to Computing for Forgetful Power Users"
+theme = 'chom'
