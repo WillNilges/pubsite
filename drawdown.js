@@ -29,8 +29,11 @@
         src = src.replace(rex, fn);
     }
 
-    function element(tag, content) {
-        return '<' + tag + '>' + content + '</' + tag + '>';
+    function element(tag, content, myClass='') {
+        if (myClass === '')
+            return '<' + tag + '>' + content + '</' + tag + '>';
+        console.log("Ah fuck me.");
+        return '<' + tag + ' class=' + myClass + '>' + content + '</' + tag + '>';
     }
 
     function blockquote(src) {
@@ -90,7 +93,7 @@
 
     // code
     replace(rx_code, function(all, p1, p2, p3, p4) {
-        stash[--si] = element('pre', element('code', p3||p4.replace(/^    /gm, '')));
+        stash[--si] = element('div', element('pre', element('code', p3||p4.replace(/^    /gm, ''))), 'codeBlock');
         return si + '\uf8ff';
     });
 

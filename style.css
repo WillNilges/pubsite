@@ -36,8 +36,7 @@ code {
     color: #BBFFCC;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 15px;
-    overflow: auto;
-    background-color: #333;
+    /*background-color: #333;*/
 }
 
 /*summary {
