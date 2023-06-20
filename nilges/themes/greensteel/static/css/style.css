@@ -8,6 +8,16 @@
     --colorBodyBackground:#555555;
 }
 
+.navbar__right {
+    position: absolute;
+    right: 0px;
+}
+
+.navbar__left {
+}
+
+/*Old Site*/
+
 /* Components */
 
 body {
