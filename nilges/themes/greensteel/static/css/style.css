@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+:root {
+    --colorCode:#BBFFCC;
+    --colorLink:#00FF99;
+    --colorCodeBackground:#333333;
+    --colorBodyBackground:#555555;
+}
+
+/* Components */
+
+body {
+    float: center;
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #FFFFFF;
+    background-color: var(--colorCodeBackground);
+}
+
+img {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    color: #808080;
+    border-style: solid;
+}
+
+code {
+    color: #BBFFCC;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    /*background-color: #333;*/
+}
+
+/*summary {
+    font-size: 10px;
+}*/
+
+a:link {
+    color: #00FF99;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #00FF99;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00FF00;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: darkgreen;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* Classes */
+
+.pageTitle {
+    text-align: center;
+    font-size: 36px;
+}
+
+.sectionHeaders {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.articleHeaders {
+    font-size: 28px;
+    font-weight:bold;
+}
+
+.codeBlock {
+    overflow: auto;
+    display: block;
+    background-color: var(--colorCodeBackground);
+}
+
+.sideBar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+/* Generated JS stuff */
+
+.post {
+    background-color: transparent;
+}
+
+.post h2 {
+    color: var(--colorLink);
+    background-color: var(--colorCodeBackground);
+    display: inline;
+}
+
+.article {
+    background-color: transparent;
+}
+
+/* Tags */
+
+/*#code {
+    font-family: "Monospace";
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 0px;
+}*/
+
+#new-title {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+#sidebarLink {
+    text-decoration: none;
+}
+
+#main {
+    background-color: var(--colorBodyBackground);
+    margin-bottom: 100px;
+    border-left: 1px solid #00FF99;
+}
+
+/* Sad attempt at responsive design */
+
+@media screen and (max-width: 800px){
+    body{
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 800px){
+    #sidebar {
+        position: relative;
+        float: left;
+        width: 20%;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom:10px;
+        background-color: inherit;
+        border: none;
+    }
+
+    #sidebarBody {
+        display: block;
+    }
+
+    #main {
+        position: relative;
+        float: right;
+        width: 75%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom:100px;
+        /* background-image: linear-gradient(to bottom, #555555, #333333); */
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    #sidebar {
+        position: relative;
+        float: center;
+        text-align: center;
+        width: 90%;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom:10px;
+        background-color: inherit;
+        border: none;
+    }
+
+    #sidebarBody {
+        display: none;
+    }
+
+    #main {
+        position: relative;
+        float: center;
+        width: 100%;
+        padding-top: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom:10px;
+        /* background-image: linear-gradient(to bottom, #555555, #333333); */
+    }
+}
