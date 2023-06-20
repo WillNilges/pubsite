@@ -24,6 +24,13 @@
     background: pink;
 }
 
+#bigLink {
+    color: var(--colorLink);
+    background-color: var(--colorCodeBackground);
+    display: inline;
+}
+
+
 /*Old Site*/
 
 /* Components */
@@ -124,6 +131,8 @@ a:active {
     color: var(--colorLink);
     background-color: var(--colorCodeBackground);
     display: inline;
+    margin-bottom: 0px;
+    text-decoration: none;
 }
 
 .article {

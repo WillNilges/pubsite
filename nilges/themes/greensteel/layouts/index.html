@@ -1,7 +1,10 @@
 {{ define "main" }}  
 {{ .Content }}  
-{{ range ( where .Site.RegularPages "Type" "blog" | first 3 ) }}
-  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ range ( where .Site.RegularPages "Type" "blog" ) }}
+<div class="post">
+<a id="sidebarLink" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+</div>
+<h3 style="margin-top:0px;">{{ .Date.Format "2006-03-03" }}</h3>
 {{end}}
 {{ end }}  
 
