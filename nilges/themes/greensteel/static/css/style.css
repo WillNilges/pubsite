@@ -10,10 +10,18 @@
 
 .navbar__right {
     position: absolute;
-    right: 0px;
+    right: 20px;
 }
 
 .navbar__left {
+    position: absolute;
+    left: 20px;
+    margin: 20px;
+}
+
+#content {
+    flex-flow: column;
+    background: pink;
 }
 
 /*Old Site*/
