@@ -1,4 +1,8 @@
-**29 October, 2018**\
+This is an embedded nightmare...
+
+### 29 October, 2018
+
+------------------------------------------------------------------------
 
 So, if you\'ve read my aboutme page recently, you\'ll know that I\'m
 currently working on putting together a cool custom controller for a GDD

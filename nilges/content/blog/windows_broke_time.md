@@ -1,8 +1,10 @@
 Windows broke my time!
 
-### 24 December, 2018. Updated 4 February, 2019
+### 24 December, 2018
 
 ------------------------------------------------------------------------
+
+Updated 4 February, 2019
 
 I\'ve had this issue several times in the past: After installing Arch to
 a machine and rebooting a few times, the time may inexplicably be wrong.

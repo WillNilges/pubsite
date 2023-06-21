@@ -1,6 +1,6 @@
 How to set up networking on an uncooperative CLI
 
-**29 October, 2018**\
+### 29 October, 2018
 
 ------------------------------------------------------------------------
 
