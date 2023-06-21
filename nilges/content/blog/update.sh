@@ -9,6 +9,9 @@ for file in ./*.md; do
     echo $iso_date
     echo
     
-    replace_pattern='---\ntitle: "$1"\ndate: $2\ncategories: [ "Blog" ]\ndraft: false\n---'
+    printf -- '---\ntitle: "%s"\ndate: %s\ncategories: [ \"Blog\" ]\ndraft: false\n---' $title $iso_date
+    echo
+    echo "$prepend_string" | cat - "$file" > "$temp_file"
+    exit 1
 
 done
