@@ -1,5 +1,6 @@
 FROM archlinux
 
-RUN pacman -Sy; pacman -S --noconfirm hugo
+RUN pacman -Sy; pacman -S --noconfirm hugo tmux
 
-# $ podman run --rm -it --name pubsite -p 8080:8080 -v ./:/workdir:Z archlinux
+WORKDIR /workdir/nilges
+ENTRYPOINT hugo server --bind 0.0.0.0 --baseURL=http://localhost --port=8080

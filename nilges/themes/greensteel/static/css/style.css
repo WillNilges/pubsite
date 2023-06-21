@@ -94,11 +94,6 @@ a:active {
 
 /* Classes */
 
-.pageTitle {
-    text-align: center;
-    font-size: 36px;
-}
-
 .sectionHeaders {
     font-size: 24px;
     font-weight: bold;
@@ -170,13 +165,15 @@ a:active {
 
 /* Sad attempt at responsive design */
 
-@media screen and (max-width: 800px){
-    body{
-        font-size: 18px;
-    }
-}
-
 @media screen and (min-width: 800px){
+
+    .pageTitle {
+        margin:auto;
+        width: 600px;
+        text-align: center;
+        font-size: 36px;
+    }
+
     #sidebar {
         position: relative;
         float: left;
@@ -205,6 +202,15 @@ a:active {
 }
 
 @media screen and (max-width: 800px){
+    body{
+        font-size: 18px;
+    }
+
+    .pageTitle {
+        text-align: center;
+        font-size: 36px;
+    }
+
     #sidebar {
         position: relative;
         float: center;
