@@ -1,6 +1,6 @@
 ---
 title: "Trying (and failing) to finish ShelfLife"
-date: 2020-05-11T00:00:00Z
+date: 2020-05-10T00:00:00Z
 categories: [ "Blog" ]
 draft: false
 ---

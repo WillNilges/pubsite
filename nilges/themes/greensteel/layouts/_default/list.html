@@ -6,7 +6,7 @@
             {{ .Content }}  
             {{ range .Pages }}  
                 <div class="post">
-                <a id="sidebarLink" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+                <a id="nakedLink" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
                 </div>
                 <h3 style="margin-top:0px;">{{ .Date.Format "2006" }}</h3>
             {{ end }}
