@@ -1,8 +1,9 @@
-How to properly scale i3 on HiDPI displays
-
-### 13 August, 2019
-
-------------------------------------------------------------------------
+---
+title: "How to properly scale i3 on HiDPI displays"
+date: 2019-08-13T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 So I nuked my laptop last week and re-installed Arch (no Windows in this
 house anymore). I need to post a lot of cool new things I learned, but

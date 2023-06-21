@@ -1,8 +1,9 @@
-Intro to GNU/Linux (But mostly RHEL for RIT CE students)
-
-### 2 February, 2019
-
-------------------------------------------------------------------------
+---
+title: "Intro to GNU/Linux (But mostly RHEL for RIT CE students)"
+date: 2019-02-02T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 This seminar will be a light introduction to GNU/Linux for those who are
 brand new or at least know their way around.

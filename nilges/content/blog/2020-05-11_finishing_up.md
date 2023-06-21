@@ -1,8 +1,9 @@
-Trying (and failing) to finish ShelfLife
-
-### 11 May, 2020
-
-------------------------------------------------------------------------
+---
+title: "Trying (and failing) to finish ShelfLife"
+date: 2020-05-11T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Yo, It's been a while. The semester is finally over and I can finally
 pay attention to projects again. It's been an unhealthy amount of time

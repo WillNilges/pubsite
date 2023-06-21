@@ -1,8 +1,9 @@
-How to set up networking on an uncooperative CLI
-
-### 29 October, 2018
-
-------------------------------------------------------------------------
+---
+title: "How to set up networking on an uncooperative CLI"
+date: 2018-10-29T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 So, if you have something like a ThinkPad X380 Yoga (or like, any of the
 newer, thiner ThinkPads) that has something like a proprietary Ethernet

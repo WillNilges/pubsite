@@ -1,8 +1,9 @@
-Graphics output!
-
-### 17 December, 2018
-
-------------------------------------------------------------------------
+---
+title: "Graphics output!"
+date: 2018-12-17T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Did you know it\'s possible to run Proprietary Nvidia drivers AND use
 Intel Integrated Graphics® to display the desktop? Yeah. You just have

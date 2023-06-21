@@ -1,8 +1,9 @@
-This is an embedded nightmare...
-
-### 29 October, 2018
-
-------------------------------------------------------------------------
+---
+title: "This is an embedded nightmare..."
+date: 2018-10-29T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 So, if you\'ve read my aboutme page recently, you\'ll know that I\'m
 currently working on putting together a cool custom controller for a GDD

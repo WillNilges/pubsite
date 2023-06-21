@@ -1,8 +1,9 @@
-Pimp my DE seminar notes
-
-### 5 November, 2018
-
-------------------------------------------------------------------------
+---
+title: "Pimp my DE seminar notes"
+date: 2018-11-05T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 I recently gave a seminar on the basics of desktop environment (DE)
 customization at Computer Science House. I discussed how to customize

@@ -1,8 +1,9 @@
-A small update
-
-### 13 January, 2020
-
-------------------------------------------------------------------------
+---
+title: "A small update"
+date: 2020-01-13T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Hello, and happy new year!
 

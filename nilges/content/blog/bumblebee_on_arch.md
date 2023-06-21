@@ -1,8 +1,9 @@
-How to install Bumblebee on Arch
-
-### 29 October, 2018
-
-------------------------------------------------------------------------
+---
+title: "How to install Bumblebee on Arch"
+date: 2018-10-29T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Do this after installing Xorg but before installing a DE. The next time
 I install Arch I\'ll actually blog about it properly but this is

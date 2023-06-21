@@ -1,8 +1,9 @@
-Windows broke my time!
-
-### 24 December, 2018
-
-------------------------------------------------------------------------
+---
+title: "Windows broke my time!"
+date: 2018-12-24T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Updated 4 February, 2019
 

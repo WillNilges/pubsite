@@ -1,8 +1,9 @@
-A neat HiDPI scaling hack
-
-### 12 July, 2019
-
-------------------------------------------------------------------------
+---
+title: "A neat HiDPI scaling hack"
+date: 2019-07-12T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 \
 

@@ -1,8 +1,9 @@
-The Future is Open reigstration happening now!
-
-### 2 October, 2019
-
-------------------------------------------------------------------------
+---
+title: "The Future is Open reigstration happening now!"
+date: 2019-10-02T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Hello!
 

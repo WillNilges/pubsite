@@ -1,8 +1,9 @@
-Installing GRUB on Arch
-
-### 13 March, 2019
-
-------------------------------------------------------------------------
+---
+title: "Installing GRUB on Arch"
+date: 2019-03-13T00:00:00Z
+categories: [ "Blog" ]
+draft: false
+---
 
 Ok so I\'m making this post out of annoyance. I might even edit the wiki
 to include this because this was really weird with an NVMe drive. Or
