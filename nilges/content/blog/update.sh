@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 
 for file in ./*.md; do
     echo $file
@@ -9,9 +11,8 @@ for file in ./*.md; do
     echo $iso_date
     echo
     
-    printf -- '---\ntitle: "%s"\ndate: %s\ncategories: [ \"Blog\" ]\ndraft: false\n---' $title $iso_date
-    echo
-    echo "$prepend_string" | cat - "$file" > "$temp_file"
+    tail -n +6 $file > "fuckme.md"
+    printf -- '---\ntitle: "%s"\ndate: %s\ncategories: [ \"Blog\" ]\ndraft: false\n---\n' "$title" "$iso_date" | cat - "fuckme.md" > "fuckme2.md"
     exit 1
 
 done
