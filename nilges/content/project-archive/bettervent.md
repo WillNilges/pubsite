@@ -4,8 +4,6 @@ date: 2023-06-20T04:12:26Z
 draft: false
 ---
 
-## **BetterVent**
-
 BetterVent is a scheduling app I am developing for Computer Science
 House. We have tablets outside our special rooms that run this software.
 It displays the current time, which event is currently taking place, and
