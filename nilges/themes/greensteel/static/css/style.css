@@ -166,7 +166,6 @@ a:active {
 /* Sad attempt at responsive design */
 
 @media screen and (min-width: 800px){
-
     .pageTitle {
         margin:auto;
         width: 600px;
