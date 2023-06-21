@@ -1,4 +1,9 @@
-## **BOA**
+---
+title: "BOA"
+date: 2018-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 BOA is a Unity game that I am currently developing in C#. It\'s a
 fast-paced, PVP, multiplayer shooter with a heavy focus on mobility and

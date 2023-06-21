@@ -1,4 +1,9 @@
-## Inkpath
+---
+title: "Inkpath"
+date: 2021-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 ### Whiteboard transcription that doesn't suck!
 

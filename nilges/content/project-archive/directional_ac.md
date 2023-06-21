@@ -1,4 +1,10 @@
-## **Directional AC**
+---
+title: "DirectionalAC"
+date: 2019-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
+
 
 Directional AC is a project I worked on for Imagine RIT 2019 as part of
 a bigger smart-car project made by CSH. The project helps to complete

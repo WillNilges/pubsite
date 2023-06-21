@@ -1,4 +1,9 @@
-## **The Death Panel**
+---
+title: "The Death Panel"
+date: 2019-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 The Death Panel is a hackable custom control panel that was created for
 CSH\'s Imagine RIT 2020 project. Our project was a minigame suite with a
@@ -7,7 +12,7 @@ as an \"admin panel\" for a given minigame that is currently being
 played. When you push a button, anything can happen!
 
 ![Concept CAD #1 of The Death
-Panel™](posts/images/deathpanel-concept1.png)
+Panel™](/project-archive/deathpanel-concept1.png)
 
 The project consists of a few different parts: Firstly, there\'s the
 games, which were intended to be couch-based multiplayer-style. Then,

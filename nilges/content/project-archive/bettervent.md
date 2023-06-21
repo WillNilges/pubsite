@@ -1,6 +1,7 @@
 ---
 title: "BetterVent"
-date: 2023-06-20T04:12:26Z
+date: 2018-08-01T00:00:00Z
+categories: [ "Project" ]
 draft: false
 ---
 
@@ -13,7 +14,7 @@ progress and fork me
 [here](https://www.github.com/willnilges/bettervent).
 
 ![bettervent on display in front of the
-lounge.](posts/images/bettervent-image.png)
+lounge.](/project-archive/bettervent-image.png)
 
 Bettervent is open source, and you can find my repo on GitHub. You can
 also look at Reservator that I tried to fork from, but that app ended up

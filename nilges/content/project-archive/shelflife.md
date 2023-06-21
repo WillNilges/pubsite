@@ -1,4 +1,9 @@
-## **ShelfLife**
+---
+title: "ShelfLife"
+date: 2019-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 ShelfLife is a utility used to automatically monitor and manage
 resources on an OKD cluster. When active on a cluster, it monitors the

@@ -1,4 +1,9 @@
-## **SampleZone**
+---
+title: "SampleZone"
+date: 2019-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 SampleZone is a command line mixer made by Steve Greene (sgreene570) I
 contribute to. It uses ncurses to allow for mixing and pitch shifting of

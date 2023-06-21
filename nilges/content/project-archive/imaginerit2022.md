@@ -1,4 +1,9 @@
-## ImagineRIT 2022 {#imaginerit2022}
+---
+title: "ImagineRIT 2022 — CSHacked"
+date: 2022-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 One day I was over at a friend\'s house, discussing how CSH didn\'t have
 an Imagine project yet. We got to talking, and progressed through a

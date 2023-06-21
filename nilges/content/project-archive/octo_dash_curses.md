@@ -1,4 +1,9 @@
-### Octo Dash Curses
+---
+title: "Octo Dash Curses"
+date: 2020-01-01T00:00:00Z
+categories: [ "Project" ]
+draft: false
+---
 
 I'm fairly new to the world of 3D Printing (Only had my printer since August), but I'm loving it so far. I've got an Ender 3 Pro hooked up to an OctoPrint server, and that's how I've been managing my printer this whole time.
 
