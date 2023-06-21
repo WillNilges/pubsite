@@ -11,8 +11,7 @@ for file in ./*.md; do
     echo $iso_date
     echo
     
-    tail -n +6 $file > "fuckme.md"
-    printf -- '---\ntitle: "%s"\ndate: %s\ncategories: [ \"Blog\" ]\ndraft: false\n---\n' "$title" "$iso_date" | cat - "fuckme.md" > "fuckme2.md"
-    exit 1
-
+    tail -n +6 $file > "temp.md"
+    printf -- '---\ntitle: "%s"\ndate: %s\ncategories: [ \"Blog\" ]\ndraft: false\n---\n' "$title" "$iso_date" | cat - "temp.md" > $file 
+    rm "temp.md"
 done
