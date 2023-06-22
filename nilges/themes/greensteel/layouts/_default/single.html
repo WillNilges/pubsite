@@ -6,9 +6,8 @@
             <div class="blog__details">  
               <div class="blog__info">  
                 {{ if in .Params.categories "Blog" }}
-                  <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |   
-                      {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} 	                         minutes {{ end }} read  
-                   </p>
+                  <h3><time>{{ .PublishDate.Format "January 2, 2006" }}</time> | {{ .ReadingTime }} minute read  
+                   </h3>
                  {{ else if in .Params.categories "Project" }}
                   <p>Circa <time>{{ .PublishDate.Format "2006" }}</time>
                  {{ end }}

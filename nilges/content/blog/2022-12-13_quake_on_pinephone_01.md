@@ -5,7 +5,7 @@ categories: [ "Blog" ]
 draft: false
 ---
 
-![Quake running natively on the Pinephone on Postmarket OS](posts/images/quake_on_pinephone.jpg)
+![Quake running natively on the Pinephone on Postmarket OS](/blog/quake_on_pinephone.jpg)
 
 ### Introduction
 

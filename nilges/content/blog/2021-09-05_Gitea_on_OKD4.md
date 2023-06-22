@@ -77,7 +77,7 @@ Finally, add some routes so that you can connect to your new Gitea instance.
 
 I'm lazy, and just used the web interface for this.
 
-![Routing Screenie](posts/images/routing.png)
+![Routing Screenie](/blog/routing.png)
 
 Sick, now you've got Gitea running. Go ahead and add an account.
 

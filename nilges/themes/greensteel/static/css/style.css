@@ -34,7 +34,6 @@ img {
 
 hr {
     color: #808080;
-    border:none;
 }
 
 a:link {
@@ -84,6 +83,11 @@ pre > code {
     font-size: 32px;
 }
 
+.blog__details h3 {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
 .navbar__right {
     position: absolute;
     right: 20px;
@@ -100,7 +104,7 @@ pre > code {
 }
 
 .post h2 {
-    color: var(--colorLink);
+    color: white;
     background-color: var(--colorCodeBackground);
     display: inline;
     margin-bottom: 0px;
@@ -163,7 +167,7 @@ pre > code {
     .pageTitle {
         font-size: 36px;
         float: right;
-        width: 75%;
+        width: 76%; /*The title is slightly off-kilter if this is 75 instead of 76 so uhhh*/
         padding-left: 100%;
     }
 

@@ -10,7 +10,7 @@ Computer Science House uses Proxmox extensively for our infrastructure. From LDA
 
 Proxmox has an... _okay_ user interface available for managing your virtual machines, and that's what we, the RTPs, use to manage our core services. It works well enough, and gives you acess to _most_ of the functionality you need for serious hypervisor management.
 
-![Proxmox dashboard](posts/images/proxmox.jpg)
+![Proxmox dashboard](/blog/proxmox.jpg)
 
 However, the interface has a few critical flaws that make it difficult to use for the average CSHer, especially someone who is new to hypervisors:
 1. The interface is pretty complicated. There are a lot of bells and whistles that the average user isn't going to want or need to touch.
@@ -19,7 +19,7 @@ However, the interface has a few critical flaws that make it difficult to use fo
 
 Enter [Proxstar](https://github.com/computersciencehouse/proxstar). Proxstar is a Virtual Machine configuration and management interface written in Flask. It takes advantage of the [Proxmox API](https://pve.proxmox.com/pve-docs/api-viewer/) and [Proxmoxer](https://github.com/proxmoxer) to provide a clean and simple way for users to access our VM infrastructure, and for RTPs to impose limits to things like CPU, RAM, and storage. You can create VMs, install (RTP approved) ISOs, install an SSH key, and open a noVNC console.
 
-![Screenshot of Proxstar's VM management page](posts/images/proxstar.jpg)
+![Screenshot of Proxstar's VM management page](/blog/proxstar.jpg)
 
 That last point is the subject of today's blog post. Let's dive in.
 
@@ -33,7 +33,7 @@ One (ok, well, two) small issues: The first one is that in order for this to be 
 
 To get around this, Jordan gave SSH credentials to Proxstar for it to open an SSH tunnel to forward VNC traffic through. Clever, if a bit hacky. It worked prettty well, until Proxmox 7.
 
-![Proxmox noVNC as programmed by Jordan Rogers](posts/images/proxstar_jordan.png)
+![Proxmox noVNC as programmed by Jordan Rogers](/blog/proxstar_jordan.png)
 
 This route still exists in Proxmox 7, but due to a [regression](https://lists.nongnu.org/archive/html/qemu-devel/2021-08/msg04233.html) in QEMU, you can no longer change these settings on the fly. Instead, you have to add the VNC configuration in the QEMU config file pertaining to a host, then reboot the host. I actually tried to patch Jordan's code to make this possible, but it was a complete mess, didn't work half the time (I blame Proxmox), and even if it did, you'd have to reboot your VM to get a console.
 
@@ -52,7 +52,7 @@ Unbeknownst to me, Proxmox's `vncwebsocket` API route is not at all what it seem
 
 Now, this is roughly how it works.
 
-![New Proxmox Setup](posts/images/proxstar_willard.png)
+![New Proxmox Setup](/blog/proxstar_willard.png)
 
 At this point, I want to make two quick shout outs:
 
