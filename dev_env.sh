@@ -1,9 +1,9 @@
 #!/bin/bash
 
-serve_port=$1
-
-if [[ -z "$serve_port" ]]; then
-    serve_port=8080;
+if [[ ! -z $1 ]]; then
+	entrypoint="--entrypoint=$1"
 fi
 
-podman run --rm -dit --name pubsite -p "$serve_port":80 -v "$PWD":/usr/local/apache2/htdocs/:Z httpd
+podman run --rm -it --name pubsite -p 8080:8080 -v ./:/workdir:Z $entrypoint nilges-hugo
+
+#  hugo server --bind 0.0.0.0 --baseURL=http://localhost --port=8080

@@ -1,0 +1,22 @@
+{{ define "main" }}  
+<section class="section">  
+  <article>  
+    <div class="blog__container">  
+          <h1 class="blog__title">{{ .Title }}</h1>  
+            <div class="blog__details">  
+              <div class="blog__info">  
+                {{ if in .Params.categories "Blog" }}
+                  <h3><time>{{ .PublishDate.Format "January 2, 2006" }}</time> | {{ .ReadingTime }} minute read  
+                   </h3>
+                 {{ else if in .Params.categories "Project" }}
+                  <p>Circa <time>{{ .PublishDate.Format "2006" }}</time>
+                 {{ end }}
+              </div>  
+            </div>  
+          <div class="content">  
+            {{ .Content }}  
+          </div>  
+        </div>  
+  </article>  
+</section>  
+{{ end }}  

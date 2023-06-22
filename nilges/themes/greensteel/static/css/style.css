@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+:root {
+    --colorAccent:#e5b567;
+    --colorAccentHover:#ebe5ab;
+    --colorLink:#75BFFF;
+    --colorLinkVisited:#75BFFF;
+    --colorLinkHover:#A3CEF5;
+    --colorPostLink:#94C530;
+    --colorCode:#bbff5c;
+    --colorCodeBackground:#333333;
+    --colorBodyBackground:#2e2e2e;
+}
+
+/* Components */
+
+body {
+    float: center;
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #FFFFFF;
+    background-color: var(--colorCodeBackground);
+}
+
+img {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    color: #808080;
+}
+
+a:link {
+    color: var(--colorAccent);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--colorAccent);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--colorAccentHover);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--colorAccent);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+:not(pre) > code {
+    color: var(--colorCode);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    background-color: var(--colorCodeBackground);
+}
+
+pre > code {
+    color: var(--colorCode);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+
+    overflow: auto;
+    display: block;
+    background-color: var(--colorCodeBackground);
+}
+
+/* Classes */
+
+.blog__title {
+    font-size: 32px;
+}
+
+.blog__details h3 {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.navbar__right {
+    position: absolute;
+    right: 20px;
+}
+
+.navbar__left {
+    position: absolute;
+    left: 20px;
+    margin: 20px;
+}
+
+.post {
+    background-color: transparent;
+}
+
+.post h2 {
+    color: white;
+    background-color: var(--colorCodeBackground);
+    display: inline;
+    margin-bottom: 0px;
+    text-decoration: none;
+}
+
+.post h2:hover {
+    color: var(--colorLinkHover);
+}
+
+/* Tags */
+
+#main {
+    background-color: var(--colorBodyBackground);
+    margin-bottom: 100px;
+    border-left: 1px solid var(--colorAccent);
+}
+
+#main a {
+    color: var(--colorLink);
+}
+
+#main a:hover {
+    color: var(--colorLinkHover); 
+}
+
+#new-title {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+#nakedLink {
+    text-decoration: none;
+}
+
+#sidebarLink {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+#content {
+    flex-flow: column;
+    background: pink;
+}
+
+#bigLink {
+    color: var(--colorAccent);
+    background-color: var(--colorCodeBackground);
+    display: inline;
+}
+
+/* Sad attempt at responsive design */
+
+@media screen and (min-width: 800px){
+    .pageTitle {
+        font-size: 36px;
+        float: right;
+        width: 76%; /*The title is slightly off-kilter if this is 75 instead of 76 so uhhh*/
+        padding-left: 100%;
+    }
+
+
+    #sidebar {
+        position: relative;
+        float: left;
+        text-align: right;
+        width: 20%;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom:10px;
+        background-color: inherit;
+        border: none;
+    }
+
+    #sidebarBody {
+        display: block;
+    }
+
+    #main {
+        position: relative;
+        float: right;
+        width: 75%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom:100px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    body{
+        font-size: 18px;
+    }
+
+    .pageTitle {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    #sidebar {
+        position: relative;
+        float: center;
+        text-align: center;
+        width: 90%;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom:10px;
+        background-color: inherit;
+        border: none;
+    }
+
+    #sidebarBody {
+        display: none;
+    }
+
+    #main {
+        position: relative;
+        float: center;
+        width: 100%;
+        padding-top: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom:10px;
+        /* background-image: linear-gradient(to bottom, #555555, #333333); */
+    }
+}
