@@ -5,7 +5,7 @@ categories: [ "Blog" ]
 draft: false
 ---
 
-![Quake running natively on the Pinephone on Postmarket OS](posts/images/minicom_works.jpg)
+![Quake running natively on the Pinephone on Postmarket OS](/blog/minicom_works.jpg)
 
 ### Introduction
 
@@ -56,4 +56,4 @@ We're in business. Network can be configured... just as soon as I remember to tu
 
 Apparently, the `uucp` group is an old Unix-ism from Bell Labs. It stands for [Unix-to-Unix Copy](https://en.wikipedia.org/wiki/UUCP), which was a suite of programs for transferring files between computers way back when. To be clear, I have no idea why this worked for me, and your mileage may vary. Had I the wherewithal, I would test this more thoroughly to figure it out, but I am lazy. If I had to guess, minicom probably uses some kind of protocol that still obeys the group. I'm not sure why the other groups didn't work here, though.
 
-It's probably fine. ¯\_(ツ)_/¯
+It's probably fine. ¯\\\_(ツ)_/¯
