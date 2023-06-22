@@ -29,7 +29,7 @@ defaults:
 jobs:
   # Build job
   build:
-    runs-on: archlinux
+    runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
     steps:
@@ -48,8 +48,9 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+        working-directory: ./nilges
         run: |
-          cd nilges && ls -la && pwd && hugo \
+            hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
