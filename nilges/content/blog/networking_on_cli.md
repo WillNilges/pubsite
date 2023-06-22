@@ -18,14 +18,14 @@ First, you need to add the device to
 Add the device to your \`interfaces\` file which might look something
 like this:
 
-::: codeBlock
+```
         # This file describes the network interfaces available on your system
         # and how to activate them. For more information, see interfaces(5).
         source /etc/network/interfaces.d/*
         # The loopback network interface
         auto lo
         iface lo inet loopback
-:::
+```
 
 You will need to find the device name using
 

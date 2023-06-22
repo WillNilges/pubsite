@@ -12,8 +12,8 @@ install Bumblebee on any other flavor,\
 \
 *don\'t.*
 
-::: codeBlock
+```
         sudo pacman -S bumblebee mesa xf86-video-intel lib32-virtualgl lib32-nvidia-utils
         sudo gpasswd -a $USER bumblebee
         sudo systemctl enable bumblebee
-:::
+```

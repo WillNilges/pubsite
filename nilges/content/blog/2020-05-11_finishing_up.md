@@ -44,7 +44,7 @@ wanna poke at these roles again first. So lemme do that.
 For reference, here's what cluster-admin looks like according to
 `oc describe clusterrole.rbac | less`
 
-::: codeBlock
+```
     Name:         cluster-admin
     Labels:       kubernetes.io/bootstrapping=rbac-defaults
     Annotations:  authorization.openshift.io/system-only=true
@@ -53,17 +53,17 @@ For reference, here's what cluster-admin looks like according to
       Resources  Non-Resource URLs  Resource Names  Verbs
       ---------  -----------------  --------------  -----
       *.*        []                 []              [*]
-:::
+```
 
 I think I just got it.
 
 one of these two commands worked. (Actually, you just need the second
 one, pretty sure).
 
-::: codeBlock
+```
     oc policy add-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot
     oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot # This one works!
-:::
+```
 
 Now, that's not exactly what I want, since, well, it's probably not good
 to shunt cluster-admins onto systems willie nilly. So, we gotta make a
@@ -72,13 +72,13 @@ earlier in the year (Like, January). Here's what it looks like according
 to `oc describe clusterrole.rbac | less`. To create this, use this
 command:
 
-::: codeBlock
+```
 `oc create clusterrole shelflife --verb=get,watch,list,delete --resource=pods,namespaces,deployments,builds,buildconfigs,deploymentconfigs,deployments,podtemplates,projects`.
-:::
+```
 
 \
 
-::: codeBlock
+```
     Name:         shelflife
     Labels:       <none>
     Annotations:  <none>
@@ -93,7 +93,7 @@ command:
       builds.build.openshift.io            []                 []              [get watch list delete]
       deployments.extensions               []                 []              [get watch list delete]
       projects.project.openshift.io        []                 []              [get watch list delete]
-:::
+```
 
 This does not work. However, when doing
 `oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:sl-test`,
@@ -113,13 +113,13 @@ do all this cluster magic automatically.
 Here are the commands you need to create a service account, give it
 sufficient permissions, and get a key to add to your `.env` file:
 
-::: codeBlock
-::: codeBlock
+```
+```
     oc create sa shelflife-dev-bot
     oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:default:shelflife-dev-bot
     oc get token shelflife-dev-bot
-:::
-:::
+```
+```
 
 I'll just.... uhhhh.... add this to the README for now.
 

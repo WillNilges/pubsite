@@ -15,9 +15,9 @@ nightmare, surprising nobody.
 
 My new way is a simple .Xdefaults file, containting one (1) line:
 
-::: codeBlock
+```
     Xft.dpi: 168
-:::
+```
 
 That\'s literally it. Now, all of my fonts are back to normal-ish values
 (Terminal font is now 12 instead of 30), Thunar no longer is impossible
