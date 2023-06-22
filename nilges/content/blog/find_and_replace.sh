@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 find_and_replace() {
     # Iterate over each file in the directory
     for file in "$directory"/*.md; do
@@ -12,11 +14,7 @@ find_and_replace() {
 directory="."
 
 # Specify the search and replace strings
-search_string='::: codeBlock'
-replace_string='```'
-
-find_and_replace
-
-search_string=':::'
+search_string='posts\/images'
+replace_string='\/blog'
 
 find_and_replace

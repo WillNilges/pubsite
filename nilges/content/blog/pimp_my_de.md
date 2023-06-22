@@ -39,7 +39,7 @@ GNOME, KDE, and XFCE.
 
 **GNOME**
 
-![gnome de](posts/images/gnome.png)
+![gnome de](/blog/gnome.png)
 
 The one most newbies use because it comes with Ubuntu and Fedora by
 default. It\'s simple (on the surface), pretty stable, and easy to learn
@@ -55,7 +55,7 @@ coming from Windows or macOS.
 
 **KDE**
 
-![kde de](posts/images/kde.png)
+![kde de](/blog/kde.png)
 
 KDE is a nice DE that isn\'t as heavy as GNOME and operates similarly to
 Windows, so it\'s good for those looking to transition. It customizes in
@@ -73,7 +73,7 @@ communities.
 
 **XFCE**
 
-![xfce de](posts/images/xfce.png)
+![xfce de](/blog/xfce.png)
 
 XFCE is the lightest weight of these DEs. It\'s pretty old, too, and has
 a smaller development team. It\'s highly configurable boasting a robust
