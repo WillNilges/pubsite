@@ -4,7 +4,7 @@ layout: about-me.html
 
 # About Me
 
-## Hi, I'm Willard (he/they)
+## Hi, I'm Willard (they/them)
 
 ---
 
