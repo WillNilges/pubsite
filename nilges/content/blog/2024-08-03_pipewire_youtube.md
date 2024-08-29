@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Youtube Playback with Pipewire"
-date: 2020-08-03T00:00:00Z
+date: 2024-08-03T00:00:00Z
 categories: [ "Blog" ]
 draft: false
 ---
