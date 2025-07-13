@@ -105,7 +105,7 @@ pre > code {
 
 .post h2 {
     color: white;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBodyBackground);
     display: inline;
     margin-bottom: 0px;
     text-decoration: none;
@@ -159,6 +159,14 @@ pre > code {
     color: var(--colorAccent);
     background-color: var(--colorCodeBackground);
     display: inline;
+}
+
+.eightyEightByThirtyOne {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
 }
 
 /* Sad attempt at responsive design */

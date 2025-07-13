@@ -3,3 +3,6 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'greensteel'
 staticDir = './static'
+
+[markup.goldmark.renderer]
+  unsafe = true
