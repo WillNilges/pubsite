@@ -1,5 +1,9 @@
 # About this site
 
+<div class="eightyEightByThirtyOne">
+    <a href="https://nilges.me/"><img src="res/wilnil_takeone.gif" style="width:88px; height:31px;"></a>
+</div>
+
 Hello! Welcome to my website.
 
 I'm Willard Nilges (they/them): Computer Engineer, Linux Fanatic, DevOps goblin,
@@ -15,12 +19,5 @@ the sidebar.
 Please enjoy, and if you find anything I'm working on interesting, feel free to
 reach out on Mastodon or LinkedIn (I check the former _substantially_ more than
 I check the latter).
-
-Oh, and feel free to take one :)
-
-<div class="eightyEightByThirtyOne">
-    <a href="https://nilges.me/"><img src="res/wilnil_takeone.gif" style="width:88px; height:31px;"></a>
-</div>
-
 
 # Posts
