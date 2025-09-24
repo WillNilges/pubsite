@@ -1,5 +1,3 @@
-# About this site
-
 <div class="eightyEightByThirtyOne">
     <a href="https://nilges.me/"><img src="res/wilnil_takeone.gif" style="width:88px; height:31px;"></a>
 </div>
