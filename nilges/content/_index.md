@@ -6,6 +6,11 @@
 
 Hello! Welcome to my website.
 
+<!--chom-->
+<div class="eightyEightByThirtyOne">
+    <a href="https://nilges.me/"><img src="res/wilnil_takeone.gif" style="width:88px; height:31px;"></a>
+</div>
+
 I'm Willard Nilges (they/them): Computer Engineer, Linux Fanatic, DevOps goblin,
 and Shiny Object Enthusiast. Here, you will find lots of opinions about technology,
 no-nonsense guides, absolute nonsense guides, and occasional notes I write as I
