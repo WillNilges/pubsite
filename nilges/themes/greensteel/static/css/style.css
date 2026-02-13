@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');*/
 
 :root {
+    --fontFamily: 'IBM Plex Sans', sans-serif;
+    --fontFamilyCode: 'IBM Plex Mono', monospace;
+    --fontWeight: 'lighter';
+    --colorSecondary:#cccccc;
     --colorAccent:#e5b567;
     --colorAccentHover:#ebe5ab;
     --colorLink:#75BFFF;
@@ -9,8 +13,8 @@
     --colorLinkHover:#A3CEF5;
     --colorPostLink:#94C530;
     --colorCode:#bbff5c;
-    --colorCodeBackground:#333333;
-    --colorBodyBackground:#2e2e2e;
+    --colorBackgroundSecondary:#333333;
+    --colorBackground:#2e2e2e;
 }
 
 /* Components */
@@ -18,16 +22,15 @@
 body {
     float: center;
     margin: auto;
-    width: 80%;
-    max-width: 1000px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--fontFamily);
+    font-weight: var(--fontWeight);
     color: #FFFFFF;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
 }
 
 img {
     display: block;
-    width: 50%;
+    width: 50% class;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,24 +65,24 @@ a:active {
 
 :not(pre) > code {
     color: var(--colorCode);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--fontFamilyCode);
     font-size: 15px;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
 }
 
 pre > code {
     color: var(--colorCode);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--fontFamilyCode);
     font-size: 15px;
 
     overflow: auto;
     display: block;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
 }
 
 /* Classes */
 
-.blog__title {
+/*.blog__title {
     font-size: 32px;
 }
 
@@ -97,30 +100,40 @@ pre > code {
     position: absolute;
     left: 20px;
     margin: 20px;
+}*/
+
+.postLineItem {
+    margin: 12px 0px 12px 0px;
 }
 
-.post {
-    background-color: transparent;
-}
-
-.post h2 {
+.postTitle h2 {
     color: white;
-    background-color: var(--colorBodyBackground);
     display: inline;
     margin-bottom: 0px;
     text-decoration: none;
+    font-weight: light;
 }
 
-.post h2:hover {
+.postTitle h2:hover {
     color: var(--colorLinkHover);
+}
+
+.postDate {
+    color: var(--colorSecondary);
+}
+
+.sidebarContainer {
+    padding-right: 64px;
+    background-color: var(--colorBackground);
+    border-right: 1px solid var(--colorAccent);
 }
 
 /* Tags */
 
 #main {
-    background-color: var(--colorBodyBackground);
-    margin-bottom: 100px;
-    border-left: 1px solid var(--colorAccent);
+    background-color: var(--colorBackground);
+    padding: 0px 10px 0px;
+    margin: 0px 24px 24px 100px;
 }
 
 #main a {
@@ -131,23 +144,15 @@ pre > code {
     color: var(--colorLinkHover); 
 }
 
-#new-title {
-  display: block;
-  font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
 
 #nakedLink {
     text-decoration: none;
 }
 
 #sidebarLink {
+    display: flex;
+
     text-decoration: none;
-    font-size: 24px;
 }
 
 #content {
@@ -157,7 +162,7 @@ pre > code {
 
 #bigLink {
     color: var(--colorAccent);
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
     display: inline;
 }
 
@@ -173,23 +178,19 @@ pre > code {
 
 @media screen and (min-width: 800px){
     .pageTitle {
+        display: flex;
+
+        padding: 12px;
         font-size: 36px;
-        float: right;
-        width: 76%; /*The title is slightly off-kilter if this is 75 instead of 76 so uhhh*/
-        padding-left: 100%;
+        background-color: var(--colorBackground);
     }
 
+    .myBody {
+        display: flex;
+    }
 
     #sidebar {
-        position: relative;
-        float: left;
-        text-align: right;
-        width: 20%;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom:10px;
-        background-color: inherit;
-        border: none;
+
     }
 
     #sidebarBody {
@@ -197,12 +198,7 @@ pre > code {
     }
 
     #main {
-        position: relative;
-        float: right;
-        width: 75%;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom:100px;
+        background-color: var(--colorBackgroundSecondary);
     }
 }
 
