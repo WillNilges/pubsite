@@ -82,26 +82,6 @@ pre > code {
 
 /* Classes */
 
-/*.blog__title {
-    font-size: 32px;
-}
-
-.blog__details h3 {
-    font-size: 18px;
-    margin-top: 0px;
-}
-
-.navbar__right {
-    position: absolute;
-    right: 20px;
-}
-
-.navbar__left {
-    position: absolute;
-    left: 20px;
-    margin: 20px;
-}*/
-
 .postLineItem {
     margin: 12px 0px 12px 0px;
 }
