@@ -23,12 +23,10 @@
 /* Components */
 
 body {
-    float: center;
-    margin: auto;
     font-family: var(--fontFamily);
     font-weight: var(--fontWeight);
     color: #FFFFFF;
-    background-color: var(--colorBackgroundSecondary);
+    background-color: var(--colorBackground);
 }
 
 img {
@@ -107,17 +105,17 @@ pre > code {
 
 /* Tags */
 
-#main {
+.main {
     background-color: var(--colorBackground);
     padding: 0px 10px 0px;
     margin: 0px 24px 24px 24px;
 }
 
-#main a {
+.main a {
     color: var(--colorLink);
 }
 
-#main a:hover {
+.main a:hover {
     color: var(--colorLinkHover); 
 }
 
@@ -161,9 +159,22 @@ pre > code {
     margin: 10px;
 }
 
+.pageTitle {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 36px;
+    font-family: var(--titleFont);
+    background-color: var(--colorBackground);
+
+    /* For sticky header */
+    position: fixed;
+    width: 100%;
+}
+
 /* Sad attempt at responsive design */
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 1000px){
     .pageTitle {
         display: flex;
         flex-direction: column;
@@ -171,16 +182,6 @@ pre > code {
         margin: 0;
         padding: 12px;
         font-size: 36px;
-        font-family: var(--titleFont);
-        background-color: var(--colorBackground);
-
-        /* For sticky header */
-        position: fixed;
-        width: 100%;
-    }
-
-    .myBody {
-        display: flex;
     }
 
     .sidebar {
@@ -196,55 +197,28 @@ pre > code {
         z-index: 1;
         overflow-x: hidden;
         margin-top:67.2px; /* Height of title. Forgive me father for I have sinned. */
-        /*
-        height: 100vh;
-        min-height: 200px;
-        overflow: auto;
-        position: -webkit-sticky;
-        position: sticky;
-        */
     }
 
-    #main {
+    .main {
         background-color: var(--colorBackgroundSecondary);
         margin-left: 180px; /* Width of sidebar */
         margin-top: 67.2px; /* Width of header */
     }
 }
 
-@media screen and (max-width: 800px){
-    body{
-        font-size: 18px;
-    }
-
+@media screen and (max-width: 1000px){
     .pageTitle {
         text-align: center;
         font-size: 36px;
+        width: 100%;
     }
 
     .sidebar {
         display: none;
-        /*
-        position: relative;
-        float: center;
-        text-align: center;
-        width: 90%;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom:10px;
-        background-color: inherit;
-        border: none;
-        */
     }
 
-    #main {
-        position: relative;
-        float: center;
+    .main {
         width: 100%;
-        padding-top: 1px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom:10px;
-        /* background-image: linear-gradient(to bottom, #555555, #333333); */
+        margin: 0;
     }
 }
