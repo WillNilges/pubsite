@@ -105,13 +105,6 @@ pre > code {
     color: var(--colorSecondary);
 }
 
-.navbar {
-    height: 100%;
-}
-
-.sidebarContainer {
-}
-
 /* Tags */
 
 #main {
@@ -142,7 +135,6 @@ pre > code {
 
     padding: 4px;
     margin: 4px;
-    width: 180px;
 }
 
 .sidebarSeparator {
@@ -187,6 +179,10 @@ pre > code {
         font-size: 36px;
         font-family: var(--titleFont);
         background-color: var(--colorBackground);
+
+        /* For sticky header */
+        position: fixed;
+        width: 100%;
     }
 
     .myBody {
@@ -198,7 +194,14 @@ pre > code {
         background-color: var(--colorBackground);
         border-right: 1px solid var(--colorAccent);
         flex-direction: column;
+        width: 180px;
+
+        /* Sticky Sidebar */
         height: 100%;
+        position: fixed;
+        z-index: 1;
+        overflow-x: hidden;
+        margin-top:67.2px; /* Height of title. Forgive me father for I have sinned. */
         /*
         height: 100vh;
         min-height: 200px;
@@ -214,6 +217,8 @@ pre > code {
 
     #main {
         background-color: var(--colorBackgroundSecondary);
+        margin-left: 180px; /* Width of sidebar */
+        margin-top: 67.2px; /* Width of header */
     }
 }
 
