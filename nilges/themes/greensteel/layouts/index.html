@@ -3,7 +3,7 @@
 {{ range ( where .Site.RegularPages "Type" "blog" ) }}
 <div class="postLineItem">
     <div class="postTitle">
-        <a id="nakedLink" href="{{ .Permalink }}">{{ .Title }}</a>
+        <a class="nakedLink" href="{{ .Permalink }}">{{ .Title }}</a>
     </div>
     <div class="postDate">
         {{ .Date.Format "2006-01-02" }}
