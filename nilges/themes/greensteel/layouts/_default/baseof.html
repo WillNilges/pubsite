@@ -4,9 +4,7 @@
     <body>
         {{- partial "header.html" . -}}
         <div class="myBody">
-            <div class="sidebarContainer">
             {{- partial "sidebar.html" . -}}
-            </div>
             <div id="main">
             {{- block "main" . }}{{- end }}
             </div>

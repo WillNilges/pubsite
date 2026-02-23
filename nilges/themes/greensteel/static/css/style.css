@@ -1,8 +1,11 @@
 /*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');*/
 /*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=VT323&display=swap');
 
 :root {
-    --fontFamily: 'IBM Plex Sans', sans-serif;
+    --titleFont: 'VT323';
+    --fontFamily: 'Open Sans', sans-serif;
     --fontFamilyCode: 'IBM Plex Mono', monospace;
     --fontWeight: 'lighter';
     --colorSecondary:#cccccc;
@@ -13,8 +16,8 @@
     --colorLinkHover:#A3CEF5;
     --colorPostLink:#94C530;
     --colorCode:#bbff5c;
-    --colorBackgroundSecondary:#333333;
-    --colorBackground:#2e2e2e;
+    --colorBackgroundSecondary:#111111;
+    --colorBackground:#020202;
 }
 
 /* Components */
@@ -102,10 +105,11 @@ pre > code {
     color: var(--colorSecondary);
 }
 
+.navbar {
+    height: 100%;
+}
+
 .sidebarContainer {
-    padding-right: 64px;
-    background-color: var(--colorBackground);
-    border-right: 1px solid var(--colorAccent);
 }
 
 /* Tags */
@@ -113,7 +117,7 @@ pre > code {
 #main {
     background-color: var(--colorBackground);
     padding: 0px 10px 0px;
-    margin: 0px 24px 24px 100px;
+    margin: 0px 24px 24px 24px;
 }
 
 #main a {
@@ -129,10 +133,27 @@ pre > code {
     text-decoration: none;
 }
 
-#sidebarLink {
+.sidebarLink {
     display: flex;
 
-    text-decoration: none;
+    font-size: 24px;
+    font-family: var(--titleFont);
+    color: var(--colorAccent);
+
+    padding: 4px;
+    margin: 4px;
+    width: 180px;
+}
+
+.sidebarSeparator {
+    justify-content: center;
+}
+
+.bottomItems {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 #content {
@@ -159,9 +180,12 @@ pre > code {
 @media screen and (min-width: 800px){
     .pageTitle {
         display: flex;
+        flex-direction: column;
 
+        margin: 0;
         padding: 12px;
         font-size: 36px;
+        font-family: var(--titleFont);
         background-color: var(--colorBackground);
     }
 
@@ -169,8 +193,19 @@ pre > code {
         display: flex;
     }
 
-    #sidebar {
-
+    .sidebar {
+        display: flex;
+        background-color: var(--colorBackground);
+        border-right: 1px solid var(--colorAccent);
+        flex-direction: column;
+        height: 100%;
+        /*
+        height: 100vh;
+        min-height: 200px;
+        overflow: auto;
+        position: -webkit-sticky;
+        position: sticky;
+        */
     }
 
     #sidebarBody {
