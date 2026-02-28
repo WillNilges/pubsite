@@ -23,6 +23,7 @@
 /* Components */
 
 body {
+    margin: 0;
     font-family: var(--fontFamily);
     font-weight: var(--fontWeight);
     color: #FFFFFF;
@@ -105,23 +106,18 @@ pre > code {
 
 /* Tags */
 
-.main {
+.mainContent {
     background-color: var(--colorBackground);
-    padding: 0px 10px 0px;
-    margin: 0px 24px 24px 24px;
+    padding: 10px;
+    /*padding: 0px 10px 0px;*/
 }
 
-.main a {
+.mainContent a {
     color: var(--colorLink);
 }
 
-.main a:hover {
+.mainContent a:hover {
     color: var(--colorLinkHover); 
-}
-
-
-.nakedLink {
-    text-decoration: none;
 }
 
 .sidebarLink {
@@ -139,29 +135,17 @@ pre > code {
     justify-content: center;
 }
 
-.bottomItems {
+.sidebarBottomItems {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-#content {
-    flex-flow: column;
-    background: pink;
-}
-
-.eightyEightByThirtyOne {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-}
-
 .pageTitle {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 
     font-size: 36px;
     font-family: var(--titleFont);
@@ -172,6 +156,7 @@ pre > code {
     width: 100%;
 }
 
+
 /* Sad attempt at responsive design */
 
 @media screen and (min-width: 1000px){
@@ -180,7 +165,6 @@ pre > code {
         flex-direction: column;
 
         margin: 0;
-        padding: 12px;
         font-size: 36px;
     }
 
@@ -191,18 +175,16 @@ pre > code {
         flex-direction: column;
         width: 180px;
 
-        /* Sticky Sidebar */
-        height: 100%;
+        /* Sticky sidebar */
         position: fixed;
-        z-index: 1;
-        overflow-x: hidden;
-        margin-top:67.2px; /* Height of title. Forgive me father for I have sinned. */
+        height: 100%;
+
+        margin-top: 44px; /* Height of the top bar */
     }
 
-    .main {
-        background-color: var(--colorBackgroundSecondary);
-        margin-left: 180px; /* Width of sidebar */
-        margin-top: 67.2px; /* Width of header */
+    .mainContent {
+        margin-left: 181px; /* Same as the width of the sidebar */
+        margin-top: 44px; /* Height of the top bar */
     }
 }
 
@@ -215,10 +197,5 @@ pre > code {
 
     .sidebar {
         display: none;
-    }
-
-    .main {
-        width: 100%;
-        margin: 0;
     }
 }
