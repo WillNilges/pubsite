@@ -1,0 +1,16 @@
+{{ define "main" }}  
+<!--For the lists of talks/projects/etc-->
+<div class="postLineItem">
+    {{ .Content }}  
+    {{ range .Pages }}
+    <div class="postLineItem">
+        <div class="postTitle">
+            <a class="nakedLink" href="{{ .Permalink }}">{{ .Title }}</a>
+        </div>
+        <div class="postDate">
+            {{ .Date.Format "2006-01-02" }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}  

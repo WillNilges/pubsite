@@ -3,7 +3,7 @@
 On occasion, I like to speak about my work. Here are links to some publicly available
 talks I've given.
 
-## [Lessons Learned Building Observability for a Non-Profit](https://www.youtube.com/watch?v=17hTXhArfXY)
+[Lessons Learned Building Observability for a Non-Profit](https://www.youtube.com/watch?v=17hTXhArfXY)
 ### 2025-10-04
 
 In October, I had the amazing opportunity to speak at [Texas Linux Fest 2025](https://2025.texaslinuxfest.org/talks/lessons-learned-building-observability-for-a-non-profit),
