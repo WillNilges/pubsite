@@ -26,7 +26,6 @@ body {
     margin: 0;
     font-family: var(--fontFamily);
     font-weight: var(--fontWeight);
-    color: #FFFFFF;
     background-color: var(--colorBackground);
 }
 
@@ -82,7 +81,19 @@ pre > code {
     background-color: var(--colorBackgroundSecondary);
 }
 
-/* Classes */
+.pageTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 36px;
+    font-family: var(--titleFont);
+    background-color: var(--colorBackground);
+
+    /* For sticky header */
+    position: fixed;
+    width: 100%;
+}
 
 .postLineItem {
     margin: 12px 0px 12px 0px;
@@ -104,10 +115,9 @@ pre > code {
     color: var(--colorSecondary);
 }
 
-/* Tags */
-
 .mainContent {
-    background-color: var(--colorBackground);
+    color: #FFFFFF;
+    background-color: var(--colorBackgroundSecondary);
     padding: 10px;
     /*padding: 0px 10px 0px;*/
 }
@@ -142,28 +152,11 @@ pre > code {
     justify-content: flex-end;
 }
 
-.pageTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    font-size: 36px;
-    font-family: var(--titleFont);
-    background-color: var(--colorBackground);
-
-    /* For sticky header */
-    position: fixed;
-    width: 100%;
-}
-
 
 /* Sad attempt at responsive design */
 
 @media screen and (min-width: 1000px){
     .pageTitle {
-        display: flex;
-        flex-direction: column;
-
         margin: 0;
         font-size: 36px;
     }
