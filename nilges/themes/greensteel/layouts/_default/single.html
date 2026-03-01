@@ -1,6 +1,6 @@
 {{ define "main" }}  
 <!--For a blog post-->
-    <h1>{{ .Title }}</h1>
+    <h2>{{ .Title }}</h2>
     {{ if in .Params.categories "Blog" }}
     <h3>
         <time>{{ .PublishDate.Format "2006-01-02" }}</time> | {{ .ReadingTime }} minute read  

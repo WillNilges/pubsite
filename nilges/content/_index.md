@@ -10,7 +10,7 @@ Additionally, I have some blurbs about what I'm working on in the "About Me" and
 "Project Archive" pages. You can also find my resume and links to my socials in
 the sidebar.
 
-Please enjoy, and if you find anything I'm working on interesting, feel free to
+Please enjoy your stay, and if you find anything I'm working on interesting, feel free to
 reach out on Mastodon or LinkedIn (I check the former _substantially_ more than
 I check the latter).
 
