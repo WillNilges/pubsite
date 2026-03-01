@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=VT323&display=swap');
 
 :root {
+    --titleFont: 'VT323';
+    --fontFamily: 'Open Sans', sans-serif;
+    --fontFamilyCode: 'IBM Plex Mono', monospace;
+    --fontWeight: 'lighter';
+    --colorSecondary:#cccccc;
     --colorAccent:#e5b567;
     --colorAccentHover:#ebe5ab;
     --colorLink:#75BFFF;
@@ -9,25 +16,22 @@
     --colorLinkHover:#A3CEF5;
     --colorPostLink:#94C530;
     --colorCode:#bbff5c;
-    --colorCodeBackground:#333333;
-    --colorBodyBackground:#2e2e2e;
+    --colorBackgroundSecondary:#111111;
+    --colorBackground:#020202;
 }
 
 /* Components */
 
 body {
-    float: center;
-    margin: auto;
-    width: 80%;
-    max-width: 1000px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: #FFFFFF;
-    background-color: var(--colorCodeBackground);
+    margin: 0;
+    font-family: var(--fontFamily);
+    font-weight: var(--fontWeight);
+    background-color: var(--colorBackgroundSecondary);
 }
 
 img {
     display: block;
-    width: 50%;
+    width: 50% class;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,184 +66,138 @@ a:active {
 
 :not(pre) > code {
     color: var(--colorCode);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--fontFamilyCode);
     font-size: 15px;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
 }
 
 pre > code {
     color: var(--colorCode);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--fontFamilyCode);
     font-size: 15px;
 
     overflow: auto;
     display: block;
-    background-color: var(--colorCodeBackground);
+    background-color: var(--colorBackgroundSecondary);
 }
 
-/* Classes */
+.pageTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-.blog__title {
-    font-size: 32px;
+    font-size: 36px;
+    font-family: var(--titleFont);
+    background-color: var(--colorBackground);
+
+    /* For sticky header */
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
-.blog__details h3 {
-    font-size: 18px;
-    margin-top: 0px;
+.headerEightyEightByThirtyOne {
+    display: flex;
+    flex-direction: row;
 }
 
-.navbar__right {
-    position: absolute;
-    right: 20px;
+.postLineItem {
+    margin: 12px 0px 12px 0px;
 }
 
-.navbar__left {
-    position: absolute;
-    left: 20px;
-    margin: 20px;
-}
-
-.post {
-    background-color: transparent;
-}
-
-.post h2 {
+.postTitle h2 {
     color: white;
-    background-color: var(--colorBodyBackground);
     display: inline;
     margin-bottom: 0px;
     text-decoration: none;
+    font-weight: light;
 }
 
-.post h2:hover {
+.postTitle h2:hover {
     color: var(--colorLinkHover);
 }
 
-/* Tags */
-
-#main {
-    background-color: var(--colorBodyBackground);
-    margin-bottom: 100px;
-    border-left: 1px solid var(--colorAccent);
+.postDate {
+    color: var(--colorSecondary);
 }
 
-#main a {
+.mainContent {
+    min-width: 0;
+    color: #FFFFFF;
+    background-color: var(--colorBackgroundSecondary);
+    padding: 10px;
+    /*padding: 0px 10px 0px;*/
+
+}
+
+.mainContent a {
     color: var(--colorLink);
 }
 
-#main a:hover {
+.mainContent a:hover {
     color: var(--colorLinkHover); 
 }
 
-#new-title {
-  display: block;
-  font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
+.mainContent img {
+    max-height: 300px;
+    max-width: 80%;
 }
 
-#nakedLink {
-    text-decoration: none;
-}
-
-#sidebarLink {
-    text-decoration: none;
-    font-size: 24px;
-}
-
-#content {
-    flex-flow: column;
-    background: pink;
-}
-
-#bigLink {
-    color: var(--colorAccent);
-    background-color: var(--colorCodeBackground);
-    display: inline;
-}
-
-.eightyEightByThirtyOne {
+.sidebarLink {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+
+    font-size: 24px;
+    font-family: var(--titleFont);
+    color: var(--colorAccent);
+
+    padding: 4px;
+    margin: 4px;
+}
+
+.sidebarSeparator {
     justify-content: center;
-    margin: 10px;
 }
 
 /* Sad attempt at responsive design */
 
 @media screen and (min-width: 800px){
     .pageTitle {
+        margin: 0;
         font-size: 36px;
-        float: right;
-        width: 76%; /*The title is slightly off-kilter if this is 75 instead of 76 so uhhh*/
-        padding-left: 100%;
+        padding: 8px;
     }
 
+    .sidebar {
+        display: flex;
+        background-color: var(--colorBackground);
+        border-right: 1px solid var(--colorAccent);
+        flex-direction: column;
+        width: 180px;
 
-    #sidebar {
-        position: relative;
-        float: left;
-        text-align: right;
-        width: 20%;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom:10px;
-        background-color: inherit;
-        border: none;
+        /* Sticky sidebar */
+        position: fixed;
+        height: 100%;
     }
 
-    #sidebarBody {
-        display: block;
-    }
-
-    #main {
-        position: relative;
-        float: right;
-        width: 75%;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom:100px;
+    .mainContent {
+        margin-left: 180px;
     }
 }
 
 @media screen and (max-width: 800px){
-    body{
-        font-size: 18px;
-    }
-
     .pageTitle {
         text-align: center;
         font-size: 36px;
+        width: 100%;
     }
 
-    #sidebar {
-        position: relative;
-        float: center;
-        text-align: center;
-        width: 90%;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom:10px;
-        background-color: inherit;
-        border: none;
-    }
-
-    #sidebarBody {
+    .sidebar {
         display: none;
     }
 
-    #main {
-        position: relative;
-        float: center;
-        width: 100%;
-        padding-top: 1px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom:10px;
-        /* background-image: linear-gradient(to bottom, #555555, #333333); */
+    .headerEightyEightByThirtyOne {
+        display: none;
     }
+
 }

@@ -2,9 +2,9 @@
 layout: about-me.html
 ---
 
-# About Me
+## About Me
 
-## Hi, I'm Willard (they/them)
+### Hi, I'm Willard (they/them)
 
 ---
 
@@ -14,7 +14,7 @@ I write a lot of code, stare at Datadog, swear at the command line, and put circ
 on boards. I work on all kinds of stuff, because being absurdly busy is the key
 to happiness for me.
 
-## What I'm working on
+### What I'm working on
 
 ---
 

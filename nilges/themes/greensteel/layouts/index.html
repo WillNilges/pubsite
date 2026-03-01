@@ -1,10 +1,14 @@
 {{ define "main" }}  
 {{ .Content }}  
 {{ range ( where .Site.RegularPages "Type" "blog" ) }}
-<div class="post">
-<a id="nakedLink" href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+<div class="postLineItem">
+    <div class="postTitle">
+        <a class="nakedLink" href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+    <div class="postDate">
+        {{ .Date.Format "2006-01-02" }}
+    </div>
 </div>
-<h3 style="margin-top:0px;">{{ .Date.Format "2006-01-02" }}</h3>
 {{end}}
 {{ end }}  
 
