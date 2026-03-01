@@ -159,17 +159,6 @@ pre > code {
     justify-content: center;
 }
 
-/*
-* Positioning is bungus'ed on this
-.sidebarBottomItems {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-*/
-
-
 /* Sad attempt at responsive design */
 
 @media screen and (min-width: 800px){
