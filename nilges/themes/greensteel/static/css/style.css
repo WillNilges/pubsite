@@ -18,7 +18,6 @@
     --colorCode:#bbff5c;
     --colorBackgroundSecondary:#111111;
     --colorBackground:#020202;
-    --topBarHeight:59px;
 }
 
 /* Components */
@@ -93,7 +92,8 @@ pre > code {
     background-color: var(--colorBackground);
 
     /* For sticky header */
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
 }
 
@@ -128,6 +128,7 @@ pre > code {
     background-color: var(--colorBackgroundSecondary);
     padding: 10px;
     /*padding: 0px 10px 0px;*/
+
 }
 
 .mainContent a {
@@ -158,12 +159,15 @@ pre > code {
     justify-content: center;
 }
 
+/*
+* Positioning is bungus'ed on this
 .sidebarBottomItems {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: flex-end;
 }
+*/
 
 
 /* Sad attempt at responsive design */
@@ -185,13 +189,10 @@ pre > code {
         /* Sticky sidebar */
         position: fixed;
         height: 100%;
-
-        margin-top: var(--topBarHeight); /* Height of the top bar */
     }
 
     .mainContent {
-        margin-left: 181px; /* Same as the width of the sidebar */
-        margin-top: var(--topBarHeight); /* Height of the top bar */
+        margin-left: 180px;
     }
 }
 
