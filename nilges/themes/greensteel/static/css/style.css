@@ -91,7 +91,6 @@ pre > code {
     /* For sticky header */
     position: sticky;
     top: 0;
-    width: 100%;
 }
 
 .headerEightyEightByThirtyOne {
@@ -158,7 +157,7 @@ pre > code {
 
 /* Sad attempt at responsive design */
 
-@media screen and (min-width: 800px){
+@media (min-width: 800px){
     .pageTitle {
         margin: 0;
         font-size: 36px;
@@ -182,7 +181,7 @@ pre > code {
     }
 }
 
-@media screen and (max-width: 800px){
+@media (max-width: 800px){
     .pageTitle {
         text-align: center;
         font-size: 36px;
