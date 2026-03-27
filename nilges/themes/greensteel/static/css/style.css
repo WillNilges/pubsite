@@ -1,7 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');*/
-/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=VT323&display=swap');
+@import url('fonts.css');
 
 :root {
     --titleFont: 'VT323';
@@ -94,7 +91,6 @@ pre > code {
     /* For sticky header */
     position: sticky;
     top: 0;
-    width: 100%;
 }
 
 .headerEightyEightByThirtyOne {
@@ -144,6 +140,45 @@ pre > code {
     max-width: 80%;
 }
 
+.sidebar {
+    display: flex;
+    background-color: var(--colorBackground);
+    border-right: 1px solid var(--colorAccent);
+    flex-direction: column;
+    width: 180px;
+
+    /* Sticky sidebar */
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar {
+    display: flex;
+    background-color: var(--colorBackground);
+    border-right: 1px solid var(--colorAccent);
+    flex-direction: column;
+    width: 180px;
+
+    /* Sticky sidebar */
+    position: fixed;
+    height: 100%;
+}
+
+.mobileSidebar {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.mobileSidebar details {
+    color: var(--colorAccent);
+}
+
+.mobileTitle {
+    display: flex;
+    padding: 5px;
+}
+
 .sidebarLink {
     display: flex;
 
@@ -161,35 +196,43 @@ pre > code {
 
 /* Sad attempt at responsive design */
 
-@media screen and (min-width: 800px){
+@media (min-width: 800px){
     .pageTitle {
         margin: 0;
         font-size: 36px;
         padding: 8px;
-    }
-
-    .sidebar {
-        display: flex;
-        background-color: var(--colorBackground);
-        border-right: 1px solid var(--colorAccent);
-        flex-direction: column;
-        width: 180px;
-
-        /* Sticky sidebar */
-        position: fixed;
-        height: 100%;
+        width: calc(100vw - 16px);
     }
 
     .mainContent {
         margin-left: 180px;
     }
+
+    /* Don't display the mobile version of the headerbar*/
+    .mobileTitle {
+        display: none;
+    }
+
+    .mobileSidebar {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 800px){
+@media (max-width: 800px) {
+    /* When in mobile view */
     .pageTitle {
         text-align: center;
         font-size: 36px;
-        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5px;
+
+        background-color: var(--colorBackground);
+        border-bottom: 1px solid var(--colorAccent);
+
+    /* For sticky header */
+    position: sticky;
+    top: 0;
     }
 
     .sidebar {
@@ -200,4 +243,7 @@ pre > code {
         display: none;
     }
 
+    .desktopTitle {
+        display: none;
+    }
 }
